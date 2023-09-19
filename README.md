@@ -10,7 +10,7 @@ Buscamos dirigirno a un publico variado en edades, que sean aficionados por las 
 Descripción de los integrantes del grupo:
 -Soy Abril Ramos, tengo 21 años y actualmente resido en la ciudad de Morteros, Córdoba. Soy estudiante de la tecnicatura superio de desarrollo de software.
 Soy una persona curiosa siempre con ganas de aprender y de enfrentar nuevos desafios; me encanta trabajar en equipo, soy organizada y perseverante.
--
+-Soy Agustina Peralta, tengo 21 años, vivo en la ciudad de Rafaela y estudio la Tecnicatura Universitaria en Programacion en UTN. Siempre estoy interesada en seguir aprendiendo e incorporar herramientas para el día a día. 
 -
 -
 -
