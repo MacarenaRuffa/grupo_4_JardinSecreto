@@ -23,6 +23,6 @@ Soy una persona curiosa siempre con ganas de aprender y de enfrentar nuevos desa
 Paginas de referencia:
 -https://viveroagronomia.com.ar/
 -https://www.chimi.com.ar/
--https://www.tiendanova.com/vivero/
--https://potit.com.ar/
+-https://www.tiendanova.com/vivero/ elegimos esta página para usar de base en el header del homepage.
+-https://potit.com.ar/ elegimos esta página por la similitud en los productos que ofrece y el body del homepage.
 -https://www.viverodeluca.com.ar/plantas/
