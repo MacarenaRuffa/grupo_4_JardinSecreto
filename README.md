@@ -16,7 +16,7 @@ Soy una persona curiosa siempre con ganas de aprender y de enfrentar nuevos desa
 
 -Soy Manuel Muract, tengo 24 años y soy de Rio cuarto, Cordoba. Soy una persona organizada y creativa, me gusta aprender y enfrentarme a nuevos retos, soy tecnico informatico por, lo cual, estoy muy interesado en aprender programacion. 
 
--Soy jorgelina finello , vivo en la ciudad de Rafaela, me considero una persona muy alegre.Estudie la tecnicatura de Diseño de Sofware y  Trabajo en el area de soporte tecnico de Sofware.
+-Soy jorgelina Finello , vivo en la ciudad de Rafaela, me considero una persona muy alegre.Estudié la tecnicatura de Diseño de Sofware y  Trabajo en el area de soporte tecnico de Sofware.
 
 - Soy Macarena Ruffa, tengo 30 años y soy de CABA. Además de tener interés en aprender sobre programación soy Ingeniera Civil egresada de UTN en 2019. 
 
