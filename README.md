@@ -21,8 +21,8 @@ Soy una persona curiosa siempre con ganas de aprender y de enfrentar nuevos desa
 - Soy Macarena Ruffa, tengo 30 años y soy de CABA. Además de tener interés en aprender sobre programación soy Ingeniera Civil egresada de UTN en 2019. 
 
 Paginas de referencia:
--https://viveroagronomia.com.ar/
--https://www.chimi.com.ar/
+-https://viveroagronomia.com.ar/ elegimos esta página ya que nos gusto la paleta de colores.
+-https://www.chimi.com.ar/ elegimos esta página cómo inspiración para el carrito de compras porque nos parecía bastante intuitivo y sencillo.
 -https://www.tiendanova.com/vivero/ elegimos esta página para usar de base en el header del homepage.
 -https://potit.com.ar/ elegimos esta página por la similitud en los productos que ofrece y el body del homepage.
--https://www.viverodeluca.com.ar/plantas/
+-https://www.viverodeluca.com.ar/plantas/  elegimos esta página ya que es muy interesante la información que brinda sobre el tema, ademas algunas caracteristicas que nos gustaron para el formulario de registro.
