@@ -20,6 +20,8 @@ Soy una persona curiosa siempre con ganas de aprender y de enfrentar nuevos desa
 
 - Soy Macarena Ruffa, tengo 30 años y soy de CABA. Además de tener interés en aprender sobre programación soy Ingeniera Civil egresada de UTN en 2019. 
 
+- Soy Francisco Alegre, tengo 23 años y soy de Santa Fe capital, me recibí de técnico informatico y actualmente estoy ejerciendo de esto. Tengo mucho interés y me gusta mucho la programación.
+
 Paginas de referencia:
 -https://viveroagronomia.com.ar/ elegimos esta página ya que nos gusto la paleta de colores.
 -https://www.chimi.com.ar/ elegimos esta página cómo inspiración para el carrito de compras porque nos parecía bastante intuitivo y sencillo.
