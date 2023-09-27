@@ -18,7 +18,6 @@ Soy una persona curiosa siempre con ganas de aprender y de enfrentar nuevos desa
 
 -Soy jorgelina Finello , vivo en la ciudad de Rafaela, me considero una persona muy alegre.Estudié la tecnicatura de Diseño de Sofware y  Trabajo en el area de soporte tecnico de Sofware.
 -Soy Macarena Ruffa, tengo 30 años y soy de CABA. Además de tener interés en aprender sobre programación soy Ingeniera Civil egresada de UTN en 2019. 
-
 -Soy Francisco Alegre, tengo 23 años, vivo en Santa Fe capital y actualmente estoy trabajando de soporte técnico en el área de informatica, me interesa mucho aprender programación ya que es todo nuevo para mi.
 
 Paginas de referencia:
