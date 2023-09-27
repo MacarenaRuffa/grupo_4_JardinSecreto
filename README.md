@@ -1,11 +1,10 @@
 # grupo_4_JardinSecreto
 
 Descripción del producto ofrecido en el sitio:
+
 Nuestro sitio está destinado a la venta de plantas y los productos necesarios para complementar su cuidado. 
 En él se podrán encontrar accesorios, herramientas de jardinería e insumos de mantenimiento.
 Buscamos dirigirno a un publico variado en edades, que sean aficionados por las plantas 
-
-
 
 Descripción de los integrantes del grupo:
 
@@ -23,8 +22,13 @@ Soy una persona curiosa siempre con ganas de aprender y de enfrentar nuevos desa
 -Soy Francisco Alegre, tengo 23 años, vivo en Santa Fe capital y actualmente estoy trabajando de soporte técnico en el área de informatica, me interesa mucho aprender programación ya que es todo nuevo para mi.
 
 Paginas de referencia:
+
 -https://viveroagronomia.com.ar/ elegimos esta página ya que nos gusto la paleta de colores.
+
 -https://www.chimi.com.ar/ elegimos esta página cómo inspiración para el carrito de compras porque nos parecía bastante intuitivo y sencillo.
+
 -https://www.tiendanova.com/vivero/ elegimos esta página para usar de base en el header del homepage.
+
 -https://potit.com.ar/ elegimos esta página por la similitud en los productos que ofrece y el body del homepage.
+
 -https://www.viverodeluca.com.ar/plantas/  elegimos esta página ya que es muy interesante la información que brinda sobre el tema, ademas algunas caracteristicas que nos gustaron para el formulario de registro.
