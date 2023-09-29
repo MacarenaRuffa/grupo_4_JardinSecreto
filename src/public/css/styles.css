@@ -5,12 +5,6 @@
     font-family: 'Mooli', sans-serif; 
 }
 
-ul.nav-list li a i{
-    height: 1px;
-    width: 1px;
-    
-}
-
 /* Estilos para la barra de navegación, editable y modificable --Fran*/
 .navbar,h5 {
     background-color: #435334;
