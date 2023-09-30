@@ -11,24 +11,70 @@
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-    <headear>
-        <div class="navbar">
-            <div class="logo-btn">
-                <img src="images/Logo.jpg" alt="Logo">
-            </div> 
-            <ul class="nav-list">
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Acerca de</a></li>
-                <li><a href="#">Servicios</a></li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
-            <button class="menu-btn">&#9776;</button> 
-        </div>
-    </nav>
-    </headear>
+    <header>
+        <nav>
+            <div class = "info">
+                <p>Envío gratis desde $15.000 - Promociones con todos los bancos! + info acá</p>
+            </div>
+            <div class="navbar">
+                <div class="logo-btn">
+                    <img src="images/Logo-verde.png" alt="Logo">
+                </div>
+                <div class="form" action="#" method="GET">
+                    <div class="input">Buscá tu producto favorito</div>
+                    <div class="submit"><i class="fa fa-search"></i></div>
+                </div>
+                <div>
+                    <li type="none"><a href="/register">Registrate <i class="far fa-id-card"></i></a></li>
+                    <li type="none"><a href="/login">Ingresá <i class="fas fa-sign-in-alt"></i></a></li>
+                    <li type="none"><a href="#">Mis compras <i class="fas fa-shopping-basket"></i></a></li>
+                </div>
+            </div>
+            <div>
+                <ul class="nav-list">
+                    <li><a href="#">Interior <i class="fas fa-caret-down"></i></a></li>
+                    <li><a href="#">Exterior <i class="fas fa-caret-down"></i></a></li>
+                    <li><a href="#">Macetas <i class="fas fa-caret-down"></i></a></li>
+                    <li><a href="#">Insumos <i class="fas fa-caret-down"></i></a></li>
+                    <li><a href="#">Herramientas <i class="fas fa-caret-down"></i></a></li>
+                    <li><a href="#">Semillas <i class="fas fa-caret-down"></i></a></li>
+                    <li><a href="#">Suculentas <i class="fas fa-caret-down"></i></a></li>
+                </ul>
+                <button class="menu-btn">&#9776;</button> 
+            </div>    
+        </nav>
+        <section class="banner"> <!--son 3 imagenes deslizables-->
+            <img src="/images/Banner-promo1.png" alt="Banner de ofertas">
+        </section>
+    </header>
     <main>
         <section>
-    
+            <section class="outstanding">
+                <h3>Destacados del mes</h3>
+                <div class="products">
+                    <article>
+                        <img src="/images/Exterior/PE-Alegria_del_Hogar.png" alt="Alegria" class="product_img">
+                        <div class="main-article">
+                            <h4 class="description">Alegría del hogar</h4>
+                            <p class="price">Desde $600 <i class="fas fa-cart-plus"></i></p>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="/images/Exterior/PE-Azalea.png" alt="Azalea" class="product_img">
+                        <div class="main-article">
+                            <h4 class="description">Azalea </h4>
+                            <p class="price">$4.500 <i class="fas fa-cart-plus"></i></p>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="/images/Interior/PI-Calathea_Macoyana.png" alt="Calathea" class="product_img">
+                        <div class="main-article">
+                            <h4 class="description">Calathea Macoyana</h4>
+                            <p class="price">$6.300 <i class="fas fa-cart-plus"></i></p>
+                        </div>
+                    </article>
+                </div>
+            </section>
         </section>
     </main>
     <footer>
