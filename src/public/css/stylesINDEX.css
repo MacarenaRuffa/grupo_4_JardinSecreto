@@ -1,15 +1,21 @@
 main{
-    background-color: #9EB384;
+    background-color:#CEDEBD;
 }
 
 h3{
-    font-size: 2em;
-    padding: 50px;
+    font-size: 1.5em;
+    padding: 30px;
+    color: #435334;
 }
 
 div.products{
     display:flex;
     justify-content: space-around;
+}
+
+p a{
+    color: #435334;
+    text-decoration: none;
 }
 
 main section.bestsellers article img{
@@ -21,6 +27,7 @@ main section.bestsellers article img{
 div.main-article{
     text-align: center;
     width: 100%;
+    padding-bottom: 50px;
 }
 
 article div h4, article div p{
