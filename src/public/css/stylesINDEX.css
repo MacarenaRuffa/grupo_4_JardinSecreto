@@ -1,8 +1,28 @@
 main{
+    background-color: #9EB384;
+}
+
+h3{
+    font-size: 2em;
+    padding: 50px;
+}
+
+div.products{
+    display:flex;
+    justify-content: space-around;
+}
+
+main section.bestsellers article img{
+    height: 250px;
     background-color: #FAF1E4;
+    border-radius: 50%;
 }
 
-main section.outstanding article{
-    display: block;
+div.main-article{
+    text-align: center;
+    width: 100%;
 }
 
+article div h4, article div p{
+    padding-top: 10px;
+}
