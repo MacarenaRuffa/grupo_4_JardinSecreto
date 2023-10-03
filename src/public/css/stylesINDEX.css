@@ -1,0 +1,35 @@
+main{
+    background-color:#CEDEBD;
+}
+
+h3{
+    font-size: 1.5em;
+    padding: 30px;
+    color: #435334;
+}
+
+div.products{
+    display:flex;
+    justify-content: space-around;
+}
+
+p a{
+    color: #435334;
+    text-decoration: none;
+}
+
+main section.bestsellers article img{
+    height: 250px;
+    background-color: #FAF1E4;
+    border-radius: 50%;
+}
+
+div.main-article{
+    text-align: center;
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+article div h4, article div p{
+    padding-top: 10px;
+}
