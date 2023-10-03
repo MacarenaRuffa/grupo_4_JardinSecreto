@@ -9,6 +9,10 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'views/index.html'));
 });
 
+app.get('/product-cart', (req, res) => { 
+    res.sendFile(path.join(__dirname, 'views/productCart.html'));
+});
+
 const port = 3030;
 app.listen(port, () => {
     console.log(`Servidor iniciado en http://localhost:${port}`);
