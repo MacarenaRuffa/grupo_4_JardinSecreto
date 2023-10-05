@@ -159,4 +159,8 @@ footer section a{
         flex-direction: column;
         order: 2; /* Colocar la lista de navegación antes del botón hamburguesa en celulares --Fran */
     }
+
+    .form {
+        width: 300px;
+    }
 }
