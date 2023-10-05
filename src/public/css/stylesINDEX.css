@@ -10,6 +10,7 @@ h3{
 
 div.products{
     display:flex;
+    flex-wrap: wrap;
     justify-content: space-around;
 }
 
