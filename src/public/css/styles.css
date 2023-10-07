@@ -4,6 +4,13 @@
     font-family: 'Mooli', sans-serif; 
 }
 
+/* Tamaño de logo -- Maca */
+.logo-btn img {
+    max-width: 100px; 
+    height: auto; 
+    margin: 0;
+}
+
 /*estilos para la info de arriba y copyrigth --Maca*/
 nav div.info p, body div.info p{
     background-color: #9EB384;
@@ -12,8 +19,8 @@ nav div.info p, body div.info p{
 }
 
 /* Buscador --Maca*/
-div .input{
-    display: inline;
+div .input{ /*estilo barra*/
+    display: none;
     background-color: #FAF1E4;
     color: #666;
     width: 10%;
@@ -22,19 +29,63 @@ div .input{
     padding-right: 200px;
 }
   
-div .submit {
+div .submit { /*estilo de la lupita*/
     display: inline;
     background-color: #FAF1E4;
     color: #666;
-    width: 10%;
     text-align: center;
     border: 1px solid #9EB384;
+    font-size: 20px;
 }
 
-nav div.navbar div li a {
+nav div.navbar div li a { /*estilo del registrate, ingresa, carrito*/
     list-style-type: none;
     text-decoration: none;
     color: #435334;
+}
+
+/* Estilos para la barra de navegación --Fran*/
+.navbar{
+    background-color: #CEDEBD;
+    padding-right: 10px;
+    color: white;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding-left: 1em;
+}
+
+header div ul.nav-list {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding-bottom: 10px;
+    background: #CEDEBD;
+    justify-content: center;
+}
+
+header div ul.nav-list li {
+    margin-right: 1rem;
+    background: #9EB384; 
+    padding: 0.5rem 1rem; 
+    border-radius: 5px; 
+}
+
+
+/* Estilos para el botón hamburguesa --Maca */
+div.burger-menu {
+    text-align: center;
+    background-color: #CEDEBD;
+}
+  
+div.burger-menu i {
+    background-color: #435334;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 20px;
+    height: 20px;
+    width: 20px;
+    padding: 10px;
 }
 
 /*estilos de links nav --Maca*/
@@ -60,7 +111,7 @@ header div ul.nav-list li a:active{
     text-decoration: none;
 }
 
-section.banner img {
+section.banner img { /*estilo de la imagen banner*/
     width: 100%;
   }
 
@@ -76,10 +127,11 @@ footer{
     padding-top: 5px;
 }
 
-footer section a{
+footer section a{ /*colores iconos*/
     background-color: #9EB384;
     color: #435334;
 }
+
 
 /* Estilos para la barra de navegación, editable y modificable --Fran*/
 .navbar{
@@ -153,7 +205,7 @@ input[type="text"] {
     border-radius: 4px;
 }
 
-button {
+.container .search-bar button {
     padding: 8px 15px;
     border: none;
     background-color: #4CAF50;
@@ -167,6 +219,10 @@ button {
     margin-right: 20px;
 }
 
+header div ul.nav-list {
+
+    display: flex;
+}
 @media screen and (max-width: 768px) {
     /* Menú hamburguesa en celulares --Fran */
     .menu-btn {
@@ -186,10 +242,12 @@ button {
     }
 
     /* Mostrar el menú desplegable en celulares --Fran */
-    .nav-list.active {
+    
+
+
+    header div ul.nav-list {
+
         display: flex;
-        flex-direction: column;
-        order: 2; /* Colocar la lista de navegación antes del botón hamburguesa en celulares --Fran */
     }
 
 
@@ -221,4 +279,12 @@ button {
     .menu ul li a .hidden-text {
         display: none;
     }
+    div.burger-menu{
+        display: none;
+    }
+
+    div .input{
+        display: inline;
+    }
+
 }
