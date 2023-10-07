@@ -134,6 +134,38 @@ footer section a{
 .nav-list li a {
     background-color: #9EB384;
 }
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input[type="text"] {
+    padding: 8px;
+    margin-right: 10px;
+    width: 70%;
+    border: none;
+    border-radius: 4px;
+}
+
+button {
+    padding: 8px 15px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.menu ul li {
+    display: inline;
+    margin-right: 20px;
+}
 
 @media screen and (max-width: 768px) {
     /* Menú hamburguesa en celulares --Fran */
@@ -160,7 +192,33 @@ footer section a{
         order: 2; /* Colocar la lista de navegación antes del botón hamburguesa en celulares --Fran */
     }
 
-    .form {
-        width: 300px;
+
+    .search-bar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    input[type="text"] {
+        padding: 8px;
+        margin-right: 10px;
+        width: 70%;
+        border: none;
+        border-radius: 4px;
+    }
+   
+    .menu ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+    .menu ul li a {
+        display: flex;
+        align-items: center;
+    }
+    .menu ul li a i {
+        margin-right: 10px;
+    }
+    .menu ul li a .hidden-text {
+        display: none;
     }
 }
