@@ -9,8 +9,29 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'views/index.html'));
 });
 
-app.get('/product-cart', (req, res) => { 
+app.get('/productCart', (req, res) => { 
     res.sendFile(path.join(__dirname, 'views/productCart.html'));
+});
+
+app.get('/productDetail', (req, res) => { 
+    res.sendFile(path.join(__dirname, 'views/productDetail.html'));
+});
+app.post('/productDetail', (req, res) => { 
+    res.redirect('/');
+});
+
+app.get('/register', (req, res) => { 
+    res.sendFile(path.join(__dirname, 'views/register.html'));
+});
+app.post('/register', (req, res) => { 
+    res.redirect('/');
+});
+
+app.get('/login', (req, res) => { 
+    res.sendFile(path.join(__dirname, 'views/login.html'));
+});
+app.post('/login', (req, res) => { 
+    res.redirect('/');
 });
 
 const port = 3030;

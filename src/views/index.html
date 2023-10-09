@@ -15,32 +15,40 @@
 <body>
     <header>
         <nav>
-            <div class = "info">
-                <p>Envío gratis desde $15.000 - Promociones con todos los bancos! <a href="#">+ info acá</a></p>
+            <div class = "infonav">
+                <p>Envío gratis desde $15.000 - Promociones con todos los bancos! <a href="#">Más información acá</a></p>
             </div>
             <div class="navbar">
                 <div class="logo-btn">
                     <img src="images/Logo-verde.png" alt="Logo">
                 </div>
-                <div class="form" action="#" method="GET">
-                    <div class="input">Buscá tu producto favorito</div>
-                    <div class="submit"><i class="fa fa-search"></i></div>
+                <div class="container">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Buscá tu producto favorito">
+                        <button type="button"><i class="fa fa-search"></i></button>
+                    </div>
                 </div>
-                <div>
-                    <li type="none"><a href="/register">Registrate <i class="far fa-id-card"></i></a></li>
-                    <li type="none"><a href="/login">Ingresá <i class="fas fa-sign-in-alt"></i></a></li>
-                    <li type="none"><a href="#">Mis compras <i class="fas fa-shopping-basket"></i></a></li>
+                <div class="menu">
+                    <ul>
+                        <li class="search"><a href="#"><i class="fas fa-search"></i></a></li>
+                        <li><a href="/register"><i class="far fa-id-card"></i>
+                            <span class="hidden-text">Registrate</span></a></li>
+                        <li><a href="/login"><i class="fas fa-sign-in-alt"></i>
+                            <span class="hidden-text">Ingresá</span></a></li>
+                        <li><a href="#"><i class="fas fa-shopping-basket"></i>
+                            <span class="hidden-text">Mis compras</span></a></li>
+                    </ul>
                 </div>
             </div>
             <div>
                 <ul class="nav-list">
-                    <li><a href="/product-cart">Interior <i class="fas fa-caret-down"></i></a></li>
-                    <li><a href="/product-cart">Exterior <i class="fas fa-caret-down"></i></a></li>
-                    <li><a href="/product-cart">Macetas <i class="fas fa-caret-down"></i></a></li>
-                    <li><a href="/product-cart">Insumos <i class="fas fa-caret-down"></i></a></li>
-                    <li><a href="/product-cart">Herramientas <i class="fas fa-caret-down"></i></a></li>
-                    <li><a href="/product-cart">Semillas <i class="fas fa-caret-down"></i></a></li>
-                    <li><a href="/product-cart">Suculentas <i class="fas fa-caret-down"></i></a></li>
+                    <li><a href="#">Interior <i class="fas fa-caret-down"></i></a></li>
+                    <li><a href="#">Exterior <i class="fas fa-caret-down"></i></a></li>
+                    <li><a href="#">Macetas <i class="fas fa-caret-down"></i></a></li>
+                    <li><a href="#">Insumos <i class="fas fa-caret-down"></i></a></li>
+                    <li><a href="#">Herramientas <i class="fas fa-caret-down"></i></a></li>
+                    <li><a href="#">Semillas <i class="fas fa-caret-down"></i></a></li>
+                    <li><a href="#">Suculentas <i class="fas fa-caret-down"></i></a></li>
                 </ul>
                 <div class="burger-menu">
                     <i class="fa fa-bars burger"></i>
@@ -60,7 +68,7 @@
                         <img src="/images/Exterior/PE-Alegria_del_Hogar.png" alt="Alegria" class="product_img">
                         <div class="main-article">
                             <h4 class="description">Alegría del hogar</h4>
-                            <p class="price"><a href="#"><i class="fas fa-info-circle fa-lg"></a></i> Desde $600 <a href="#"><i class="fas fa-cart-plus fa-lg"></a></i></p>
+                            <p class="price"><a href="/product-detail"><i class="fas fa-info-circle fa-lg"></a></i> Desde $600 <a href="#"><i class="fas fa-cart-plus fa-lg"></a></i></p>
                         </div>
                     </article>
                     <article>
@@ -111,13 +119,16 @@
     </main>
     <footer>
         <section>
-            <h5>Regalá una giftcard! <a href="#"><i class="fas fa-gift fa-lg"></i></a></h5>
+            <h5>Regalá una giftcard!</h5>
+            <a href="#"><i class="fas fa-gift fa-lg"></i></a>
         </section>
         <section>
-            <h5>Contactate con nosotros <a href="#"><i class="fas fa-envelope fa-lg"></i></a></h5>
+            <h5>Contactate con nosotros</h5>
+            <a href="#"><i class="fas fa-envelope fa-lg"></i></a>
         </section>
         <section>
-            <h5>Asesoramiento sin cargo <a href="#"><i class="fas fa-toolbox fa-lg"></i></a></h5>
+            <h5>Asesoramiento</h5>
+            <a href="#"><i class="fas fa-toolbox fa-lg"></i></a>
         </section>   
     </footer>
     <div class = "info">
