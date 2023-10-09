@@ -12,47 +12,24 @@
 }
 
 /*estilos para la info de arriba y copyrigth --Maca*/
-nav div.info p, body div.info p{
+nav div.infonav p{
     background-color: #9EB384;
     text-align: center;
     font-size: 0.8em;
 }
 
-/* Buscador --Maca*/
-div .input{ /*estilo barra*/
-    display: none;
-    background-color: #FAF1E4;
-    color: #666;
-    width: 10%;
+body div.info p{
+    background-color: #9EB384;
     text-align: center;
-    border: 1px solid #9EB384;
-    padding-right: 200px;
-}
-  
-div .submit { /*estilo de la lupita*/
-    display: inline;
-    background-color: #FAF1E4;
-    color: #666;
-    text-align: center;
-    border: 1px solid #9EB384;
-    font-size: 20px;
+    font-size: 0.8em;
+    padding-top: 10px;
 }
 
-nav div.navbar div li a { /*estilo del registrate, ingresa, carrito*/
+/* Buscador --Maca*/
+nav div.navbar div li a, li.search { /*estilo del registrate, ingresa, carrito*/
     list-style-type: none;
     text-decoration: none;
     color: #435334;
-}
-
-/* Estilos para la barra de navegación --Fran*/
-.navbar{
-    background-color: #CEDEBD;
-    padding-right: 10px;
-    color: white;
-    display: flex;
-    justify-content: space-between; 
-    align-items: center; 
-    padding-left: 1em;
 }
 
 header div ul.nav-list {
@@ -71,9 +48,9 @@ header div ul.nav-list li {
     border-radius: 5px; 
 }
 
-
 /* Estilos para el botón hamburguesa --Maca */
 div.burger-menu {
+    display: none;
     text-align: center;
     background-color: #CEDEBD;
 }
@@ -119,23 +96,25 @@ section.banner img { /*estilo de la imagen banner*/
 footer{
     display: flex;
     justify-content: space-around;
+    text-align: center;
     width: 100%;
     background-color:#9EB384;
     color: #435334;
     font-size: 1.2em;
     border-top: #FAF1E4 4px solid;
     padding-top: 5px;
+    padding-bottom: 5px;
 }
 
-footer section a{ /*colores iconos*/
+footer section i{ /*colores iconos*/
     background-color: #9EB384;
     color: #435334;
 }
 
-
 /* Estilos para la barra de navegación, editable y modificable --Fran*/
 .navbar{
     background-color: #CEDEBD;
+    padding-right: 10px;
     color: white;
     display: flex;
     justify-content: space-between; 
@@ -143,10 +122,17 @@ footer section a{ /*colores iconos*/
     padding-left: 1em;
 }
 
+.navbar ul{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: nowrap;
+}
+
 /* Estilos para el botón hamburguesa (oculto en pantallas grandes PC) --Fran */
 .menu-btn {
     cursor: pointer;
-    display: none;
+    display: block;
 }
 
 /* Estilos del botón del logo, totalmente editable --Fran */
@@ -192,6 +178,7 @@ footer section a{ /*colores iconos*/
 }
 
 .search-bar {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -219,10 +206,14 @@ input[type="text"] {
     margin-right: 20px;
 }
 
-header div ul.nav-list {
+div.menu ul li.search{
+    display: none;
+}
 
+header div ul.nav-list {
     display: flex;
 }
+
 @media screen and (max-width: 768px) {
     /* Menú hamburguesa en celulares --Fran */
     .menu-btn {
@@ -232,6 +223,7 @@ header div ul.nav-list {
 
     /* Comando para ocultar la lista de navegación en celulares --Fran */
     .nav-list {
+        display: block;
         list-style: none;
         padding: 0;
         display: none;
@@ -240,21 +232,20 @@ header div ul.nav-list {
         top: 20%;
         right: 0;
     }
-
-    /* Mostrar el menú desplegable en celulares --Fran */
     
-
-
+    /* Mostrar el menú desplegable en celulares --Fran */
     header div ul.nav-list {
-
-        display: flex;
+        display: none;
     }
-
-
-    .search-bar {
-        display: flex;
+    
+    .search-bar input {
+        display: none;
         align-items: center;
         justify-content: center;
+    }
+
+    div.search-bar button{
+        display: none;
     }
 
     input[type="text"] {
@@ -264,27 +255,38 @@ header div ul.nav-list {
         border: none;
         border-radius: 4px;
     }
-   
-    .menu ul li {
+
+    div.menu ul li.search{
         display: block;
-        margin-bottom: 10px;
     }
-    .menu ul li a {
+
+    .navbar ul{
         display: flex;
+        justify-content: space-around;
         align-items: center;
     }
-    .menu ul li a i {
-        margin-right: 10px;
-    }
+
     .menu ul li a .hidden-text {
         display: none;
     }
+
     div.burger-menu{
-        display: none;
+        display: block;
+        padding-bottom: 10px;
     }
 
-    div .input{
-        display: inline;
+    div.menu ul a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
+    h3{
+        text-align: center;
+    }
+    
+    footer h5{
+        font-size: 10px;
+        padding-bottom: 5px;
+    }
 }
