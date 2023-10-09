@@ -1,0 +1,15 @@
+main.cart{
+    background-color: #FAF1E4;
+}
+
+.copy-cart{
+    background-color: #9EB384;
+    color: #FAF1E4;
+    border-radius: 10px;
+    width: auto;
+    padding: 5px;
+    padding-left: 20px;
+    margin-top: 10px;
+    font-size: 18px;
+    display: block;
+}
