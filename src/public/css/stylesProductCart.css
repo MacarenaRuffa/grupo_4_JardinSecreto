@@ -7,9 +7,9 @@ main.cart{
     color: #FAF1E4;
     border-radius: 10px;
     width: auto;
-    padding: 5px;
-    padding-left: 20px;
+    padding: 20px;
     margin-top: 10px;
     font-size: 18px;
-    display: block;
+    display: flex;
+    justify-content: space-between;
 }
