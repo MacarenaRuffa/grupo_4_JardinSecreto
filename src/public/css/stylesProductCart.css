@@ -1,3 +1,4 @@
+
 main.cart{
     background-color: #FAF1E4;
 }
@@ -94,7 +95,28 @@ button.buy-btn{
 
 @media (min-width: 769px) {
     button.buy-btn {
-        width: 40%;
+        width: 45%;
+        margin: 4%;
         
+        font-size: 20px;;
+
     }
+
+    main.cart article div.product{
+            width: 45%;
+            margin: 1%;
+    }
+
+    div.zip-code-calc input.zip-code,
+    div.zip-code-calc button.zp-button{
+        width: 22%;
+        padding: 2%;
+    }
+
+    div.total{
+        width: 45%;
+        font-size: 20px;
+    }
+
+
 }
