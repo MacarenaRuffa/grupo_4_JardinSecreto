@@ -32,3 +32,4 @@ Paginas de referencia:
 -https://potit.com.ar/ elegimos esta página por la similitud en los productos que ofrece y el body del homepage.
 
 -https://www.viverodeluca.com.ar/plantas/  elegimos esta página ya que es muy interesante la información que brinda sobre el tema, ademas algunas caracteristicas que nos gustaron para el formulario de registro.
+
