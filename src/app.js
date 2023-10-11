@@ -13,12 +13,19 @@ app.get('/productCart', (req, res) => {
     res.sendFile(path.join(__dirname, 'views/productCart.html'));
 });
 
-app.get('/productDetail', (req, res) => { 
-    res.sendFile(path.join(__dirname, 'views/productDetail.html'));
+app.get('/productDetail-azalea', (req, res) => { 
+    res.sendFile(path.join(__dirname, 'views/productDetail-azalea.html'));
 });
 app.post('/productDetail', (req, res) => { 
     res.redirect('/');
 });
+app.get('/productDetail-alegriadelHogar', (req, res) => { 
+    res.sendFile(path.join(__dirname, 'views/productDetail-alegriadelHogar.html'));
+});
+app.post('/productDetail', (req, res) => { 
+    res.redirect('/');
+});
+
 
 app.get('/register', (req, res) => { 
     res.sendFile(path.join(__dirname, 'views/register.html'));
