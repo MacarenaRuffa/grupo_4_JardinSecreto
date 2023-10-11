@@ -1,0 +1,3 @@
+Se comentan los avances y las dificultades que se presentan para poder solucionarlas entre todos (por ejemplo: problemas con las rutas), así como también compartir un espacio para expresar las ideas y críticas constructivas. 
+Cada vez que un miembro del equipo realiza cambios, informa por Whatsapp para los demás tener la carpeta actualizada cada vez que vamos a trabajar sobre el proyecto.
+Tenemos un buen diálogo y trabajamos en equipo para lograr el objetivo en común en tiempo y forma.
