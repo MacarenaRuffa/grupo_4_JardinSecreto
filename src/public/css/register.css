@@ -1,0 +1,62 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    background-color:#9EB384; /* Verde claro */
+    color: #435334; /* Verde oscuro */
+    padding: 10px 0;
+    text-align: center;
+}
+
+form {
+    background-color: #FAF1E4; /* Color hueso */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para los campos de entrada de texto */
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="password"],
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #9EB384; /* Verde medio */
+    border-radius: 5px;
+}
+
+/* Estilo para el botón Enviar */
+button[type="submit"] {
+    background-color: #9EB384; /* Verde medio */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Estilo para el botón Borrar */
+button[type="reset"] {
+    background-color: #435334; /* Verde oscuro */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/* Estilo para los labels */
+label {
+    font-weight: bold;
+}
+
+/* Estilo para los radio buttons y checkboxes */
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 5px;
+}
