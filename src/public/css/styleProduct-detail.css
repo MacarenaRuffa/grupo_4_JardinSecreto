@@ -32,16 +32,17 @@ main {
 }
 
 .button-trolley {
-  margin-top: 15px;
-  margin-bottom: 15px;
-  padding: 5px;
+  padding: 10px 20px;
+  background-color: #4CAF50; /* Color de fondo */
+  color: white; /* Color del texto */
+  border: none;
   border-radius: 5px;
   cursor: pointer;
-
+  transition: background-color 0.3s;
 }
 
 .button-trolley:hover {
-  background-color: #CEDEBD;
+  background-color: #45A049;
 
 }
 
