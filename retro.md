@@ -1,3 +1,5 @@
-Se comentan los avances y las dificultades que se presentan para poder solucionarlas entre todos (por ejemplo: problemas con las rutas), así como también compartir un espacio para expresar las ideas y críticas constructivas. 
-Cada vez que un miembro del equipo realiza cambios, informa por Whatsapp para los demás tener la carpeta actualizada cada vez que vamos a trabajar sobre el proyecto.
-Tenemos un buen diálogo y trabajamos en equipo para lograr el objetivo en común en tiempo y forma.
+Que comenzar a hacer: Se debería comenzar a utilizar las ramas (feature branch) para tener mejor control y coordinación del equipo, esto evitará futuros conflictos en el código.
+Que hacer más:  Continuar apoyándonos y ayudándonos mutuamente reforzando el compañerismo y el trabajo en equipo. Priorizar como equipo los días designados a la reunión semanal. 
+Que hacer menos: No llegar tan justo a la entrega del sprint, mejorando la planificación y organizando nuestros tiempos.
+Que dejar de hacer: Dejar de posponer o aplazar tareas importantes. En lugar de procrastinar, comprometernos a abordarlas de manera más efectiva y oportuna.
+Que seguir haciendo: Trabajar en equipo, comunicar las dificultades y avisos de avances de cada parte del equipo, continuar promoviendo un ambiente de trabajo colaborativo donde los miembros del equipo se sientan cómodos compartiendo ideas y conocimientos.
