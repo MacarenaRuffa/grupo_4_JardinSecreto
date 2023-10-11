@@ -57,22 +57,40 @@ main {
 .product-imgSmall:hover {
   background-color: bisque;
 }
+/* MEDIDAS QUERY */
 
-
-
-/* .product-img-container {
-  flex: 1;
-  padding: 20px;
+@media  (max-width: 470px) { 
+    .product{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+  
+  }
+  .product-img{
+    width: 60%;
+  }
+  .description{
+  width: 100%;
+  }
+    
 }
 
-.product-img {
-  max-width: 100%;
-}
 
-.product-info {
-  flex: 2;
-} */
+  @media (max-width: 768px)  {
 
-/* Estilos adicionales si es necesario */
+     .product{
+    display: flex;
+    /* flex-direction: column; */
+    margin: auto;
+  
+  }
+  .product-img{
+    width: 40%;
+  }
+  .description{
+  width: 100%;
+  }
+  
+  } 
 
-/* Estilos adicionales si es necesario */
+
