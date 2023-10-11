@@ -33,6 +33,7 @@ main {
 
 .button-trolley {
   padding: 10px 20px;
+  margin-bottom: 20px;
   background-color: #4CAF50; /* Color de fondo */
   color: white; /* Color del texto */
   border: none;
@@ -48,15 +49,18 @@ main {
 
 .product-imgSmall {
   width: 15%;
-  border: 2px solid #ccc;
+ margin-bottom: 20px;
+ margin-top: 20px;
   cursor: pointer;
   margin-top: 15px;
-  ;
+  border-radius: 50%;
+  background-color: #FAF1E4;
 
 }
 
 .product-imgSmall:hover {
   background-color: bisque;
+  border-radius: 50%;
 }
 /* MEDIDAS QUERY */
 
@@ -67,13 +71,17 @@ main {
     margin: auto;
   
   }
-  .product-img{
-    width: 60%;
+  .button-trolley{
+    text-align: center;
+    margin-left: 30%;
   }
+ 
   .description{
   width: 100%;
   }
-    
+  .product-imgSmall{
+    width: 30%;
+  }
 }
 
 
