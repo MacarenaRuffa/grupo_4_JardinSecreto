@@ -1,66 +1,135 @@
-
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
     <meta charset="UTF-8">
+    <title>Bienvenidxs a Jardin Secreto</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>El jardin secreto</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
 <body>
-    <div class="container">
-        <h1>¡Registrate!</h1>
-        <form>
-            <label for="nombre">Nombre*:</label>
-            <input type="text" id="nombre" name="nombre" required>
+    <header>
+        <div class="top-header">
+            <div class="logo">
+                <img src="images/Logo-verde.png" alt="El Jardin Secreto">
+            </div>
+           
+            <p>¡Registrate!</p>
+        </div>
+     
+        <div class="burger-menu">
+            <i class="fa fa-bars burger"></i>
+        </div>
+    </header>
+    <main class="register">
+        <form action="/register" method="POST">
+            <input type="text" name="name" placeholder="Nombre y apellido">
+            <input type="text" name="user" placeholder="Nombre de usuario">
+            <input type="email" name="email" placeholder="E-mail">
+            <br>
+            <label for="birth_date"><b>Fecha de nacimiento</b></label>
+            <br>
+            <input type="date" name="birth_date" id="birth_date">
+            <br>
+            <div class="register">
+                <label class="Pais">Pais</label>
+                <select name="register">
+                    <option value="buy"></option>
+                    <option value="buy">Argentina</option>
+                    <option value="sell">Brazil</option>
+                    <option value="buy">Uruguay</option> 
+                    <option value="sell">Paraguay</option>
+                 
+                </select>
+            </div>
+            <br>
+            <div class="profile">
+                <label class="Provincia">Provincia</label>
+                <select name="profile">
+                    <option value="buy"></option>
+                    <option value="buy">Santa Fe</option>
+                    <option value="sell">Cordoba</option>
+                    <option value="buy">La Rioja</option> 
+                    <option value="sell">Catamarca</option>
+                    <option value="buy">Jujuy</option>
+                </select>
+            </div>
+            <br>
+            <br>
+                <div class="profile">
+                <label class="Ciudad">Ciudad</label>
+                <select name="profile">
+                    <option value="buy"></option>
+                    <option value="buy">Rafaela</option>
+                    <option value="sell">Ceres</option>
+                    <option value="buy">Susana</option> 
+                    <option value="sell">Sunchales</option>
+                    <option value="buy">Maria Juana</option>
+                </select>
+            </div>
+            <br>
+            <div class="profile">
+                <label class="Ciudad">Genero</label>
+                <select name="profile">
+                    <option value="buy"></option>
+                    <option value="buy">Masculino</option>
+                    <option value="sell">Femenino</option>
+                    <option value="buy">Binario</option> 
+                    <option value="sell">No Binario</option>
+                    <option value="buy">Otro</option>
+                </select>
+            </div>
+            <br>
 
-            <label for="apellido">Apellido*:</label>
-            <input type="text" id="apellido" name="apellido" required>
 
-            <label for="email">Correo Electrónico:</label>
-            <input type="email" id="email" name="email" required>
+            <h4>Intereses</h4>
+            <div class="interests">
+                <div>
+                    <input type="checkbox" name="interests" value="a" id="a">
+                    <label for="a">Plantas</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="interests" value="b" id="b">
+                    <label for="b">Suculentas</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="interests" value="c" id="c">
+                    <label for="c">Semillas</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="interests" value="d" id="d">
+                    <label for="d">Herramientas</label>
+                </div>
+               
+            </div>
 
-            <label for="dni">DNI:</label>
-            <input type="text" id="dni" name="dni" required>
+            <h4>Elegí tu foto de usuario</h4>
+            <input type="file" name="avatar">
+            <br>
+            <br>
+            <input type="password" name="pass" placeholder="Elegí tu contraseña">
+            <input type="password" name="pass_confirm" placeholder="Confirmá tu contraseña">
+            <br>
+            <div>
+                <input type="checkbox" name="interests" value="d" id="d">
+                <label for="d">Acepto los terminos y condiciones de El Jardin Secreto</label>
+            </div>
+           
 
-            <label for="numero-dni">Número de DNI:</label>
-            <input type="text" id="numero-dni" name="numero-dni" required>
-
-            <label>Género:</label>
-            <label for="genero-masculino"><input type="radio" id="genero-masculino" name="genero" value="masculino"> Masculino</label>
-            <label for="genero-femenino"><input type="radio" id="genero-femenino" name="genero" value="femenino"> Femenino</label>
-            <label for="genero-otro"><input type="radio" id="genero-otro" name="genero" value="otro"> Otro</label>
-
-            <label for="direccion">Dirección:</label>
-            <textarea id="direccion" name="direccion" rows="4" required></textarea>
-
-            <label for="mapa">Ver Mapa:</label>
-            <input type="text" id="mapa" name="mapa">
-
-            <label for="calle-numero">Calle y Número:</label>
-            <input type="text" id="calle-numero" name="calle-numero">
-
-            <label for="piso-dto">Piso/Dto:</label>
-            <input type="text" id="piso-dto" name="piso-dto">
-
-            <label for="localidad">Localidad:</label>
-            <input type="text" id="localidad" name="localidad">
-
-            <label for="terminos-condiciones">
-                <input type="checkbox" id="terminos-condiciones" name="terminos-condiciones" required>
-                Acepto los términos y condiciones
-            </label>
-
-            <input type="submit" value="Enviar">
+            <br>
+            <button type="submit">Enviar</button>
+            <button type="reset">Borrar</button>
+            <br>
+            <br>
         </form>
-    </div>
+    </main>
+    <footer>
+    </footer>
 </body>
+
 </html>
 
 
