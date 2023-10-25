@@ -1,64 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Jardin secreto</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="shortcut icon" href="/images/Icono.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Mooli&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/stylesINDEX.css">
-</head>
+<%- include('partials/head') %>
 <body>
-    <header>
-        <nav>
-            <div class = "infonav">
-                <p>Envío gratis desde $15.000 - Promociones con todos los bancos! <a href="#">Más información acá</a></p>
-            </div>
-            <div class="navbar">
-                <div class="logo-btn">
-                    <img src="images/Logo-verde.png" alt="Logo">
-                </div>
-                <div class="container">
-                    <div class="search-bar">
-                        <input type="text" placeholder="Buscá tu producto favorito">
-                        <button type="button"><i class="fa fa-search"></i></button>
-                    </div>
-                </div>
-                <div class="menu">
-                    <ul>
-                        <li class="search"><a href="#"><i class="fas fa-search"></i></a></li>
-                        <li><a href="/register"><i class="far fa-id-card"></i>
-                            <span class="hidden-text">Registrate</span></a></li>
-                        <li><a href="/login"><i class="fas fa-sign-in-alt"></i>
-                            <span class="hidden-text">Ingresá</span></a></li>
-                        <li><a href="/productCart"><i class="fas fa-shopping-basket"></i>
-                            <span class="hidden-text">Mis compras</span></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div>
-                <ul class="nav-list">
-                    <li><a href="/productDetail">Interior <i class="fas fa-caret-down"></i></a></li>
-                    <li><a href="#">Exterior <i class="fas fa-caret-down"></i></a></li>
-                    <li><a href="#">Macetas <i class="fas fa-caret-down"></i></a></li>
-                    <li><a href="#">Insumos <i class="fas fa-caret-down"></i></a></li>
-                    <li><a href="#">Herramientas <i class="fas fa-caret-down"></i></a></li>
-                    <li><a href="#">Semillas <i class="fas fa-caret-down"></i></a></li>
-                    <li><a href="#">Suculentas <i class="fas fa-caret-down"></i></a></li>
-                </ul>
-                <div class="burger-menu">
-                    <i class="fa fa-bars burger"></i>
-                </div>
-            </div>    
-        </nav>
-        <section class="banner"> <!--son 3 imagenes deslizables-->
-            <img src="/images/Banner-promo1.png" alt="Banner de ofertas">
-        </section>
-    </header>
+    <%- include('partials/header') %>
     <main>
         <section>
             <h3>Destacados del mes</h3>
@@ -117,23 +59,7 @@
             </section>
         </section>
     </main>
-    <footer>
-        <section>
-            <h5>Regalá una giftcard!</h5>
-            <a href="#"><i class="fas fa-gift fa-lg"></i></a>
-        </section>
-        <section>
-            <h5>Contactate con nosotros</h5>
-            <a href="#"><i class="fas fa-envelope fa-lg"></i></a>
-        </section>
-        <section>
-            <h5>Asesoramiento</h5>
-            <a href="#"><i class="fas fa-toolbox fa-lg"></i></a>
-        </section>   
-    </footer>
-    <div class = "info">
-        <p>Copyright ©2023 Jardín Secreto. Todos los derechos reservados</p>
-    </div>
+    <%- include('partials/footer') %>
     <script src="/views/script.js"></script> <!--Prueba de linkeo para la carpeta de funciones scrip -Fran -->
 </body>
 </html>
