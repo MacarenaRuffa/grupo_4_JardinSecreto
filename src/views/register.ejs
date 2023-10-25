@@ -1,26 +1,13 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="UTF-8">
-    <title>Bienvenidxs a Jardin Secreto</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/register.css">
-</head>
+<%- include('partials/head', {styles : ['register']}) %>
 
 <body>
     <header>
         <div class="top-header">
             <div class="logo">
-                <img src="images/Logo-verde.png" alt="El Jardin Secreto">
+                <img src="/images/Logo-verde.png" alt="El Jardin Secreto">
             </div>
-           
             <p>¡Registrate!</p>
         </div>
-     
         <div class="burger-menu">
             <i class="fa fa-bars burger"></i>
         </div>
@@ -85,7 +72,6 @@
             </div>
             <br>
 
-
             <h4>Intereses</h4>
             <div class="interests">
                 <div>
@@ -104,7 +90,6 @@
                     <input type="checkbox" name="interests" value="d" id="d">
                     <label for="d">Herramientas</label>
                 </div>
-               
             </div>
 
             <h4>Elegí tu foto de usuario</h4>
@@ -118,8 +103,6 @@
                 <input type="checkbox" name="interests" value="d" id="d">
                 <label for="d">Acepto los terminos y condiciones de El Jardin Secreto</label>
             </div>
-           
-
             <br>
             <button type="submit">Enviar</button>
             <button type="reset">Borrar</button>
@@ -127,10 +110,8 @@
             <br>
         </form>
     </main>
-    <footer>
-    </footer>
+    <%- include('partials/footer') %>
 </body>
-
 </html>
 
 
