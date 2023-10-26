@@ -1,18 +1,12 @@
 //aca irian los metodos que recibiran datos de productos y devolveran la info correspondiente
 // create, edit, detail, list
-
+//productCart y productDetail
 const productController = {
-    index: (req,res) => {
-        res.send('Acá muestro vista con la lista de productos')
+    productDetail: (req,res) => {
+        res.render('productDetail');
     },
-    show: (req,res) => {
-        res.send('Acá muestro vista con el detalle de un producto')
-    },
-    create: (req,res) => {
-        res.send('Acá muestro vista para crear un producto')
-    },
-    edit: (req,res) => {
-        res.send ('Acá muestro vista para editar un producto')
+    productCart: (req,res) => {
+        res.render('productCart');
     }
 };
 
