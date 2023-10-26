@@ -1,6 +1,31 @@
 <%- include('partials/head') %>
 <body>
+<main class="edit"> 
+    <form action="/product-edit" method="POST">
+        <input type="text" name="product-name" placeholder="Nombre del producto">
+        <label for="description">Descripcion del producto:</label>
+        <textarea name="description" id="description">Descripcion</textarea>
+        
+        <div class="img-product">
+            <p class="copy">Foto del producto</p>
+            <input type="file" name="avatar">
+        </div>
 
+        <div class="category">
+            <label class="copy">Seleccione categoria:</label>
+                <select name="category">
+                    <option value="semillas">Semillas</option>
+                    <option value="insumos">Insumos</option>
+                    <option value="macetas">Macetas</option>
+                    <option value="herramientas">Herramientas</option>
+                    <option value="suculentas">Suculentas</option>
+                    <option value="interior">Interior</option>
+                    <option value="exterior">Exterior</option>
+                </select>
+        </div>
+        <input type="text" name="price" placeholder="Precio del producto">
+    </form>
+</main>
     
 <%- include('partials/footer') %>
 </body>
