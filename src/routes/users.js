@@ -1,7 +1,7 @@
 //rutas con register, login, profile, search
 const express = require('express');
 
-const router = express.Router;
+const router = express.Router();
 
 const usersController = require('../controllers/usersController');
 

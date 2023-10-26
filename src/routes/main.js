@@ -1,7 +1,7 @@
 //rutas con home, contact, about us
 const express = require('express');
 
-const router = express.Router;
+const router = express.Router();
 
 const mainController = require('../controllers/mainController.js');
 
