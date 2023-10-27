@@ -1,57 +1,57 @@
 [
     {
       "id": 1,
-      "name": "Hamburguesa Clásica",
-      "description": "Una hamburguesa deliciosa con carne a la parrilla.",
-      "price": 8.99,
+      "name": "Alegria del hogar",
+      "description": "Planta de exterior",
+      "price": 600,
       "discount": 10, 
-      "category": "Clásica",
-      "image": "classic-burger.jpg"
+      "category": "Exterior",
+      "image": "PE-Alegria_del_Hogar.jpg"
     },
     {
       "id": 2,
-      "name": "Hamburguesa de Pollo",
-      "description": "Una hamburguesa de pollo crujiente y sabrosa.",
-      "price": 7.99,
+      "name": "Azalea",
+      "description": "son los arbustos de flores del género Rhododendron",
+      "price": 4500,
       "discount": 15, 
-      "category": "Pollo",
-      "image": "chicken-burger.jpg"
+      "category": "Exterior",
+      "image": "PE-Azalea.png"
     },
     {
       "id": 3,
-      "name": "Hamburguesa Vegetariana",
-      "description": "Una hamburguesa vegetariana llena de sabor.",
-      "price": 9.49,
+      "name": "Calathea Macoyana",
+      "description": " Calathea makoyana es una planta de hoja perenne que alcanza un tamaño de hasta 45 cm de altura",
+      "price": 6300,
       "discount": 0, 
-      "category": "Vegetariana",
-      "image": "vegetarian-burger.jpg"
+      "category": "Interior",
+      "image": "PI-Calathea_Macoyana"
     },
     {
       "id": 4,
-      "name": "Hamburguesa Doble Queso",
-      "description": "Dos carnes jugosas con mucho queso.",
-      "price": 10.99,
+      "name": "Mix de suculentas",
+      "description": " son aquellas en las que algún órgano está especializado en el almacenamiento de agua en cantidades mayores que las plantas sin esta adaptación..",
+      "price": 5000,
       "discount": 5, 
-      "category": "Doble Queso",
-      "image": "double-cheese-burger.jpg"
+      "category": "Exterior",
+      "image": ""
     },
     {
       "id": 5,
-      "name": "Hamburguesa Picante",
-      "description": "Una hamburguesa con un toque picante para los amantes del picante.",
-      "price": 8.99,
+      "name": "Maceta de cerámica",
+      "description": "Maceta de cerámica, esmaltada en tonos suaves, elegante y duradera",
+      "price": 3500,
       "discount": 0, 
-      "category": "Picante",
-      "image": "spicy-burger.jpg"
+      "category": "Macetas",
+      "image": "MA-Ceramica_beige.png"
     },
     {
       "id": 6,
-      "name": "Hamburguesa con Champiñones",
-      "description": "Hamburguesa con champiñones frescos y queso suizo.",
-      "price": 9.99,
+      "name": "Kit para jardin ",
+      "description": "Kit de tres herramientas para el jardin pala,palita y rastillo",
+      "price": 7300,
       "discount": 20, 
-      "category": "Champiñones",
-      "image": "mushroom-burger.jpg"
+      "category": "Herramientas",
+      "image": "HE-Kit_jardin.png"
     },
     {
       "id": 7,
