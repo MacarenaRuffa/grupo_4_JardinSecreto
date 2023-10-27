@@ -1,5 +1,6 @@
 [
     {
+
       "id": 1,
       "name": "Alegria del hogar",
       "description": "Planta de exterior",
@@ -53,40 +54,33 @@
       "category": "Herramientas",
       "image": "HE-Kit_jardin.png"
     },
+
     {
-      "id": 7,
       "name": "Hamburguesa BBQ",
       "description": "Hamburguesa con salsa BBQ y cebolla caramelizada.",
-      "price": 8.99,
-      "discount": 0, 
+      "image": "classic-burger.jpg",
       "category": "BBQ",
-      "image": "bbq-burger.jpg"
+      "price": 8.99
     },
     {
-      "id": 8,
       "name": "Hamburguesa de Pavo",
       "description": "Hamburguesa de pavo magra y saludable.",
-      "price": 7.99,
-      "discount": 10, 
+      "image": "classic-burger.jpg",
       "category": "Pavo",
-      "image": "turkey-burger.jpg"
+      "price": 7.99
     },
     {
-      "id": 9,
       "name": "Hamburguesa de Pescado",
       "description": "Hamburguesa de pescado fresco con lechuga y salsa tártara.",
-      "price": 9.49,
-      "discount": 0, 
+      "image": "classic-burger.jpg",
       "category": "Pescado",
-      "image": "fish-burger.jpg"
+      "price": 9.49
     },
     {
-      "id": 10,
       "name": "Hamburguesa Vegana",
       "description": "Hamburguesa vegana con ingredientes de origen vegetal.",
-      "price": 9.99,
-      "discount": 5, 
+      "image": "classic-burger.jpg",
       "category": "Vegana",
-      "image": "vegan-burger.jpg"
+      "price": 9.99 
     }
-  ]
+]
