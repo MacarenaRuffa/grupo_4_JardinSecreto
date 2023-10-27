@@ -1,7 +1,7 @@
-<%- include('partials/head') %>
+<%- include('partials/head',{styles : ['productEdit']}) %>
 <body>
 <main class="edit"> 
-    <form action="/product-edit" method="POST">
+    <form action="products/edit" method="POST">
         <input type="text" name="product-name" placeholder="Nombre del producto">
         <label for="description">Descripcion del producto:</label>
         <textarea name="description" id="description">Descripcion</textarea>

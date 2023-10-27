@@ -1,92 +1,72 @@
 [
     {
-      "id": 1,
       "name": "Hamburguesa Clásica",
       "description": "Una hamburguesa deliciosa con carne a la parrilla.",
-      "price": 8.99,
-      "discount": 10, 
+      "image": "classic-burger.jpg",
       "category": "Clásica",
-      "image": "classic-burger.jpg"
+      "price": 8.99
     },
     {
-      "id": 2,
       "name": "Hamburguesa de Pollo",
       "description": "Una hamburguesa de pollo crujiente y sabrosa.",
-      "price": 7.99,
-      "discount": 15, 
+      "image": "classic-burger.jpg",
       "category": "Pollo",
-      "image": "chicken-burger.jpg"
+      "price": 7.99  
     },
     {
-      "id": 3,
       "name": "Hamburguesa Vegetariana",
       "description": "Una hamburguesa vegetariana llena de sabor.",
-      "price": 9.49,
-      "discount": 0, 
+      "image": "classic-burger.jpg",
       "category": "Vegetariana",
-      "image": "vegetarian-burger.jpg"
+      "price": 9.49
     },
     {
-      "id": 4,
       "name": "Hamburguesa Doble Queso",
       "description": "Dos carnes jugosas con mucho queso.",
-      "price": 10.99,
-      "discount": 5, 
+      "image": "classic-burger.jpg",
       "category": "Doble Queso",
-      "image": "double-cheese-burger.jpg"
+      "price": 10.99 
     },
     {
-      "id": 5,
       "name": "Hamburguesa Picante",
       "description": "Una hamburguesa con un toque picante para los amantes del picante.",
-      "price": 8.99,
-      "discount": 0, 
+      "image": "classic-burger.jpg",
       "category": "Picante",
-      "image": "spicy-burger.jpg"
+      "price": 8.99
     },
     {
-      "id": 6,
       "name": "Hamburguesa con Champiñones",
       "description": "Hamburguesa con champiñones frescos y queso suizo.",
-      "price": 9.99,
-      "discount": 20, 
+      "image": "classic-burger.jpg",
       "category": "Champiñones",
-      "image": "mushroom-burger.jpg"
+      "price": 9.99
     },
     {
-      "id": 7,
       "name": "Hamburguesa BBQ",
       "description": "Hamburguesa con salsa BBQ y cebolla caramelizada.",
-      "price": 8.99,
-      "discount": 0, 
+      "image": "classic-burger.jpg",
       "category": "BBQ",
-      "image": "bbq-burger.jpg"
+      "price": 8.99
     },
     {
-      "id": 8,
       "name": "Hamburguesa de Pavo",
       "description": "Hamburguesa de pavo magra y saludable.",
-      "price": 7.99,
-      "discount": 10, 
+      "image": "classic-burger.jpg",
       "category": "Pavo",
-      "image": "turkey-burger.jpg"
+      "price": 7.99
     },
     {
-      "id": 9,
       "name": "Hamburguesa de Pescado",
       "description": "Hamburguesa de pescado fresco con lechuga y salsa tártara.",
-      "price": 9.49,
-      "discount": 0, 
+      "image": "classic-burger.jpg",
       "category": "Pescado",
-      "image": "fish-burger.jpg"
+      "price": 9.49
     },
     {
-      "id": 10,
       "name": "Hamburguesa Vegana",
       "description": "Hamburguesa vegana con ingredientes de origen vegetal.",
-      "price": 9.99,
-      "discount": 5, 
+      "image": "classic-burger.jpg",
       "category": "Vegana",
-      "image": "vegan-burger.jpg"
+      "price": 9.99 
     }
-  ]
+]

@@ -3,9 +3,10 @@ const express = require('express');
 
 const router = express.Router();
 
-const productController = require('../controllers/productsController');
+const productsController = require('../controllers/productsController');
 
-router.get('/detail', productController.productDetail);
-router.get('/cart', productController.productCart);
+router.get('/detail', productsController.productDetail);
+router.get('/cart', productsController.productCart);
+router.get('/edit', productsController.productEdit);
 
 module.exports = router;
