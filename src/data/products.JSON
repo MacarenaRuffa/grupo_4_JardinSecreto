@@ -7,7 +7,7 @@
       "price": 600,
       "discount": 10, 
       "category": "Exterior",
-      "image": "PE-Alegria_del_Hogar.jpg"
+      "image": "PE-Alegria_del_Hogar.png"
     },
     {
       "id": 2,
@@ -19,25 +19,43 @@
       "image": "PE-Azalea.png"
     },
     {
-      "id": 3,
-      "name": "Calathea Macoyana",
-      "description": " Calathea makoyana es una planta de hoja perenne que alcanza un tamaño de hasta 45 cm de altura",
-      "price": 6300,
-      "discount": 0, 
-      "category": "Interior",
-      "image": "PI-Calathea_Macoyana"
-    },
-    {
       "id": 4,
       "name": "Mix de suculentas",
       "description": " son aquellas en las que algún órgano está especializado en el almacenamiento de agua en cantidades mayores que las plantas sin esta adaptación..",
       "price": 5000,
       "discount": 5, 
       "category": "Exterior",
-      "image": ""
+      "image": "SU-Arreglo4.png"
+    },
+    {
+      "id": 3,
+      "name": "Calathea Macoyana",
+      "description": " Calathea makoyana es una planta de hoja perenne que alcanza un tamaño de hasta 45 cm de altura",
+      "price": 6300,
+      "discount": 0, 
+      "category": "Interior",
+      "image": "PI-Calathea_Macoyana.png"
+    },
+    {
+      "id":4,
+      "name": "Croton Monalisa",
+      "description": " Planta ornamental vibrante, hojas coloridas, ideal para jardines y interiores.",
+      "price": 2500,
+      "discount": 20, 
+      "category": "Interior",
+      "image": "PI-Croton_Monalisa.png"
     },
     {
       "id": 5,
+      "name": "Palo de agua",
+      "description": "Utensilio de jardinería para riego eficiente y controlado de plantas.",
+      "price": 5000,
+      "discount": 10, 
+      "category": "Interior",
+      "image": "PI-Palo_Agua.png"
+    },
+    {
+      "id": 6,
       "name": "Maceta de cerámica",
       "description": "Maceta de cerámica, esmaltada en tonos suaves, elegante y duradera",
       "price": 3500,
@@ -46,7 +64,16 @@
       "image": "MA-Ceramica_beige.png"
     },
     {
-      "id": 6,
+      "id": 7,
+      "name": "Fertilizante de floración ",
+      "description": "Nutre plantas con nutrientes esenciales para un crecimiento saludable y abundante.",
+      "price": 3000,
+      "discount": 20, 
+      "category": "Insumos",
+      "image": "IN-Fertilizante_Floracion.png"
+    },
+    {
+      "id": 8,
       "name": "Kit para jardin ",
       "description": "Kit de tres herramientas para el jardin pala,palita y rastillo",
       "price": 7300,
@@ -54,33 +81,23 @@
       "category": "Herramientas",
       "image": "HE-Kit_jardin.png"
     },
-
     {
-      "name": "Hamburguesa BBQ",
-      "description": "Hamburguesa con salsa BBQ y cebolla caramelizada.",
-      "image": "classic-burger.jpg",
-      "category": "BBQ",
-      "price": 8.99
+      "id": 9,
+      "name": "Semillas de girasol",
+      "description": "Las semillas para plantar girasoles son pequeñas, en forma de óvalo, de color negro o marrón oscuro. Tienen una cubierta dura que debe ablandarse antes de la siembra para facilitar la germinación",
+      "price": 1000,
+      "discount": 10, 
+      "category": "Semillas",
+      "image": "SE-Girasol_multifloral.png"
     },
     {
-      "name": "Hamburguesa de Pavo",
-      "description": "Hamburguesa de pavo magra y saludable.",
-      "image": "classic-burger.jpg",
-      "category": "Pavo",
-      "price": 7.99
-    },
-    {
-      "name": "Hamburguesa de Pescado",
-      "description": "Hamburguesa de pescado fresco con lechuga y salsa tártara.",
-      "image": "classic-burger.jpg",
-      "category": "Pescado",
-      "price": 9.49
-    },
-    {
-      "name": "Hamburguesa Vegana",
-      "description": "Hamburguesa vegana con ingredientes de origen vegetal.",
-      "image": "classic-burger.jpg",
-      "category": "Vegana",
-      "price": 9.99 
+      "id": 10,
+      "name": "Semillas de margarita",
+      "description": "son pequeñas y alargadas, generalmente de color marrón claro. Estas semillas se pueden encontrar en el centro de la cabeza de la margarita después de que ha florecido. ",
+      "price": 1000,
+      "discount": 5, 
+      "category": "Semillas",
+      "image": "SE-Margarita.png"
     }
+
 ]
