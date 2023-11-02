@@ -8,8 +8,8 @@ h3{
     color: #435334;
 }
 
-div.products{
-    display: inline-block;
+main section.bestsellers{
+    display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
