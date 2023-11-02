@@ -6,7 +6,8 @@
       "price": 600,
       "discount": 10, 
       "category": "Exterior",
-      "image": "PE-Alegria_del_Hogar.png"
+      "image": "PE-Alegria_del_Hogar.png",
+      "sale": "in-sale"
     },
     {
       "id": 2,
@@ -15,7 +16,8 @@
       "price": 4500,
       "discount": 15, 
       "category": "Exterior",
-      "image": "PE-Azalea.png"
+      "image": "PE-Azalea.png",
+      "sale": "no-sale"
     },
     {
       "id": 3,
@@ -24,7 +26,8 @@
       "price": 5000,
       "discount": 5, 
       "category": "Exterior",
-      "image": "SU-Arreglo4.png"
+      "image": "SU-Arreglo4.png",
+      "sale": "in-sale"
     },
     {
       "id": 4,
@@ -33,7 +36,8 @@
       "price": 6300,
       "discount": 0, 
       "category": "Interior",
-      "image": "PI-Calathea_Macoyana.png"
+      "image": "PI-Calathea_Macoyana.png",
+      "sale": "no-sale"
     },
     {
       "id":5,
@@ -42,7 +46,8 @@
       "price": 2500,
       "discount": 20, 
       "category": "Interior",
-      "image": "PI-Croton_Monalisa.png"
+      "image": "PI-Croton_Monalisa.png",
+      "sale": "in-sale"
     },
     {
       "id": 6,
@@ -51,7 +56,8 @@
       "price": 5000,
       "discount": 10, 
       "category": "Interior",
-      "image": "PI-Palo_Agua.png"
+      "image": "PI-Palo_Agua.png",
+      "sale": "no-sale"
     },
     {
       "id": 7,
@@ -60,7 +66,8 @@
       "price": 3500,
       "discount": 0, 
       "category": "Macetas",
-      "image": "MA-Ceramica_beige.png"
+      "image": "MA-Ceramica_beige.png",
+      "sale": "in-sale"
     },
     {
       "id": 8,
@@ -69,7 +76,8 @@
       "price": 3000,
       "discount": 20, 
       "category": "Insumos",
-      "image": "IN-Fertilizante_Floracion.png"
+      "image": "IN-Fertilizante_Floracion.png",
+      "sale": "no-sale"
     },
     {
       "id": 9,
@@ -78,7 +86,8 @@
       "price": 7300,
       "discount": 20, 
       "category": "Herramientas",
-      "image": "HE-Kit_jardin.png"
+      "image": "HE-Kit_jardin.png",
+      "sale": "in-sale"
     },
     {
       "id": 10,
@@ -87,7 +96,8 @@
       "price": 1000,
       "discount": 10, 
       "category": "Semillas",
-      "image": "SE-Girasol_multifloral.png"
+      "image": "SE-Girasol_multifloral.png",
+      "sale": "no-sale"
     },
     {
       "id": 11,
@@ -96,7 +106,7 @@
       "price": 1000,
       "discount": 5, 
       "category": "Semillas",
-      "image": "SE-Margarita.png"
+      "image": "SE-Margarita.png",
+      "sale": "in-sale"
     }
-
 ]

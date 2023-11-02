@@ -8,57 +8,99 @@
         <section>
             <h3>Destacados del mes</h3>
             <section class="bestsellers">
+                <% locals.exterior && exterior.forEach((product) => { %>
                 <div class="products">
-                    <article>
-                        <img src="/images/Exterior/PE-Alegria_del_Hogar.png" alt="Alegria" class="product_img">
-                        <div class="main-article">
-                            <h4 class="description">Alegría del hogar</h4>
-                            <p class="price"><a href="productDetail-alegriadelHogar"><i class="fas fa-info-circle fa-lg"></a></i> Desde $600 <a href="#"><i class="fas fa-cart-plus fa-lg"></a></i></p>
-                        </div>
-                    </article>
-                    <article>
-                        <img src="/images/Exterior/PE-Azalea.png" alt="Azalea" class="product_img">
-                        <div class="main-article">
-                            <h4 class="description">Azalea </h4>
-                            <p class="price"><a href="/productDetail-azalea"><i class="fas fa-info-circle fa-lg"></a></i> $4.500 <a href="#"><i class="fas fa-cart-plus fa-lg"></a></i></p>
-                        </div>
-                    </article>
-                    <article>
-                        <img src="/images/Interior/PI-Calathea_Macoyana.png" alt="Calathea" class="product_img">
-                        <div class="main-article">
-                            <h4 class="description">Calathea Macoyana</h4>
-                            <p class="price"><a href="#"><i class="fas fa-info-circle fa-lg"></a></i> $6.300 <a href="#"><i class="fas fa-cart-plus fa-lg"></a></i></p>
-                        </div>
-                    </article>
-                </div>
+                        <article>
+                            <img src="../images/products/<%= product.image %>" alt="imagen" class="product_img">
+                            <div class="main-article">
+                                <h4 class="description"><%product.description%></h4>
+                                <p class="price"><a href="/products/detail/<%= product.id %>"><i class="fas fa-info-circle fa-lg"></a></i> Desde $ <%= product.price %><i class="fas fa-cart-plus fa-lg"></a></i></p>
+                            </div>
+                        </article>
+                </div>   
+                <% }) %>
+                <% locals.interior && interior.forEach((product) => { %>
+                    <div class="products">
+                            <article>
+                                <img src="../images/products/<%= product.image %>" alt="imagen" class="product_img">
+                                <div class="main-article">
+                                    <h4 class="description"><%product.description%></h4>
+                                    <p class="price"><a href="/products/detail/<%= product.id %>"><i class="fas fa-info-circle fa-lg"></a></i> Desde $ <%= product.price %><i class="fas fa-cart-plus fa-lg"></a></i></p>
+                                </div>
+                            </article>
+                    </div>   
+                <% }) %>
+                <% locals.macetas && macetas.forEach((product) => { %>
+                    <div class="products">
+                            <article>
+                                <img src="../images/products/<%= product.image %>" alt="imagen" class="product_img">
+                                <div class="main-article">
+                                    <h4 class="description"><%product.description%></h4>
+                                    <p class="price"><a href="/products/detail/<%= product.id %>"><i class="fas fa-info-circle fa-lg"></a></i> Desde $ <%= product.price %><i class="fas fa-cart-plus fa-lg"></a></i></p>
+                                </div>
+                            </article>
+                    </div>   
+                <% }) %>
+                <% locals.insumos && insumos.forEach((product) => { %>
+                    <div class="products">
+                            <article>
+                                <img src="../images/products/<%= product.image %>" alt="imagen" class="product_img">
+                                <div class="main-article">
+                                    <h4 class="description"><%product.description%></h4>
+                                    <p class="price"><a href="/products/detail/<%= product.id %>"><i class="fas fa-info-circle fa-lg"></a></i> Desde $ <%= product.price %><i class="fas fa-cart-plus fa-lg"></a></i></p>
+                                </div>
+                            </article>
+                    </div>   
+                <% }) %>
+                <% locals.herramientas && herramientas.forEach((product) => { %>
+                    <div class="products">
+                            <article>
+                                <img src="../images/products/<%= product.image %>" alt="imagen" class="product_img">
+                                <div class="main-article">
+                                    <h4 class="description"><%product.description%></h4>
+                                    <p class="price"><a href="/products/detail/<%= product.id %>"><i class="fas fa-info-circle fa-lg"></a></i> Desde $ <%= product.price %><i class="fas fa-cart-plus fa-lg"></a></i></p>
+                                </div>
+                            </article>
+                    </div>   
+                <% }) %>
+                <% locals.semillas && semillas.forEach((product) => { %>
+                    <div class="products">
+                            <article>
+                                <img src="../images/products/<%= product.image %>" alt="imagen" class="product_img">
+                                <div class="main-article">
+                                    <h4 class="description"><%product.description%></h4>
+                                    <p class="price"><a href="/products/detail/<%= product.id %>"><i class="fas fa-info-circle fa-lg"></a></i> Desde $ <%= product.price %><i class="fas fa-cart-plus fa-lg"></a></i></p>
+                                </div>
+                            </article>
+                    </div>   
+                <% }) %>
+                <% locals.suculentas && suculentas.forEach((product) => { %>
+                    <div class="products">
+                            <article>
+                                <img src="../images/products/<%= product.image %>" alt="imagen" class="product_img">
+                                <div class="main-article">
+                                    <h4 class="description"><%product.description%></h4>
+                                    <p class="price"><a href="/products/detail/<%= product.id %>"><i class="fas fa-info-circle fa-lg"></a></i> Desde $ <%= product.price %><i class="fas fa-cart-plus fa-lg"></a></i></p>
+                                </div>
+                            </article>
+                    </div>   
+                <% }) %>
             </section>
         </section>
         <section>
-            <h3>Los más comprados</h3>
+            <h3>Ofertas</h3>
             <section class="bestsellers">
-                <div class="products">
-                    <article>
-                        <img src="/images/Suculentas/SU-Arreglo4.png" alt="Arreglo3" class="product_img">
-                        <div class="main-article">
-                            <h4 class="description">Mix de suculentas</h4>
-                            <p class="price"><a href="#"><i class="fas fa-info-circle fa-lg"></a></i> $5.000 <a href="#"><i class="fas fa-cart-plus fa-lg"></a></i></p>
-                        </div>
-                    </article>
-                    <article>
-                        <img src="/images/Macetas/MA-Ceramica_rosa.png" alt="Maceta_ceramica" class="product_img">
-                        <div class="main-article">
-                            <h4 class="description">Maceta de cerámica </h4>
-                            <p class="price"><a href="#"><i class="fas fa-info-circle fa-lg"></a></i> $3.500 <a href="#"><i class="fas fa-cart-plus fa-lg"></a></i></p>
-                        </div>
-                    </article>
-                    <article>
-                        <img src="/images/Herramientas/HE-Kit_jardin.png" alt="Kit" class="product_img">
-                        <div class="main-article">
-                            <h4 class="description">Kit para jardín</h4>
-                            <p class="price"><a href="#"><i class="fas fa-info-circle fa-lg"></a></i> $7.300 <a href="#"><i class="fas fa-cart-plus fa-lg"></a></i></p>
-                        </div>
-                    </article>
-                </div>
+                <% locals.inSale && inSale.forEach((product) => { %>
+                    <div class="products">
+                            <article>
+                                <img src="../images/products/<%= product.image %>" alt="imagen" class="product_img">
+                                <div class="main-article">
+                                    <h4 class="description"><%product.description%></h4>
+                                    <p class="price"><a href="/products/detail/<%= product.id %>"><i class="fas fa-info-circle fa-lg"></a></i> Desde $ <%= product.price %><i class="fas fa-cart-plus fa-lg"></a></i></p>
+                                </div>
+                            </article>
+                    </div>   
+                <% }) %>
             </section>
         </section>
     </main>
