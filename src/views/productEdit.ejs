@@ -1,32 +1,42 @@
-<%- include('partials/head',{styles : ['productEdit']}) %>
+<%- include('partials/head', {styles : ['stylesLogin']}) %>
 <body>
-<main class="edit"> 
-    <form action="products/edit" method="POST">
-        <input type="text" name="product-name" placeholder="Nombre del producto">
-        <label for="description">Descripcion del producto:</label>
-        <textarea name="description" id="description">Descripcion</textarea>
-        
-        <div class="img-product">
-            <p class="copy">Foto del producto</p>
-            <input type="file" name="avatar">
-        </div>
-
-        <div class="category">
-            <label class="copy">Seleccione categoria:</label>
-                <select name="category">
-                    <option value="semillas">Semillas</option>
-                    <option value="insumos">Insumos</option>
-                    <option value="macetas">Macetas</option>
-                    <option value="herramientas">Herramientas</option>
-                    <option value="suculentas">Suculentas</option>
-                    <option value="interior">Interior</option>
-                    <option value="exterior">Exterior</option>
-                </select>
-        </div>
-        <input type="text" name="price" placeholder="Precio del producto">
-    </form>
-</main>
-    
-<%- include('partials/footer') %>
+    <div class="logo-btn">
+        <img src="/images/Logo-verde.png" alt="Logo">
+    </div>
+    <div class="wrapper">
+        <form action="products/edit" method="POST">
+            <h1>Agregar o editar productos</h1>
+            <div class="input-box">
+                <input type="text" name="product-name" placeholder="Nombre del producto">
+            </div>
+            <div class="input-box">
+                <label for="description">Descripcion del producto:</label>
+        <textarea name="description" id="description">Descripción</textarea>
+            </div>
+            <div class="input-box">
+                <input for="price" type="text" name="price" placeholder="Precio del producto">
+            </div>
+            <div class="input-box">
+                <input for="discount" type="text" name="discount" placeholder="Descuento a aplicar">
+            </div>
+            <div class="input-box">
+                <label class="copy">Seleccione categoria:</label>
+                    <select name="category">
+                        <option value="semillas">Semillas</option>
+                        <option value="insumos">Insumos</option>
+                        <option value="macetas">Macetas</option>
+                        <option value="herramientas">Herramientas</option>
+                        <option value="suculentas">Suculentas</option>
+                        <option value="interior">Interior</option>
+                        <option value="exterior">Exterior</option>
+                    </select>
+            </div>
+            <div class="input-box">
+                <p class="copy">Foto del producto</p>
+                <input for="image" type="file" name="image" accept="image/*">
+            </div>
+            <button type="submit" class="btn">Guardar producto nuevo</button>
+        </form>
+    </div>
 </body>
 </html>
