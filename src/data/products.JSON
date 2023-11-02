@@ -1,6 +1,5 @@
 [
     {
-
       "id": 1,
       "name": "Alegria del hogar",
       "description": "Planta de exterior",
@@ -19,7 +18,7 @@
       "image": "PE-Azalea.png"
     },
     {
-      "id": 4,
+      "id": 3,
       "name": "Mix de suculentas",
       "description": " son aquellas en las que algún órgano está especializado en el almacenamiento de agua en cantidades mayores que las plantas sin esta adaptación..",
       "price": 5000,
@@ -28,7 +27,7 @@
       "image": "SU-Arreglo4.png"
     },
     {
-      "id": 3,
+      "id": 4,
       "name": "Calathea Macoyana",
       "description": " Calathea makoyana es una planta de hoja perenne que alcanza un tamaño de hasta 45 cm de altura",
       "price": 6300,
@@ -37,7 +36,7 @@
       "image": "PI-Calathea_Macoyana.png"
     },
     {
-      "id":4,
+      "id":5,
       "name": "Croton Monalisa",
       "description": " Planta ornamental vibrante, hojas coloridas, ideal para jardines y interiores.",
       "price": 2500,
@@ -46,7 +45,7 @@
       "image": "PI-Croton_Monalisa.png"
     },
     {
-      "id": 5,
+      "id": 6,
       "name": "Palo de agua",
       "description": "Utensilio de jardinería para riego eficiente y controlado de plantas.",
       "price": 5000,
@@ -55,7 +54,7 @@
       "image": "PI-Palo_Agua.png"
     },
     {
-      "id": 6,
+      "id": 7,
       "name": "Maceta de cerámica",
       "description": "Maceta de cerámica, esmaltada en tonos suaves, elegante y duradera",
       "price": 3500,
@@ -64,7 +63,7 @@
       "image": "MA-Ceramica_beige.png"
     },
     {
-      "id": 7,
+      "id": 8,
       "name": "Fertilizante de floración ",
       "description": "Nutre plantas con nutrientes esenciales para un crecimiento saludable y abundante.",
       "price": 3000,
@@ -73,7 +72,7 @@
       "image": "IN-Fertilizante_Floracion.png"
     },
     {
-      "id": 8,
+      "id": 9,
       "name": "Kit para jardin ",
       "description": "Kit de tres herramientas para el jardin pala,palita y rastillo",
       "price": 7300,
@@ -82,7 +81,7 @@
       "image": "HE-Kit_jardin.png"
     },
     {
-      "id": 9,
+      "id": 10,
       "name": "Semillas de girasol",
       "description": "Las semillas para plantar girasoles son pequeñas, en forma de óvalo, de color negro o marrón oscuro. Tienen una cubierta dura que debe ablandarse antes de la siembra para facilitar la germinación",
       "price": 1000,
@@ -91,7 +90,7 @@
       "image": "SE-Girasol_multifloral.png"
     },
     {
-      "id": 10,
+      "id": 11,
       "name": "Semillas de margarita",
       "description": "son pequeñas y alargadas, generalmente de color marrón claro. Estas semillas se pueden encontrar en el centro de la cabeza de la margarita después de que ha florecido. ",
       "price": 1000,
