@@ -5,88 +5,7 @@
         <img src="/images/Banner-promo1.png" alt="Banner de ofertas">
     </section>
     <main>
-        <section>
-            <h3>Destacados del mes</h3>
-            <section class="bestsellers">
-                <% locals.exterior && exterior.forEach((product) => { %>
-                <div class="products">
-                        <article>
-                            <img src="../images/products/<%= product.image %>" alt="imagen" class="product_img">
-                            <div class="main-article">
-                                <h4 class="description"><%product.description%></h4>
-                                <p class="price"><a href="/products/detail/<%= product.id %>"><i class="fas fa-info-circle fa-lg"></a></i> Desde $ <%= product.price %><i class="fas fa-cart-plus fa-lg"></a></i></p>
-                            </div>
-                        </article>
-                </div>   
-                <% }) %>
-                <% locals.interior && interior.forEach((product) => { %>
-                    <div class="products">
-                            <article>
-                                <img src="../images/products/<%= product.image %>" alt="imagen" class="product_img">
-                                <div class="main-article">
-                                    <h4 class="description"><%product.description%></h4>
-                                    <p class="price"><a href="/products/detail/<%= product.id %>"><i class="fas fa-info-circle fa-lg"></a></i> Desde $ <%= product.price %><i class="fas fa-cart-plus fa-lg"></a></i></p>
-                                </div>
-                            </article>
-                    </div>   
-                <% }) %>
-                <% locals.macetas && macetas.forEach((product) => { %>
-                    <div class="products">
-                            <article>
-                                <img src="../images/products/<%= product.image %>" alt="imagen" class="product_img">
-                                <div class="main-article">
-                                    <h4 class="description"><%product.description%></h4>
-                                    <p class="price"><a href="/products/detail/<%= product.id %>"><i class="fas fa-info-circle fa-lg"></a></i> Desde $ <%= product.price %><i class="fas fa-cart-plus fa-lg"></a></i></p>
-                                </div>
-                            </article>
-                    </div>   
-                <% }) %>
-                <% locals.insumos && insumos.forEach((product) => { %>
-                    <div class="products">
-                            <article>
-                                <img src="../images/products/<%= product.image %>" alt="imagen" class="product_img">
-                                <div class="main-article">
-                                    <h4 class="description"><%product.description%></h4>
-                                    <p class="price"><a href="/products/detail/<%= product.id %>"><i class="fas fa-info-circle fa-lg"></a></i> Desde $ <%= product.price %><i class="fas fa-cart-plus fa-lg"></a></i></p>
-                                </div>
-                            </article>
-                    </div>   
-                <% }) %>
-                <% locals.herramientas && herramientas.forEach((product) => { %>
-                    <div class="products">
-                            <article>
-                                <img src="../images/products/<%= product.image %>" alt="imagen" class="product_img">
-                                <div class="main-article">
-                                    <h4 class="description"><%product.description%></h4>
-                                    <p class="price"><a href="/products/detail/<%= product.id %>"><i class="fas fa-info-circle fa-lg"></a></i> Desde $ <%= product.price %><i class="fas fa-cart-plus fa-lg"></a></i></p>
-                                </div>
-                            </article>
-                    </div>   
-                <% }) %>
-                <% locals.semillas && semillas.forEach((product) => { %>
-                    <div class="products">
-                            <article>
-                                <img src="../images/products/<%= product.image %>" alt="imagen" class="product_img">
-                                <div class="main-article">
-                                    <h4 class="description"><%product.description%></h4>
-                                    <p class="price"><a href="/products/detail/<%= product.id %>"><i class="fas fa-info-circle fa-lg"></a></i> Desde $ <%= product.price %><i class="fas fa-cart-plus fa-lg"></a></i></p>
-                                </div>
-                            </article>
-                    </div>   
-                <% }) %>
-                <% locals.suculentas && suculentas.forEach((product) => { %>
-                    <div class="products">
-                            <article>
-                                <img src="../images/products/<%= product.image %>" alt="imagen" class="product_img">
-                                <div class="main-article">
-                                    <h4 class="description"><%product.description%></h4>
-                                    <p class="price"><a href="/products/detail/<%= product.id %>"><i class="fas fa-info-circle fa-lg"></a></i> Desde $ <%= product.price %><i class="fas fa-cart-plus fa-lg"></a></i></p>
-                                </div>
-                            </article>
-                    </div>   
-                <% }) %>
-            </section>
-        </section>
+        
         <section>
             <h3>Ofertas</h3>
             <section class="bestsellers">
@@ -103,6 +22,7 @@
                 <% }) %>
             </section>
         </section>
+        <a href="/products"><button type="submit" class="btn">Ver todos los productos</button></a>
     </main>
     <%- include('partials/footer') %>
 </body>
