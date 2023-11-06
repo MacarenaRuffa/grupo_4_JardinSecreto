@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "name": "Juan",
     "lastname": "Lopez",
     "age": 60,
@@ -8,6 +9,7 @@
     "image": ".png"
   },
   {
+    "id": 2,
     "name": "Franco",
     "lastname": "Gonzalez",
     "age": 18,
@@ -16,6 +18,7 @@
     "image": ".png"
   },
   {
+    "id": 3,
     "name": "Maria Eugenia",
     "lastname": "Alvado",
     "age": 30,
@@ -24,6 +27,7 @@
     "image": ".png"
   },
   {
+    "id": 4,
     "name": "Lautaro",
     "lastname": "Darin",
     "age": 28,
@@ -32,6 +36,7 @@
     "image": ".png"
   },
   {
+    "id": 5,
     "name": "Sofia",
     "lastname": "Fabbiani",
     "age": 39,
@@ -40,6 +45,7 @@
     "image": ".png"
   },
   {
+    "id": 6,
     "name": "Laura",
     "lastname": "Pacheco",
     "age": 25,
@@ -48,6 +54,7 @@
     "image": ".png"
   },
   {
+    "id": 7,
     "name": "Javier",
     "lastname": "Hernandez",
     "age": 55,
@@ -56,6 +63,7 @@
     "image": ".png"
   },
   {
+    "id": 8,
     "name": "Pabla",
     "lastname": "Ruggiero",
     "age": 36,
