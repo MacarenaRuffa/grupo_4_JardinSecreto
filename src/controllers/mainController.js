@@ -14,7 +14,8 @@ const mainController = {
         const suculentas = products.filter((product) => product.category === "Suculentas");
         const inSale = products.filter((product) => product.sale === "in-sale");
         res.render('index', { exterior, interior, macetas, insumos, herramientas, semillas, suculentas, inSale});
-    },
+    }
+   
 };
 
 module.exports = mainController;

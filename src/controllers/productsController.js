@@ -1,6 +1,12 @@
 //aca irian los metodos que recibiran datos de productos y devolveran la info correspondiente
 // create, edit, detail, list
 //productCart y productDetail
+const fs = require('fs');
+const path = require('path');
+const productsFilePath = path.join(__dirname, '../data/products.JSON');
+const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+
 const productsController = {
     productDetail: (req,res) => {
         res.render('productDetail');
@@ -14,9 +20,10 @@ const productsController = {
     productCreate: (req,res) => {
         res.render('productCreate');
     },
-    products: (req,res) => {
-        res.render('productList');
+    productsList: (req,res) =>{
+        res.render('productList', {products});
     }
+
 };
 
 module.exports = productsController;
