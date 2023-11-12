@@ -9,7 +9,8 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const productsController = {
     productDetail: (req,res) => {
-        res.render('productDetail');
+        const product = products.find((product) => product.id == req.params.id);
+        res.render('productDetail',{product});
     },
     productCart: (req,res) => {
         res.render('productCart');

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * {
     margin: 0;
     padding: 0;
@@ -152,3 +153,11 @@ body {
         margin-top: 30px; 
     }
 }
+=======
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Mooli', sans-serif; 
+}
+
+>>>>>>> 7dc3232b52f65f9bd174dcfc0389ce0a99284f70
