@@ -57,7 +57,7 @@ body {
 .input-box select {
     width: 100%;
     height: 100%;
-    background: transparent;
+    background: #FAF1E4;
     border: none;
     outline: none;
     border: 2px solid rgba(255, 255, 255, 0.2);
@@ -92,7 +92,7 @@ body {
 .wrapper .btn {
     width: 100%;
     height: 45px;
-    background: transparent;
+    background: #9EB384;
     border: none;
     outline: none;
     border-radius: 40px;

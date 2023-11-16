@@ -1,4 +1,4 @@
-<%- include('partials/head', {styles : ['stylesLogin']}) %>
+<%- include('partials/head', {styles : ['productCreate']}) %>
 <body>
     <div class="logo-btn">
         <img src="/images/Logo-verde.png" alt="Logo">
@@ -30,7 +30,7 @@
                     <option value="insumos" <%= productToEdit.category === 'insumos' && 'selected' %>>Insumos</option>
                     <option value="macetas" <%= productToEdit.category === 'macetas' && 'selected' %>>Macetas</option>
                     <option value="herramientas" <%= productToEdit.category === 'herramientas' && 'selected' %>>Herramientas</option>
-                    <option value="suculentas" <%= productToEdit.category === 'suculentas' && 'selected'%>>Suculentas</option>
+                    <option value="suculentas" <%= productToEdit.category === 'suculentas' && 'selected' %>>Suculentas</option>
                     <option value="interior" <%= productToEdit.category === 'interior' && 'selected' %>>Interior</option>
                     <option value="exterior" <%= productToEdit.category === 'exterior' && 'selected' %>>Exterior</option>
                 </select>
