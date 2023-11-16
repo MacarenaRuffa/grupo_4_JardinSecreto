@@ -7,20 +7,28 @@
         <form action="/products/<%= productToEdit.id %>/edit?_method=PUT" method="post" enctype="multipart/form-data">
             <h1>Modicar productos</h1>
             <div class="input-box">
+                <label for="name" class="form-label">Nombre del producto:</label>
                 <input type="text" id="name" name="name" placeholder="Nombre del producto" value="<%= productToEdit.name %>">
             </div>
+            
             <div class="input-box">
+                <label for="description" class="form-label">Descipción:</label>
                 <textarea name="description" id="description" value="<%= productToEdit.description %>">Descripción del producto</textarea>
             </div>
+
             <div class="input-box">
+                <label for="price" class="form-label">Precio del producto:</label>
                 <input for="price" type="text" id="price" name="price" placeholder="Precio del producto" value="<%= productToEdit.price %>">
             </div>
+            
             <div class="input-box">
+                <label for="discount" class="form-label">Descuento:</label>
                 <input for="discount" type="text" id="discount" name="discount" placeholder="Descuento a aplicar" value="<%= productToEdit.discount %>">
             </div>
+
             <div class="input-box">
                 <label class="copy">Seleccione categoria:</label>
-                    <select name="category" id="category">
+                    <select name="category" id="category" value="<%= productToEdit.category %>">
                         <option value="">Elegí</option>
                         <option value="semillas">Semillas</option>
                         <option value="insumos">Insumos</option>
@@ -31,13 +39,16 @@
                         <option value="exterior">Exterior</option>
                     </select>
             </div>
+
             <div class="input-box">
                 <p class="copy">Foto del producto</p>
                 <input for="image" type="file" id="image" name="image" accept="image/*">
             </div>
+
             <div class="input-box">
                 <input for="sale" type="text" id="sale" name="sale" placeholder="Está en oferta?" value="<%= productToEdit.sale %>">
             </div>
+
             <button type="submit" class="btn">Guardar producto nuevo</button>
         </form>
     </div>
