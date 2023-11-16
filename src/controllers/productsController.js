@@ -3,7 +3,7 @@
 //productCart y productDetail
 const fs = require('fs');
 const path = require('path');
-const productsFilePath = path.join(__dirname, '../data/products.JSON');
+const productsFilePath = path.join(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 
@@ -47,21 +47,16 @@ const productsController = {
 		res.redirect('/products');
 	},
 
-	// Delete - Delete one product from DB
 	destroy: (req, res) => {
-		// Do the magic
-		// products = products.filter((product) => product.id != req.params.id);
 		const indexProduct = products.findIndex((product) => product.id == req.params.id);
 		products.splice(indexProduct, 1);
 		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
 		res.redirect('/products');
 	},
-
     
     productsList: (req,res) =>{
         res.render('productList', {products});
     }
-
 };
 
 module.exports = productsController;

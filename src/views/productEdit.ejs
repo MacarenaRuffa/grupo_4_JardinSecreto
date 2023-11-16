@@ -4,24 +4,24 @@
         <img src="/images/Logo-verde.png" alt="Logo">
     </div>
     <div class="wrapper">
-        <form action="/products/<%= productToEdit.id %>/edit?_method=PUT" method="post">
+        <form action="/products/<%= productToEdit.id %>/edit?_method=PUT" method="post" enctype="multipart/form-data">
             <h1>Modicar productos</h1>
             <div class="input-box">
-                <input type="text" id="name" placeholder="Nombre del producto" value="<%= productToEdit.name %>">
+                <input type="text" id="name" name="name" placeholder="Nombre del producto" value="<%= productToEdit.name %>">
             </div>
             <div class="input-box">
-                <label for="description">Descripcion del producto:</label>
-                <textarea id="description" id="description" value="<%= productToEdit.description %>">Descripción</textarea>
+                <textarea name="description" id="description" value="<%= productToEdit.description %>">Descripción del producto</textarea>
             </div>
             <div class="input-box">
-                <input for="price" type="text" id="price" placeholder="Precio del producto" value="<%= productToEdit.price %>">
+                <input for="price" type="text" id="price" name="price" placeholder="Precio del producto" value="<%= productToEdit.price %>">
             </div>
             <div class="input-box">
-                <input for="discount" type="text" id="discount" placeholder="Descuento a aplicar" value="<%= productToEdit.discount %>">
+                <input for="discount" type="text" id="discount" name="discount" placeholder="Descuento a aplicar" value="<%= productToEdit.discount %>">
             </div>
             <div class="input-box">
                 <label class="copy">Seleccione categoria:</label>
-                    <select name="category">
+                    <select name="category" id="category">
+                        <option value="">Elegí</option>
                         <option value="semillas">Semillas</option>
                         <option value="insumos">Insumos</option>
                         <option value="macetas">Macetas</option>
@@ -33,7 +33,10 @@
             </div>
             <div class="input-box">
                 <p class="copy">Foto del producto</p>
-                <input for="image" type="file" name="image" accept="image/*">
+                <input for="image" type="file" id="image" name="image" accept="image/*">
+            </div>
+            <div class="input-box">
+                <input for="sale" type="text" id="sale" name="sale" placeholder="Está en oferta?" value="<%= productToEdit.sale %>">
             </div>
             <button type="submit" class="btn">Guardar producto nuevo</button>
         </form>
