@@ -108,25 +108,5 @@
     "category": "Semillas",
     "image": "SE-Margarita.png",
     "sale": "in-sale"
-  },
-  {
-    "id": 12,
-    "name": "sdfsdf",
-    "description": "sdfsdf",
-    "price": "",
-    "discount": "",
-    "category": "",
-    "sale": "",
-    "image": "default-image.png"
-  },
-  {
-    "id": 13,
-    "name": "",
-    "description": "Descripción del producto",
-    "price": "",
-    "discount": "",
-    "category": "",
-    "sale": "",
-    "image": "default-image.png"
   }
 ]
