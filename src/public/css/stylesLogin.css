@@ -47,14 +47,12 @@ body {
 .input-box input {
     width: 100%;
     height: 100%;
-    background: transparent;
-    border: none;
+    background: #FAF1E4;
     outline: none;
     border: 2px solid rgba(255, 255, 255, 0.2);
     border-radius: 40px;
     font-size: 16px;
-    color:#435334;
-    padding: 20px 45px 20px 20px;
+    color:#435334
 }
 
 .input-box input::placeholder {
@@ -94,7 +92,7 @@ body {
 .wrapper .btn {
     width: 100%;
     height: 45px;
-    background: transparent;
+    background: #9EB384;
     border: none;
     outline: none;
     border-radius: 40px;

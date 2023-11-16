@@ -12,15 +12,52 @@ const productsController = {
         const product = products.find((product) => product.id == req.params.id);
         res.render('productDetail',{product});
     },
-    productCart: (req,res) => {
-        res.render('productCart');
-    },
-    productEdit: (req,res) => {
-        res.render('productEdit');
-    },
+
     productCreate: (req,res) => {
         res.render('productCreate');
     },
+
+    store: (req, res) => {
+		const newProduct = {
+			id: products[products.length - 1].id + 1,
+			...req.body,
+			image: req.file?.filename || "default-image.png"
+		};
+		products.push(newProduct);
+		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
+		res.redirect('/products');
+	},
+
+    productCart: (req,res) => {
+        res.render('productCart');
+    },
+
+    productEdit: (req, res) => {
+		const product = products.find((product) => product.id == req.params.id);
+		res.render('productEdit', { productToEdit: product });
+	},
+
+	update: (req, res) => {
+		const indexProduct = products.findIndex((product) => product.id == req.params.id);
+		products[indexProduct] = {
+			...products[indexProduct],
+			...req.body
+		};
+		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
+		res.redirect('/products');
+	},
+
+	// Delete - Delete one product from DB
+	destroy: (req, res) => {
+		// Do the magic
+		// products = products.filter((product) => product.id != req.params.id);
+		const indexProduct = products.findIndex((product) => product.id == req.params.id);
+		products.splice(indexProduct, 1);
+		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
+		res.redirect('/products');
+	},
+
+    
     productsList: (req,res) =>{
         res.render('productList', {products});
     }

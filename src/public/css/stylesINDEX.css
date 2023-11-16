@@ -1,5 +1,5 @@
 main{
-    background-color:#CEDEBD;
+    background-color:#FAF1E4;
 }
 
 h3{
@@ -22,7 +22,9 @@ p a{
 main section.bestsellers article img{
     height: 250px;
     background-color: #FAF1E4;
-    border-radius: 50%;
+    border: solid 1px #435334;
+    border-radius: 5px;
+
 }
 
 div.main-article{

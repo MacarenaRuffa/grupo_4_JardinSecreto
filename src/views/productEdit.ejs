@@ -4,7 +4,7 @@
         <img src="/images/Logo-verde.png" alt="Logo">
     </div>
     <div class="wrapper">
-        <form action="/products/edit" method="POST">
+        <form action="/products/<%= productToEdit.id %>/edit?_method=PUT" method="post">
             <h1>Modicar productos</h1>
             <div class="input-box">
                 <input type="text" name="product-name" placeholder="Nombre del producto">

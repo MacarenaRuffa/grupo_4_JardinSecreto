@@ -28,7 +28,13 @@
                     <img class="product-imgSmall" src="/images/products/<%= locals.product.image %>" alt="<%= locals.product.name %>">
                 </div>
                 <button class="button-trolley"><i class="fas fa-plus"></i></i>Añadir al carrito</button>
+                <div class = "crud-buttons" >
+                
+                        <button><a href="/products/<%= locals.product?.id %>/edit" class="action-button edit">EDITAR PRODUCTO</a></button>
+						<form action="/products/<%= locals.product?.id %>/delete?_method=DELETE" method="POST" style="display: inline-flex">
+						<button type="submit" class="action-button delete">ELIMINAR</button></form>
             </div>
+        </div>
         </section>
     </main>
     <%- include('partials/footer') %>
