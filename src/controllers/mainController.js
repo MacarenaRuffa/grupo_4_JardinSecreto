@@ -6,7 +6,7 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const mainController = {
     home: (req, res) => {
         const inSale = products.filter((product) => product.sale === "in-sale");
-        res.render('index', { exterior, interior, macetas, insumos, herramientas, semillas, suculentas, inSale });
+        res.render('index', { inSale });
 
         const filteredProducts = categories.reduce((acc, category) => {
             acc[category.toLowerCase()] = products.filter((product) => product.category === category);
