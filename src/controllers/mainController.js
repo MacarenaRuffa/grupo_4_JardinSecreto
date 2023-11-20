@@ -8,11 +8,11 @@ const mainController = {
         const inSale = products.filter((product) => product.sale === "in-sale");
         res.render('index', { inSale });
 
-        const filteredProducts = categories.reduce((acc, category) => {
-            acc[category.toLowerCase()] = products.filter((product) => product.category === category);
-            return acc;
-        }, {});
-        res.render('index', { ...filteredProducts, inSale });
+        //const filteredProducts = categories.reduce((acc, category) => {
+       //     acc[category.toLowerCase()] = products.filter((product) => product.category === category);
+        //    return acc;
+        //}, {});
+        //res.render('index', { ...filteredProducts, inSale });
     }
 
 };

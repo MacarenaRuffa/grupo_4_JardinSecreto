@@ -21,13 +21,11 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
-
-
-app.use(methodOverride('_method'));
 app.use(session({
     secret: '12345678'
 }));
 app.use(cookieParser());
+app.use(methodOverride('_method'));
 
 app.use('/', mainRoutes);
 app.use('/products', productsRoutes);
