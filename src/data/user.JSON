@@ -4,7 +4,7 @@
     "name": "Juan",
     "lastname": "Lopez",
     "age": 60,
-    "email": "juan.lopez@gmail.com", 
+    "email": "juan.lopez@gmail.com",
     "password": "1234",
     "image": ".png",
     "user": "admin"
@@ -14,7 +14,7 @@
     "name": "Franco",
     "lastname": "Gonzalez",
     "age": 18,
-    "email": "franco.gonzalez@gmail.com", 
+    "email": "franco.gonzalez@gmail.com",
     "password": "2345",
     "image": ".png",
     "user": "admin"
@@ -24,7 +24,7 @@
     "name": "Maria Eugenia",
     "lastname": "Alvado",
     "age": 30,
-    "email": "maria.alvado@gmail.com", 
+    "email": "maria.alvado@gmail.com",
     "password": "4444",
     "image": ".png",
     "user": "admin"
@@ -34,7 +34,7 @@
     "name": "Lautaro",
     "lastname": "Darin",
     "age": 28,
-    "email": "lautaro.darin@gmail.com", 
+    "email": "lautaro.darin@gmail.com",
     "password": "6662",
     "image": ".png",
     "user": "cliente"
@@ -44,7 +44,7 @@
     "name": "Sofia",
     "lastname": "Fabbiani",
     "age": 39,
-    "email": "sofia.fabbiani@gmail.com", 
+    "email": "sofia.fabbiani@gmail.com",
     "password": "3662",
     "image": ".png",
     "user": "cliente"
@@ -54,7 +54,7 @@
     "name": "Laura",
     "lastname": "Pacheco",
     "age": 25,
-    "email": "laura.pacheco@gmail.com", 
+    "email": "laura.pacheco@gmail.com",
     "password": "9921",
     "image": ".png",
     "user": "cliente"
@@ -64,7 +64,7 @@
     "name": "Javier",
     "lastname": "Hernandez",
     "age": 55,
-    "email": "javier.hernandez@gmail.com", 
+    "email": "javier.hernandez@gmail.com",
     "password": "2222",
     "image": ".png",
     "user": "cliente"
@@ -74,9 +74,10 @@
     "name": "Pabla",
     "lastname": "Ruggiero",
     "age": 36,
-    "email": "pabla.ruggiero@gmail.com", 
+    "email": "pabla.ruggiero@gmail.com",
     "password": "3692",
     "image": ".png",
     "user": "cliente"
   }
+  
 ]

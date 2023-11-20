@@ -11,7 +11,7 @@ const storage = multer.diskStorage({
     },
     filename: function (req, file, cb) {
         const ext = path.extname(file.originalname);
-        const filename = `${Date.now()}-product${ext}}`;
+        const filename = `${Date.now()}-user${ext}}`;
         cb(null, filename);
     }
 });
@@ -22,7 +22,7 @@ const upload = multer ({storage});
 const usersController = require('../controllers/usersController');
 
 router.get('/register', usersController.register);
-router.post('/create', upload.single('image'), usersController.store);
+router.post('/register', upload.single('avatar'), usersController.store);
 
 router.get('/login', usersController.login);
 
