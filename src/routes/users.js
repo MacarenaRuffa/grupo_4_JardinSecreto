@@ -33,7 +33,7 @@ router.post('/register', upload.single('avatar'), usersController.store);
 
 router.get('/login', usersController.login);
 
-router.post('/login', loginValidator, usersController.processLogin);
+router.post('/users/login', loginValidator, usersController.processLogin);
 
 
 
