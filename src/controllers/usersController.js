@@ -53,12 +53,12 @@ const usersController = {
 				}
 			}
 			if (usuarioALoguearse === undefined) {
-				return res.render('/login', { errors: [{ msg: 'Credenciales inválidas' }] });
+				return res.redirect('/login', { errors: [{ msg: 'Credenciales inválidas' }] });
 			}
 			req.session.usuarioALogueado = usuarioALoguearse;
-			return res.redirect('/');
+			return res.redirect('/index');
 		} else {
-			return res.render('/login', { errors: errors.mapped() });
+			return res.render('login', { errors: errors.mapped() });
 		}
 	}
 
