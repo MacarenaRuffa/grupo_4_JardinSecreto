@@ -58,5 +58,20 @@
     "email": "laura.pacheco@gmail.com",
     "password": "9921",
     "image": ".png"
+  },
+  {
+    "id": 7,
+    "name": "Abril Genoveva Ramos Dietmair ",
+    "username": "abril45",
+    "email": "abrilramos7@hotmail.com",
+    "birth_date": "2002-01-19",
+    "country": "Argentina",
+    "province": "Cordoba",
+    "city": "Maria Juana",
+    "gender": "Femenino",
+    "interests": "Plantas",
+    "password": "$2b$10$nw.ghhp.bC.S1emF3386Ae2M0iEk.5DGUhgUa4MYcdGv2MpGC.Vt6",
+    "pass_confirm": "12345",
+    "image": "default-image.png"
   }
 ]

@@ -70,16 +70,6 @@
     "sale": "in-sale"
   },
   {
-    "id": 8,
-    "name": "Fertilizante de floración ",
-    "description": "Nutre plantas con nutrientes esenciales para un crecimiento saludable y abundante.",
-    "price": 3000,
-    "discount": 20,
-    "category": "Insumos",
-    "image": "IN-Fertilizante_Floracion.png",
-    "sale": "no-sale"
-  },
-  {
     "id": 9,
     "name": "Kit para jardin ",
     "description": "Kit de tres herramientas para el jardin pala,palita y rastillo",
