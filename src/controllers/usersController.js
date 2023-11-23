@@ -11,17 +11,17 @@ const usersController = {
 
 
 
-	register: (req,res) => {
-        res.render('register');
-    },
+	register: (req, res) => {
+		res.render('register');
+	},
 
-    login: (req,res) => {
-        res.render('login');
+	login: (req, res) => {
+		res.render('login');
 
-    },
+	},
 
 
-    store: (req, res) => {
+	store: (req, res) => {
 		const newUser = {
 			id: user[user.length - 1].id + 1,
 			...req.body,
@@ -32,35 +32,35 @@ const usersController = {
 		fs.writeFileSync(userFilePath, JSON.stringify(user, null, 2));
 		res.redirect('/');
 	},
-	
+
 	processLogin: (req, res) => {
-        let errors = validationResult(req);
-        if (errors.isEmpty()) {
-            let usersJSON = fs.readFileSync(userFilePath, { encoding: 'UTF-8' });
-            let users;
-            if (usersJSON === '') {
-                users = [];
-            } else {
-                users = JSON.parse(usersJSON);
-            }
-            let usuarioALoguearse;
-            for (let i = 0; i < users.length; i++) {
-                if (users[i].email === req.body.email) {
-                    if (bcrypt.compareSync(req.body.password, users[i].password)) {
-                        usuarioALoguearse = users[i];
-                        break;
-                    }
-                }
-            }
-            if (usuarioALoguearse === undefined) {
-                return res.render('login', { errors: [{ msg: 'Credenciales inválidas' }] });
-            }
-            req.session.usuarioALogueado = usuarioALoguearse;
-            return res.redirect('/');
-        } else {
-            return res.render('login', { errors: errors.mapped() });
-        }
-    }
+		let errors = validationResult(req);
+		if (errors.isEmpty()) {
+			let usersJSON = fs.readFileSync(userFilePath, { encoding: 'UTF-8' });
+			let users;
+			if (usersJSON === '') {
+				users = [];
+			} else {
+				users = JSON.parse(usersJSON);
+			}
+			let usuarioALoguearse;
+			for (let i = 0; i < users.length; i++) {
+				if (users[i].email === req.body.email) {
+					if (bcrypt.compareSync(req.body.password, users[i].password)) {
+						usuarioALoguearse = users[i];
+						break;
+					}
+				}
+			}
+			if (usuarioALoguearse === undefined) {
+				return res.render('/login', { errors: [{ msg: 'Credenciales inválidas' }] });
+			}
+			req.session.usuarioALogueado = usuarioALoguearse;
+			return res.redirect('/');
+		} else {
+			return res.render('/login', { errors: errors.mapped() });
+		}
+	}
 
 
 
