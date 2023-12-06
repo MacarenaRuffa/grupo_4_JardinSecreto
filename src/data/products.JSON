@@ -3,9 +3,9 @@
     "id": 1,
     "name": "Alegria del hogar",
     "description": "Planta de exterior",
-    "price": 600,
-    "discount": 10,
-    "category": "Exterior",
+    "price": "600",
+    "discount": "10",
+    "category": "",
     "image": "PE-Alegria_del_Hogar.png",
     "sale": "in-sale"
   },

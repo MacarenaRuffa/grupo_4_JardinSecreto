@@ -6,7 +6,6 @@ const path = require('path');
 const productsFilePath = path.join(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-
 const productsController = {
     productDetail: (req,res) => {
         const product = products.find((product) => product.id == req.params.id);

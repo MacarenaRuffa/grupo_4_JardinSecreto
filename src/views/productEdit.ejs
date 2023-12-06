@@ -4,7 +4,7 @@
         <img src="/images/Logo-verde.png" alt="Logo">
     </div>
     <div class="wrapper">
-        <form action="/products/<%= productToEdit.id %>/edit?_method=PUT" method="post" enctype="multipart/form-data">
+        <form action="/products/<%= productToEdit.id %>/edit?_method=PUT" method="post">
             <h1>Modificar Producto</h1>
             <div class="input-box">
                 <label for="name" class="form-label">Nombre del producto:</label>
@@ -35,10 +35,10 @@
                     <option value="exterior" <%= productToEdit.category === 'exterior' && 'selected' %>>Exterior</option>
                 </select>
             </div>
-            <div class="input-box">
+            <!-- <div class="input-box">
                 <p class="copy">Foto del producto</p>
                 <input type="file" id="image" name="image" accept="image/*">
-            </div>
+            </div> -->
             <div class="input-box">
                 <label for="sale" class="form-label">¿Está en oferta?":</label>
                 <input type="text" id="sale" name="sale" placeholder="¿Está en oferta?" value="<%= productToEdit.sale %>">
