@@ -11,3 +11,6 @@ Con respecto a las restrospectivas anteriores aun nos encontramos con dificultad
 Si bien mejoramos el tema de coordinacion para las reuniones, sigue siendo un poco complicado pactar todos los del equipo un mismo día. De todas maneras la comunicacion entre los integrantes sigue siendo el fuerte de neustro grupo de trabajo. 
 
 Sprint 5.-Middlewares + Auth.
+En este sprint logramos mejorar la organizacion de las tareas y comenzamos a implementar reuniones eventuales de 10/15 minutos con algun miembro del equipo que esté disponible en el momento, donde planteabamos algun error que nos tenia bloqueados para poder buscar la solucion en conjunto. 
+
+Sprint 6.-
