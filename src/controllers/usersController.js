@@ -58,7 +58,7 @@ const usersController = {
 			req.session.usuarioALogueado = usuarioALoguearse;
 			return res.redirect('/index');
 		} else {
-			return res.render('login', { errors: errors.mapped() });
+			return res.render('login', { errors: errors.array() });
 		}
 	}
 

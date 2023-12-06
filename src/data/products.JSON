@@ -40,16 +40,6 @@
     "sale": "no-sale"
   },
   {
-    "id": 5,
-    "name": "Croton Monalisa",
-    "description": " Planta ornamental vibrante, hojas coloridas, ideal para jardines y interiores.",
-    "price": 2500,
-    "discount": 20,
-    "category": "Interior",
-    "image": "PI-Croton_Monalisa.png",
-    "sale": "in-sale"
-  },
-  {
     "id": 6,
     "name": "Palo de agua",
     "description": "Utensilio de jardinería para riego eficiente y controlado de plantas.",
