@@ -60,7 +60,16 @@ const usersController = {
 		} else {
 			return res.render('login', { errors: errors.mapped() });
 		}
-	}
+	},
+	
+	remember(req,res) {
+		req.session.usuarioLogueado=usuariologuearse;
+		
+		if (req.body.recordame!= undefined){
+		res.cookie('recordame', usuarioALoguearse.email,{max : 6000})
+		} ;
+	}	
+	
 
 
 
