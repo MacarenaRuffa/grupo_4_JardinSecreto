@@ -73,5 +73,40 @@
     "password": "$2b$10$nw.ghhp.bC.S1emF3386Ae2M0iEk.5DGUhgUa4MYcdGv2MpGC.Vt6",
     "pass_confirm": "12345",
     "image": "default-image.png"
+  },
+  {
+    "id": 8,
+    "name": "jorgelina",
+    "username": "finello",
+    "email": "",
+    "birth_date": "",
+    "password": "$2b$10$uHfIY38GYHjSTD.d1nUQo.ZjK.oXxwfD0kPbSZcRgdqbkCRamhzD6",
+    "pass_confirm": "",
+    "image": "default-image.png"
+  },
+  {
+    "id": 9,
+    "name": "jorgelina",
+    "username": "finello",
+    "email": "jorfinellozwicki@gmail.com",
+    "birth_date": "1986-02-04",
+    "country": "Argentina",
+    "province": "Santa Fe",
+    "city": "Rafaela",
+    "gender": "Femenino",
+    "interests": "Plantas",
+    "password": "$2b$10$lFW6WAzP39YB1/axpcGkr.fMUwLFAQtZXR0iJPLfZkrbpamn0KiFO",
+    "pass_confirm": "hola",
+    "image": "default-image.png"
+  },
+  {
+    "id": 10,
+    "name": "jorgelina",
+    "username": "",
+    "email": "jorfinellozwicki@gmail.com",
+    "birth_date": "",
+    "password": "$2b$10$A1YcdT1gzslG4ky2FzPW3uKnHH2qnfYXzoLSboo.rJr2Pt3f.yjYW",
+    "pass_confirm": "",
+    "image": "default-image.png"
   }
 ]
