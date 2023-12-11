@@ -17,6 +17,9 @@ const productsRoutes = require('./routes/products');
 const usersRoutes = require('./routes/users');
 const exp = require('constants');
 
+
+
+
 const app = express();
 
 
@@ -36,6 +39,8 @@ app.use(methodOverride('_method'));
 app.use('/', mainRoutes);
 app.use('/products', productsRoutes);
 app.use('/users', usersRoutes);
+
+
 
 
 
