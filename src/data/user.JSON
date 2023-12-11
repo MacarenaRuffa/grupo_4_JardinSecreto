@@ -108,5 +108,16 @@
     "password": "$2b$10$A1YcdT1gzslG4ky2FzPW3uKnHH2qnfYXzoLSboo.rJr2Pt3f.yjYW",
     "pass_confirm": "",
     "image": "default-image.png"
+  },
+  {
+    "id": 11,
+    "name": "",
+    "username": "",
+    "email": "",
+    "birth_date": "",
+    "password": "$2b$10$bsA/.9utF4q5DKifFD.UHeHBatSS9qsvcgZoFyci2x4PGPoWGAuLy",
+    "pass_confirm": "",
+    "recordame": "on",
+    "image": "default-image.png"
   }
 ]
