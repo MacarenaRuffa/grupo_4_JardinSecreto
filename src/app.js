@@ -17,7 +17,12 @@ const productsRoutes = require('./routes/products');
 const usersRoutes = require('./routes/users');
 const exp = require('constants');
 
+
+
+
 const app = express();
+
+
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -40,6 +45,10 @@ app.use('/users', usersRoutes);
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> af94df20f5aed2a6cc77f6864634527f09eca542
 // app.get('/', (req, res) => {
 //     res.sendFile(path.join(__dirname, 'views/index.html'));
 // });

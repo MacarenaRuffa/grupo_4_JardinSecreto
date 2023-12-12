@@ -20,8 +20,8 @@ function recordameMiddleware(req ,res, next)
              {
                     usuarioALoguearse = users[i];
                     break;
-                }
+                }}
                 req.session.usuarioALogueado = usuarioALoguearse;
-            }}}
+            }}
 
 module.exports = usersController;

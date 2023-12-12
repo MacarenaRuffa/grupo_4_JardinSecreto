@@ -73,40 +73,5 @@
     "password": "$2b$10$nw.ghhp.bC.S1emF3386Ae2M0iEk.5DGUhgUa4MYcdGv2MpGC.Vt6",
     "pass_confirm": "12345",
     "image": "default-image.png"
-  },
-  {
-    "id": 8,
-    "name": "asgagsyga",
-    "username": "ajhshas2",
-    "email": "abruol@hotmail.com",
-    "birth_date": "1000-02-13",
-    "country": "Argentina",
-    "province": "Jujuy",
-    "city": "Ceres",
-    "gender": "No Binario",
-    "interests": [
-      "Plantas",
-      "Herramientas"
-    ],
-    "password": "$2b$10$slYkHCx9LFQQGSYUoLAVAuWC5aEU3sZXRTA97UoEWEbGCmvHpQrQm",
-    "pass_confirm": "abril",
-    "terms": "d",
-    "image": "default-image.png"
-  },
-  {
-    "id": 9,
-    "name": "Abril Genoveva Ramos Dietmair ",
-    "username": "abril45",
-    "email": "abrilramos7@hotmail.com",
-    "birth_date": "2003-07-16",
-    "country": "Brazil",
-    "province": "Cordoba",
-    "city": "Ceres",
-    "gender": "Femenino",
-    "interests": "Plantas",
-    "password": "$2b$10$DuNrrcDkI.55O/wTfjLHQ.wDpUjp5fzcPFaVEIvrMqZT.P1STQ9/m",
-    "pass_confirm": "123456",
-    "terms": "d",
-    "image": "default-image.png"
   }
 ]
