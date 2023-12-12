@@ -26,7 +26,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(session({
-    secret: '12345678'
+    secret: '1234567',
+    resave: false,
+    saveUninitialized: true,
 }));
 app.use(cookieParser());
 app.use(methodOverride('_method'));
@@ -34,6 +36,7 @@ app.use(methodOverride('_method'));
 app.use('/', mainRoutes);
 app.use('/products', productsRoutes);
 app.use('/users', usersRoutes);
+
 
 
 
