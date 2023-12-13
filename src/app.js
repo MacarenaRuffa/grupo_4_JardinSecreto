@@ -17,6 +17,8 @@ const productsRoutes = require('./routes/products');
 const usersRoutes = require('./routes/users');
 const exp = require('constants');
 
+const userRemember = require('./middlewares/userRemember');
+
 
 
 
@@ -42,13 +44,14 @@ app.use('/', mainRoutes);
 app.use('/products', productsRoutes);
 app.use('/users', usersRoutes);
 
+app.use(userRemember);
 
 
 
-<<<<<<< HEAD
-=======
 
->>>>>>> af94df20f5aed2a6cc77f6864634527f09eca542
+//<<<<<<< HEAD =======
+
+//>>>>>>> af94df20f5aed2a6cc77f6864634527f09eca542
 // app.get('/', (req, res) => {
 //     res.sendFile(path.join(__dirname, 'views/index.html'));
 // });
