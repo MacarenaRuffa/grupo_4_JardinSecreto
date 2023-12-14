@@ -55,7 +55,11 @@ const usersController = {
 		if (req.body.recordame!= undefined){
 		res.cookie('recordame', usuarioALoguearse.email,{max : 6000})
 		} ;
-	}	
+	},
+	
+	errorcontroller(req,res){
+		res.render('error');
+	}
 	
 
 
