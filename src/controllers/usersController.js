@@ -23,13 +23,13 @@ const usersController = {
 
 	store: (req, res) => {
 		const newUser = {
-			id: user[user.length - 1].id + 1,
+			id: users[users.length - 1].id + 1,
 			...req.body,
 			password: bcrypt.hashSync(req.body.password, 10),
 			image: req.file?.filename || "default-image.png"
 		};
-		user.push(newUser);
-		fs.writeFileSync(userFilePath, JSON.stringify(user, null, 2));
+		users.push(newUser);
+		fs.writeFileSync(userFilePath, JSON.stringify(users, null, 2));
 		res.redirect('/');
 	},
 

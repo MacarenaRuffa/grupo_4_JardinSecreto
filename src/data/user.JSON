@@ -73,5 +73,23 @@
     "password": "$2b$10$nw.ghhp.bC.S1emF3386Ae2M0iEk.5DGUhgUa4MYcdGv2MpGC.Vt6",
     "pass_confirm": "12345",
     "image": "default-image.png"
+  },
+  {
+    "id": 8,
+    "name": "agustina",
+    "username": "agus8",
+    "email": "agus23@hotmail.com",
+    "birth_date": "2001-01-12",
+    "country": "Argentina",
+    "province": "Santa Fe",
+    "city": "Ceres",
+    "gender": "Femenino",
+    "interests": [
+      "Semillas",
+      "Herramientas"
+    ],
+    "password": "$2b$10$kBHcnh5rCnf20OG6B0VGhenKfEOPpeZj1M/mpU6RkITJCNjh6Xzgq",
+    "pass_confirm": "agus1234",
+    "image": "default-image.png"
   }
 ]

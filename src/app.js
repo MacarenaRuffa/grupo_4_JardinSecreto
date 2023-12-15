@@ -47,14 +47,10 @@ app.use('/users', usersRoutes);
 app.use(userRemember);
 
 
-
-<<<<<<< HEAD
-=======
-
 //<<<<<<< HEAD =======
 
 //>>>>>>> af94df20f5aed2a6cc77f6864634527f09eca542
->>>>>>> f32f6ada64b9a3c799a0c4fcf9d21a4f011f3766
+
 // app.get('/', (req, res) => {
 //     res.sendFile(path.join(__dirname, 'views/index.html'));
 // });
