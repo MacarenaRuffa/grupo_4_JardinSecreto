@@ -44,9 +44,11 @@ body {
     height: 50px;
     margin: 20px 0; 
 }
+
 .wrapper-reg .interests,
-.wrapper-reg .user-file{
-    margin: 20px 0;
+.wrapper-reg .user-file,
+.wrapper-reg .terms-check{
+    padding: 1%;
 }
 
 .input-box input {
@@ -63,11 +65,14 @@ body {
 .btn-gender{
     background:#FAF1E4 ;
     color: #435334;
-    height:25px;
+    height:45px;
     margin: inherit;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
 }
 
-.wrapper-reg .btn {
+.wrapper-reg .btn{
     width: 100%;
     height: 45px;
     background: #9EB384; 
@@ -79,16 +84,33 @@ body {
     margin-top: 20px;
 }
 
-
 @media (min-width: 768px) {
     .wrapper-reg{
+        width: 60%;
+    }
+    
+    .wrapper-reg .btn-container,
+    .wrapper-reg .ib-conteiner,
+    .pass-container{
         display: flex;
+        justify-content: space-around;
+        flex-direction: row;
         flex-wrap: wrap;
     }
 
-    .input-box input{
+    .btn-container .btn,
+    .ib-conteiner .input-box,
+    .pass-container .input-box{
         display: flex;
-        width: 30%;
+        width: 45%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .wrapper-reg .interests,
+    .wrapper-reg .user-file,
+    .wrapper-reg .terms-check{
+        margin: 20px;
     }
 
     .wrapper-reg .register-link {
@@ -96,8 +118,6 @@ body {
         color: #435334;
         margin-top: 15px;
     }
-
-    
     
     .register-link p a {
         color: green;
@@ -108,4 +128,6 @@ body {
     .register-link p a:hover {
         text-decoration: underline;
     }
+
+
 }
