@@ -7,10 +7,13 @@
 
 body {
     display: flex;
+    justify-content: center;
+    align-items: center;
     min-height: 100vh;
     background: #CEDEBD;
     background-size: cover;
     background-position: center;
+    flex-direction: column;
     padding-bottom: 50px;
 }
 
@@ -22,38 +25,47 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     color: #435334;
     border-radius: 10px;
-    padding: 30px;
+    padding: 30px 20px; 
     display: flex;
     flex-direction: column;
-    align-items: center; 
-    text-align: center;
 }
 
 
 .wrapper-reg h1 {
     font-size: 24px;
     color: #435334;
-    margin-bottom: 20px; 
+    text-align: center;
 }
 
 
 .wrapper-reg .input-box {
-    width: 30%;
-    margin: 10px 0; 
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 20px 0; 
 }
-
+.wrapper-reg .interests,
+.wrapper-reg .user-file{
+    margin: 20px 0;
+}
 
 .input-box input {
     width: 100%;
-    height: 50px;
-    background: transparent;
+    height: 100%;
+    background: #FAF1E4;
+    outline: none;
     border: 2px solid rgba(255, 255, 255, 0.2);
-    border-radius: 40px;
+    border-radius: 15px;
     font-size: 16px;
-    color: #435334;
-    padding: 15px 20px; 
+    color:#435334 
 }
 
+.btn-gender{
+    background:#FAF1E4 ;
+    color: #435334;
+    height:25px;
+    margin: inherit;
+}
 
 .wrapper-reg .btn {
     width: 100%;
@@ -67,22 +79,33 @@ body {
     margin-top: 20px;
 }
 
-.wrapper-reg .register-link {
-    font-size: 14.5px;
-    color: #435334;
-    margin-top: 15px;
-}
-
-.register-link p a {
-    color: green;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.register-link p a:hover {
-    text-decoration: underline;
-}
 
 @media (min-width: 768px) {
+    .wrapper-reg{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .input-box input{
+        display: flex;
+        width: 30%;
+    }
+
+    .wrapper-reg .register-link {
+        font-size: 14.5px;
+        color: #435334;
+        margin-top: 15px;
+    }
+
     
+    
+    .register-link p a {
+        color: green;
+        text-decoration: none;
+        font-weight: 600;
+    }
+    
+    .register-link p a:hover {
+        text-decoration: underline;
+    }
 }
