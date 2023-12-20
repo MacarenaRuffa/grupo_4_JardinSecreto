@@ -6,15 +6,16 @@ const methodOverride = require('method-override');
 
 const mainController = {
     home: (req, res) => {
+        const user=req.session.user
         const inSale = products.filter((product) => product.sale === "in-sale");
-        res.render('index', { inSale });
+        res.render('index', { inSale, user });
 
         //const filteredProducts = categories.reduce((acc, category) => {
         //     acc[category.toLowerCase()] = products.filter((product) => product.category === category);
         //    return acc;
         //}, {});
         //res.render('index', { ...filteredProducts, inSale });
-    }
+    },
 
 };
 

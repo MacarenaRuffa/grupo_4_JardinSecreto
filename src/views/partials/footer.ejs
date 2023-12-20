@@ -15,4 +15,18 @@
 <div class = "info">
     <p>Copyright ©2023 Jardín Secreto. Todos los derechos reservados</p>
 </div>
+
+<p>
+    <% if (locals.user && locals.user.rol === 'admin') { %>
+      Bienvenido, Administrador.
+    <% } else if (locals.user && locals.user.rol === 'cliente') { %>
+      Bienvenido, Cliente.
+    <% } else { %>
+      Bienvenido, Visitante.
+    <% } %>
+
+  </p>
+
+   
+
 <script src="/js/script.js"></script> <!--Prueba de linkeo para la carpeta de funciones scrip -Fran -->

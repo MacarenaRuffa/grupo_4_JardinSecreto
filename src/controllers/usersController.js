@@ -44,8 +44,8 @@ const usersController = {
 	if(!bcrypt.compareSync(password,userFound.password)){
 		return res.status(500).send({message: "esta mal la contraseña"})
 	}
+    req.session.user = userFound;
 	return res.redirect('/')
-	
 	},
 
 	
@@ -59,12 +59,13 @@ const usersController = {
 	
 	errorcontroller(req,res){
 		res.render('error');
-	}
+	},
+
+	logout:(req, res) => {
+        delete req.session.user;
+        return res.redirect('/');
+    }
 	
-
-
-
-
 };
 
 

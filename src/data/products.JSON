@@ -50,16 +50,6 @@
     "sale": "no-sale"
   },
   {
-    "id": 7,
-    "name": "Maceta de cerámica",
-    "description": "Maceta de cerámica, esmaltada en tonos suaves, elegante y duradera",
-    "price": 3500,
-    "discount": 0,
-    "category": "Macetas",
-    "image": "MA-Ceramica_beige.png",
-    "sale": "in-sale"
-  },
-  {
     "id": 9,
     "name": "Kit para jardin ",
     "description": "Kit de tres herramientas para el jardin pala,palita y rastillo",

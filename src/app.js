@@ -1,30 +1,17 @@
 const express = require('express');
-
-
-
-
-const path = require('path');
-
-const methodOverride = require('method-override');
-
-const cookieParser = require('cookie-parser');
 const session = require('express-session');
-
-
-
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
+const path = require('path');
+const methodOverride = require('method-override');
+const cookieParser = require('cookie-parser');
 const mainRoutes = require('./routes/main');
 const productsRoutes = require('./routes/products');
 const usersRoutes = require('./routes/users');
-const exp = require('constants');
-
 const userRemember = require('./middlewares/userRemember');
 
-
-
-
 const app = express();
-
-
+const PORT = 3030;  // Cambié el nombre de la variable a PORT para evitar conflictos
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -32,6 +19,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
 app.use(session({
     secret: '1234567',
     resave: false,
@@ -40,57 +28,64 @@ app.use(session({
 app.use(cookieParser());
 app.use(methodOverride('_method'));
 
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use('/', mainRoutes);
 app.use('/products', productsRoutes);
 app.use('/users', usersRoutes);
 
 app.use(userRemember);
 
+const users = [
+    { id: 1, username: 'admin', password: 'admin', isAdmin: true },
+    { id: 2, username: 'usuario', password: 'usuario', isAdmin: false }
+];
 
-//<<<<<<< HEAD =======
+passport.use(new LocalStrategy((username, password, done) => {
+    const user = users.find(u => u.username === username && u.password === password);
+    if (user) {
+        return done(null, user);
+    } else {
+        return done(null, false, { message: 'Credenciales inválidas' });
+    }
+}));
 
-//>>>>>>> af94df20f5aed2a6cc77f6864634527f09eca542
+passport.serializeUser((user, done) => {
+    done(null, user.id);
+});
 
-// app.get('/', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'views/index.html'));
-// });
+passport.deserializeUser((id, done) => {
+    const user = users.find(u => u.id === id);
+    done(null, user);
+});
 
-// app.get('/productCart', (req, res) => { 
-//     res.sendFile(path.join(__dirname, 'views/productCart.html'));
-// });
+function isAuthenticated(req, res, next) {
+    if (req.isAuthenticated()) {
+        return next();
+    }
+    res.redirect('/login');
+}
 
-// app.get('/productDetail-azalea', (req, res) => { 
-//     res.sendFile(path.join(__dirname, 'views/productDetail-azalea.html'));
-// });
+app.get('/login', (req, res) => {
+    res.render('login');
+});
 
-// app.post('/productDetail', (req, res) => { 
-//     res.redirect('/');
-// });
+app.post('/login', passport.authenticate('local', {
+    successRedirect: '/carrito',
+    failureRedirect: '/login',
+    failureFlash: true
+}));
 
-// app.get('/productDetail-alegriadelHogar', (req, res) => { 
-//     res.sendFile(path.join(__dirname, 'views/productDetail-alegriadelHogar.html'));
-// });
+app.get('/carrito', isAuthenticated, (req, res) => {
+    res.render('carrito', { user: req.user });
+});
 
-// app.post('/productDetail', (req, res) => { 
-//     res.redirect('/');
-// });
-
-// app.get('/register', (req, res) => { 
-//     res.sendFile(path.join(__dirname, 'views/register.html'));
-// });
-
-// app.post('/register', (req, res) => { 
-//     res.redirect('/');
-// });
-
-// app.get('/login', (req, res) => { 
-//     res.sendFile(path.join(__dirname, 'views/login.html'));
-// });
-
-// app.post('/login', (req, res) => { 
-//     res.redirect('/');
-// });
-
+app.get('/logout', (req, res) => {
+    delete req.session.user;
+    //req.logout();
+    res.redirect('/');
+});
 const port = 3030;
 app.listen(port, () => {
     console.log(`Servidor iniciado en http://localhost:${port}`);
