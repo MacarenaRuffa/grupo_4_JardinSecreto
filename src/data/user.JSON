@@ -91,5 +91,19 @@
     "password": "$2b$10$kBHcnh5rCnf20OG6B0VGhenKfEOPpeZj1M/mpU6RkITJCNjh6Xzgq",
     "pass_confirm": "agus1234",
     "image": "default-image.png"
+  },
+  {
+    "id": 9,
+    "name": "Francisco Alegre",
+    "username": "Francisco",
+    "email": "franciscoalegre775@gmail.com",
+    "birth_date": "2000-04-07",
+    "rol": "admin",
+    "country": "Argentina",
+    "province": "Santa Fe",
+    "gender": "Masculino",
+    "password": "$2b$10$EWco/DfssQLheLrZWkyPHu3THbDH/V582eng79Adi3KmEgnwn2n5i",
+    "pass_confirm": "12345",
+    "image": "default-image.png"
   }
 ]
