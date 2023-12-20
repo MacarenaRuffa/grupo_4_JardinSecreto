@@ -15,9 +15,11 @@ body {
 }
 
 .container img {
-    max-width: 100%;
+    max-width: 50%;
     height: auto;
     margin-bottom: 20px;
+    border-radius: 20px;
+  
 }
 
 .container h2 {
