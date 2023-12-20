@@ -77,6 +77,25 @@
     "password": "$2b$10$EWco/DfssQLheLrZWkyPHu3THbDH/V582eng79Adi3KmEgnwn2n5i",
     "pass_confirm": "12345",
     "image": "default-image.png"
+  },
+  {
+    "id": 10,
+    "name": "Manuel Muract",
+    "username": "Manu",
+    "email": "manuelmuract98@gmail.com",
+    "birth_date": "1998-10-27",
+    "rol": "client",
+    "country": "Argentina",
+    "province": "Cordoba",
+    "city": "Manu",
+    "gender": "Masculino",
+    "interests": [
+      "Plantas",
+      "Semillas"
+    ],
+    "password": "$2b$10$SeTHmZ2lKWocAtxSWlgA9.hXIfr/DfNNCXA.KKX5h1xDaigZ4DCqW",
+    "pass_confirm": "1998",
+    "terms": "d",
+    "image": "1703113839217-user.jpg}"
   }
 ]
-
