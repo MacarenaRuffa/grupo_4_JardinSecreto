@@ -59,6 +59,9 @@ const usersController = {
 	
 	errorcontroller(req,res){
 		res.render('error');
+	},
+	nologin(req,res){
+		res.render('nologin');
 	}
 	
 
