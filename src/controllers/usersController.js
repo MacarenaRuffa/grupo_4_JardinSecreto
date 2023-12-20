@@ -38,11 +38,11 @@ const usersController = {
 	let userFound = users.find((user) => user.username === user1);
 
 	if(!userFound ){
-		return res.status(404).send({message:"usuario no encontrado"})
+		return res.status(404).render('nologin');
 
 	}
 	if(!bcrypt.compareSync(password,userFound.password)){
-		return res.status(500).send({message: "esta mal la contraseña"})
+		return res.status(500).send({message: "esta mal la contraseña"});
 	}
     req.session.user = userFound;
 	return res.redirect('/')
@@ -56,14 +56,16 @@ const usersController = {
 		res.cookie('recordame', usuarioALoguearse.email,{maxAge: 60000})
 		} ;
 	},
+
+
 	
 	errorcontroller(req,res){
 		res.render('error');
 	},
 
-	 nologin(req,res){
-	 	res.render('nologin');
-	 }
+	nologin(req,res){
+	  	res.render('nologin');
+	  }
 	
 
 
