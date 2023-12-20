@@ -34,5 +34,34 @@
     "pass_confirm": "aGUS1234",
     "terms": "d",
     "image": "default-image.png"
+  },
+  {
+    "id": 3,
+    "name": "jorgelina",
+    "username": "jfinello",
+    "email": "jorfinellozwicki@gmail.com",
+    "rol": "admin",
+    "birth_date": "",
+    "country": "",
+    "province": "",
+    "city": "",
+    "password": "$2b$10$I7aP19hFWM2Nwd3eK6EgEe2Cr0pU4Ux0UqjUn6DjusXl9vVtjeCy6",
+    "pass_confirm": "",
+    "terms": "d",
+    "image": "default-image.png"
+  },
+  {
+    "id": 4,
+    "name": "jorgelina",
+    "username": "Jfinello",
+    "email": "jorfinello@gmail.com",
+    "birth_date": "",
+    "country": "",
+    "province": "",
+    "city": "",
+    "password": "$2b$10$DEVvSoBSd827WPonEKX/uet.1dpt6vglgva4S5Vvdnw1p5rGzF39a",
+    "pass_confirm": "12345",
+    "terms": "d",
+    "image": "default-image.png"
   }
 ]

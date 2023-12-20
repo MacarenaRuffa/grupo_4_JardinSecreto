@@ -53,7 +53,7 @@ const usersController = {
 		req.session.usuarioLogueado=usuariologuearse;
 		
 		if (req.body.recordame != undefined){
-		res.cookie('recordame', usuarioALoguearse.email,{maxAge: 6000})
+		res.cookie('recordame', usuarioALoguearse.email,{maxAge: 60000})
 		} ;
 	},
 	
