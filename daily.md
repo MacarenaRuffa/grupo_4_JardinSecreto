@@ -8,4 +8,7 @@ Sprint 4.-JSON + Metodos HTTP
 Fue dificil la distribucion de tareas en esta ocasion, el tema abordado fue un poco confuso para la mayoria de los integrantes, por lo tanto creimos que lo más fructifero sería utilizar la weekly para trabajar juntos en el codigo del proyecto. Creemos que fue una buena decision ya que pudimos aclarar más el tema y ademas logramos el objetivo de este sprint a tiempo.  
 
 Sprint 5.-Middlewares + Auth.
-En este sprint no tuvimos weeklis con todo el equipo más allá de las clases planteadas para aplicacion practica, nos comunicamos diariamente con los compañeros mediante mensajes para informar que lo que ibamos realizando, si teniamos algun problema para avanzar o pedir alguna opinion.
+En este sprint tuvimos  una sola weekly, ya que nos comunicamos mediante mensajes, mientras realizabamos nuestras tareas para informar los avances o inconvenientes que se presentaban.
+Logramos reorganizarnos como equipo para trabajar de manera individual y colaborativamente.
+
+

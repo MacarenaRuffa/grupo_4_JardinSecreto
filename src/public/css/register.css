@@ -17,7 +17,7 @@ body {
     padding-bottom: 50px;
 }
 
-.wrapper {
+.wrapper-reg {
     width: 90%;
     background: rgba(255, 255, 255, 0.4);
     border: 2px solid rgba(255, 255, 255, 0.2);
@@ -25,40 +25,54 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     color: #435334;
     border-radius: 10px;
-    padding: 30px;
+    padding: 30px 20px; 
     display: flex;
     flex-direction: column;
-    align-items: center; 
+}
+
+
+.wrapper-reg h1 {
+    font-size: 24px;
+    color: #435334;
     text-align: center;
 }
 
 
-.wrapper h1 {
-    font-size: 24px;
-    color: #435334;
-    margin-bottom: 20px; 
-}
-
-
-.wrapper .input-box {
+.wrapper-reg .input-box {
+    position: relative;
     width: 100%;
-    margin: 10px 0; 
+    height: 50px;
+    margin: 20px 0; 
 }
 
+.wrapper-reg .interests,
+.wrapper-reg .user-file,
+.wrapper-reg .terms-check{
+    padding: 1%;
+}
 
 .input-box input {
     width: 100%;
-    height: 50px;
-    background: transparent;
+    height: 100%;
+    background: #FAF1E4;
+    outline: none;
     border: 2px solid rgba(255, 255, 255, 0.2);
-    border-radius: 40px;
+    border-radius: 15px;
     font-size: 16px;
-    color: #435334;
-    padding: 15px 20px; 
+    color:#435334 
 }
 
+.btn-gender{
+    background:#FAF1E4 ;
+    color: #435334;
+    height:45px;
+    margin: inherit;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+}
 
-.wrapper .btn {
+.wrapper-reg .btn{
     width: 100%;
     height: 45px;
     background: #9EB384; 
@@ -70,18 +84,50 @@ body {
     margin-top: 20px;
 }
 
-.wrapper .register-link {
-    font-size: 14.5px;
-    color: #435334;
-    margin-top: 15px;
-}
+@media (min-width: 768px) {
+    .wrapper-reg{
+        width: 60%;
+    }
+    
+    .wrapper-reg .btn-container,
+    .wrapper-reg .ib-conteiner,
+    .pass-container{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
 
-.register-link p a {
-    color: green;
-    text-decoration: none;
-    font-weight: 600;
-}
+    .btn-container .btn,
+    .ib-conteiner .input-box,
+    .pass-container .input-box{
+        display: flex;
+        width: 45%;
+        align-items: center;
+        justify-content: center;
+    }
 
-.register-link p a:hover {
-    text-decoration: underline;
+    .wrapper-reg .interests,
+    .wrapper-reg .user-file,
+    .wrapper-reg .terms-check{
+        margin: 20px;
+    }
+
+    .wrapper-reg .register-link {
+        font-size: 14.5px;
+        color: #435334;
+        margin-top: 15px;
+    }
+    
+    .register-link p a {
+        color: green;
+        text-decoration: none;
+        font-weight: 600;
+    }
+    
+    .register-link p a:hover {
+        text-decoration: underline;
+    }
+
+
 }

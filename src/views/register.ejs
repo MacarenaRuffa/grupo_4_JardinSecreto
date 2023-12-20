@@ -1,71 +1,55 @@
-<%- include('partials/head', {styles : ['stylesLogin']}) %>
+<%- include('partials/head', {styles : ['register']}) %>
 <body>
     <div class="logo-btn">
         <img src="/images/Logo-verde.png" alt="Logo">
     </div>
-    <div class="wrapper">
+    <div class="wrapper-reg">
         <form action="/users/register" method="POST" encType="multipart/form-data">
             <h1>¡Regístrate!</h1>
-            <div class="input-box">
-                <input type="text" id="name" name="name" placeholder="Nombre y apellido">
-                <i class='bx bx-user' style='color:#435334'></i>
+            <div class="ib-conteiner">
+                <div class="input-box">
+                    <input type="text" id="name" name="name" placeholder="Nombre y apellido">
+                    <i class='bx bx-user' style='color:#435334'></i>
+                </div>
+                <div class="input-box">
+                    <input type="text" id="username" name="username" placeholder="Nombre de usuario">
+                    <i class='bx bx-user' style='color:#435334'></i>
+                </div>
+                <div class="input-box">
+                    <input type="email" id="email" name="email" placeholder="E-mail">
+                    <i class='bx bx-envelope' style='color:#435334'></i>
+                </div>
+                <div class="input-box">
+                    <input type="date" id="birth" name="birth_date" placeholder="Fecha de nacimiento">
+                    <i class='bx bx-calendar' style='color:#435334'></i>
+                </div>
+                <div class="input-box">
+                    <input type="text" id="country" name="country" placeholder="País">
+                    <i class='bx bx-globe' style='color:#435334'></i>
+                </div>
+                <div class="input-box">
+                    <input type="text" id="province" name="province" placeholder="Provincia">
+                    <i class='bx bx-map' style='color:#435334'></i>
+                </div>
+                <div class="input-box">
+                    <input type="text" id="city" name="city" placeholder="Ciudad">
+                    <i class='bx bx-map' style='color:#435334'></i>
+                </div>
+                <div class="input-box">
+                    <select id="gender" name="gender" class="btn-gender">
+                        <option value="" disabled selected>Género</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Femenino">Femenino</option>
+                        <option value="No Binario">No Binario</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                    <i class='bx bx-user' style='color:#435334'></i>
+                </div>
             </div>
-            <div class="input-box">
-                <input type="text" id="username" name="username" placeholder="Nombre de usuario">
-                <i class='bx bx-user' style='color:#435334'></i>
-            </div>
-            <div class="input-box">
-                <input type="email" id="email" name="email" placeholder="E-mail">
-                <i class='bx bx-envelope' style='color:#435334'></i>
-            </div>
-            <div class="input-box">
-                <input type="date" id="birth" name="birth_date" placeholder="Fecha de nacimiento">
-                <i class='bx bx-calendar' style='color:#435334'></i>
-            </div>
-            <div class="input-box">
-                <select id="country" name="country">
-                    <option value="" disabled selected>Pais</option>
-                    <option value="Argentina">Argentina</option>
-                    <option value="Brazil">Brazil</option>
-                    <option value="Uruguay">Uruguay</option>
-                    <option value="Paraguay">Paraguay</option>
-                </select>
-                <i class='bx bx-globe' style='color:#435334'></i>
-            </div>
-            <div class="input-box">
-                <select id="province" name="province">
-                    <option value="" disabled selected>Provincia</option>
-                    <option value="Santa Fe">Santa Fe</option>
-                    <option value="Cordoba">Cordoba</option>
-                    <option value="La Rioja">La Rioja</option>
-                    <option value="Catamarca">Catamarca</option>
-                    <option value="Jujuy">Jujuy</option>
-                </select>
-                <i class='bx bx-map' style='color:#435334'></i>
-            </div>
-            <div class="input-box">
-                <select id="city" name="city">
-                    <option value="" disabled selected>Ciudad</option>
-                    <option value="Rafaela">Rafaela</option>
-                    <option value="Ceres">Ceres</option>
-                    <option value="Susana">Susana</option>
-                    <option value="Sunchales">Sunchales</option>
-                    <option value="Maria Juana">Maria Juana</option>
-                </select>
-                <i class='bx bx-map' style='color:#435334'></i>
-            </div>
-            <div class="input-box">
-                <select id="gender" name="gender">
-                    <option value="" disabled selected>Género</option>
-                    <option value="Masculino">Masculino</option>
-                    <option value="Femenino">Femenino</option>
-                    <option value="No Binario">No Binario</option>
-                    <option value="Otro">Otro</option>
-                </select>
-                <i class='bx bx-user' style='color:#435334'></i>
-            </div>
-            <h4>Intereses</h4>
+            
+            
             <div class="interests">
+                <h4>Intereses</h4>
                 <div>
                     <input type="checkbox" id="interests" name="interests" value="Plantas" id="interest-plantas">
                     <label for="interest-plantas">Plantas</label>
@@ -83,23 +67,30 @@
                     <label for="interest-herramientas">Herramientas</label>
                 </div>
             </div>
-            <h4>Elegí tu foto de usuario</h4>
-            <input type="file" id="avatar" name="avatar">
-            <div class="input-box">
-                <input type="password" id="password" name="password" placeholder="Elegí tu contraseña">
-                <i class='bx bx-lock' style='color:#435334'></i>
+            <div class="user-file">
+                <h4>Elegí tu foto de usuario</h4>
+                <input type="file" id="avatar" name="avatar">
             </div>
-            <div class="input-box">
-                <input type="password" id="pass_confirm" name="pass_confirm" placeholder="Confirmá tu contraseña">
-                <i class='bx bx-lock' style='color:#435334'></i>
+            <div class="pass-container">
+                <div class="input-box">
+                    <input type="password" id="password" name="password" placeholder="Elegí tu contraseña">
+                    <i class='bx bx-lock' style='color:#435334'></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" id="pass_confirm" name="pass_confirm" placeholder="Confirmá tu contraseña">
+                    <i class='bx bx-lock' style='color:#435334'></i>
+                </div>
             </div>
-            <div>
+            
+            <div class="terms-check">
                 <input type="checkbox" id="terms" name="terms" value="d" id="terms">
                 <label for="terms">Acepto los términos y condiciones de El Jardin Secreto</label>
             </div>
-           
-            <button type="submit" class="btn" >Enviar</button>
-            <button type="reset" class="btn">Borrar</button>
+           <div class="btn-container">
+                <button type="submit" class="btn" >Enviar</button>
+                <button type="reset" class="btn">Borrar</button>
+            </div>
+            
         </form>
     </div>
 </body>
