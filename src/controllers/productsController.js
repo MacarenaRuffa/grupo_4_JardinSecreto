@@ -7,9 +7,15 @@ const productsFilePath = path.join(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const productsController = {
+
     productDetail: (req,res) => {
         const product = products.find((product) => product.id == req.params.id);
-        res.render('productDetail',{product});
+		const user=req.session.user
+			
+        res.render('productDetail',{product, user});
+		
+			
+		
     },
 
     productCreate: (req,res) => {
@@ -28,7 +34,12 @@ const productsController = {
 	},
 
     productCart: (req,res) => {
-        res.render('productCart');
+			const user=req.session.user
+			if (user===undefined) {
+				return res.render("login")
+			}
+			res.render('productCart', {user});
+		
     },
 
     productEdit: (req, res) => {
@@ -54,8 +65,15 @@ const productsController = {
 	},
     
     productsList: (req,res) =>{
-        res.render('productList', {products});
+		const user=req.session.user
+		if (user===undefined) {
+			return res.render("login")
+		}
+		res.render('productList', {products, user});
     }
+	
+
+
 };
 
 module.exports = productsController;

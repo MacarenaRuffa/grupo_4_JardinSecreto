@@ -1,3 +1,4 @@
+
 <header>
     <nav>
         <div class = "infonav">
@@ -18,10 +19,21 @@
                     <li class="search"><a href="#"><i class="fas fa-search"></i></a></li>
                     <li><a href="/users/register"><i class="far fa-id-card"></i>
                         <span class="hidden-text">Registrate</span></a></li>
-                    <li><a href="/users/login"><i class="fas fa-sign-in-alt"></i>
-                        <span class="hidden-text">Ingresá</span></a></li>
+
+                        <% if (locals.user) { %>
+                            <li><a href="/logout"><i class="fas fa-sign-in-alt"></i>
+                                <span class="hidden-text">Cerrar Sesión</span></a></li>
+                          <% } else { %>
+                            <li><a href="/users/login"><i class="fas fa-sign-in-alt"></i>
+
+                                <span class="hidden-text">Ingresá</span></a></li>
+                          <% } %>
+                       
+               
                     <li><a href="/products/cart"><i class="fas fa-shopping-basket"></i>
+                        
                         <span class="hidden-text">Mis compras</span></a></li>
+                        
                 </ul>
             </div>
         </div>

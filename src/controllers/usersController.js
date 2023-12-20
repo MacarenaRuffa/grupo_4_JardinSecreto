@@ -44,8 +44,8 @@ const usersController = {
 	if(!bcrypt.compareSync(password,userFound.password)){
 		return res.status(500).send({message: "esta mal la contraseña"})
 	}
+    req.session.user = userFound;
 	return res.redirect('/')
-	
 	},
 
 	
@@ -53,16 +53,12 @@ const usersController = {
 		req.session.usuarioLogueado=usuariologuearse;
 		
 		if (req.body.recordame != undefined){
-		res.cookie('recordame', usuarioALoguearse.email,{maxAge: 6000})
+		res.cookie('recordame', usuarioALoguearse.email,{maxAge: 60000})
 		} ;
 	},
 	
 	errorcontroller(req,res){
 		res.render('error');
-	},
-
-	nologin(req,res){
-		res.render('nologin');
 	}
 	
 

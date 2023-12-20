@@ -19,9 +19,11 @@
                 <% }) %>
             </section>
         </section>
-        <div class = "crud-buttons">
+
+       <% if (user.rol==="admin"){  %> <div class = "crud-buttons">
         <a href="/products/create"><button type="submit" class="btn-products">Agregá un producto</button></a>
-    </div>
+    </div> <% } %>
+    
     </main>
     <%- include('partials/footer') %>
  
