@@ -30,6 +30,6 @@ router.post('/login', loginValidator, usersController.processLogin);
 
 router.get('/error',usersController.errorcontroller);
 
-router.get('/nologin',usersController.nologincontroller);
+// router.get('/nologin',usersController.nologincontroller);
 
 module.exports = router;
