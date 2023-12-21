@@ -1,8 +1,9 @@
-<%- include('partials/head', {styles : ['error']}) %>>
+<%- include('partials/head', {styles : ['error']}) %>
 <body>
-    <div class="container">
-        <h1>Disculpe usted no está logueado</h1>
-        <img  src="/images/accesos.jpg" alt="imagen de acceso">
+    <div class="container-err">
+        <h2>Disculpe, usted no está logueado</h2>
+        <img src="/images/accesos.jpg" alt="imagen de acceso">
+        <h3>Intente nuevamente</h3>
         <a href="/users/register"><button>Registrarse</button></a>
     </div>
 </body>

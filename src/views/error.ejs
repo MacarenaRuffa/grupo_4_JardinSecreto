@@ -1,9 +1,9 @@
-<%- include('partials/head', {styles : ['error']}) %>>
+<%- include('partials/head', {styles : ['error']}) %>
 <body>
-    <div class="container">
+    <div class="container-err">
+        <h2>La contraseña ingresada es incorrecta</h2>
         <img src="/images/error.jpg" alt="imagen-de-error">
-        <h2>Se requiere autorización</h2>
-        <h3>Debe iniciar sesión para acceder a este documento</h3>
+        <h3>Intente nuevamente</h3>
         <a href="/users/login"><button>Iniciar sesión ahora</button></a>
     </div>
 </body>
