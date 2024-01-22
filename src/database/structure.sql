@@ -68,6 +68,7 @@ CREATE TABLE `structure`.`products` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
 );
+
 INSERT INTO `structure`.`products` (`id`, `name`, `description`, `price`, `discount`, `categories_id`, `imagen`, `sale`) VALUES
 (1, 'Producto1', 'Descripción del Producto 1', 100, 10, 1, 'imagen1.jpg', 1),
 (2, 'Producto2', 'Descripción del Producto 2', 150, NULL, 2, 'imagen2.jpg', 0),
