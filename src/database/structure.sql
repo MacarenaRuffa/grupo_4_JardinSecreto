@@ -79,7 +79,6 @@ UPDATE products SET name = 'Producto Modificado', price = 129.99 WHERE id = 1;
 
 DELETE FROM products WHERE id = 1;
 
-
 CREATE TABLE `structure`.`user_products` (
   `users_id` INT NOT NULL,
   `products_id` INT NOT NULL,
