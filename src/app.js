@@ -8,10 +8,9 @@ const cookieParser = require('cookie-parser');
 const mainRoutes = require('./routes/main');
 const productsRoutes = require('./routes/products');
 const usersRoutes = require('./routes/users');
-const userRemember = require('./middlewares/userRemember');
 
 const app = express();
-const PORT = 3030;  // Cambié el nombre de la variable a PORT para evitar conflictos
+const PORT = 3031;
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -34,8 +33,6 @@ app.use(passport.session());
 app.use('/', mainRoutes);
 app.use('/products', productsRoutes);
 app.use('/users', usersRoutes);
-
-app.use(userRemember);
 
 const users = [
     { id: 1, username: 'admin', password: 'admin', isAdmin: true },
@@ -82,13 +79,12 @@ app.get('/carrito', isAuthenticated, (req, res) => {
 });
 
 app.get('/logout', (req, res) => {
-    delete req.session.user;
-    //req.logout();
+    req.logout();
     res.redirect('/');
 });
-const port = 3030;
-app.listen(port, () => {
-    console.log(`Servidor iniciado en http://localhost:${port}`);
+
+app.listen(PORT, () => {
+    console.log(`Servidor iniciado en http://localhost:${PORT}`);
 });
 
 module.exports = app;
