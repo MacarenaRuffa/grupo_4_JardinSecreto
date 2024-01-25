@@ -1,38 +1,31 @@
-module.exports = (sequelize, dataTypes) => {
-    let alias = 'User_products';
-    let cols = {
-        users_id: {
-            type: dataTypes.INTEGER,
-            primaryKey: true,
-            autoIncrement: true,
-            allowNull: false
-        },
-        // created_at: dataTypes.TIMESTAMP,
-        // updated_at: dataTypes.TIMESTAMP,
-        products_id: {
-            type: dataTypes.INTEGER,
-            primaryKey: true,
-            autoIncrement: true,
-            allowNull: false
-        },
-        
-    };
-    let config = {
-        timestamps: false,
-        createdAt: 'created_at',
-        updatedAt: 'updated_at',
-        deletedAt: false,
-        tableName: 'roles'
-    }
-    const User_Product= sequelize.define(alias, cols, config); 
-
-    User_Product.belongsTo(User, {
-         foreignKey: 'users_id',
-          targetKey: 'id' 
-        });
-    User_Product.belongsTo(Product, { 
+'use strict';
+const {
+  Model
+} = require('sequelize');
+module.exports = (sequelize, DataTypes) => {
+  class User_product extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static associate(models) {
+      User_product.belongsTo(User, {
+        foreignKey: 'users_id',
+         as: 'user' 
+       });
+       User_product.belongsTo(Product, { 
         foreignKey: 'products_id',
-         targetKey: 'id'
+         as: 'product'
          });
-    return User_Product;
+    }
+  }
+  User_product.init({
+    name: DataTypes.STRING
+  }, {
+    sequelize,
+    modelName: 'User_product',
+    tableName: 'user_products'
+  });
+  return User_product;
 };
