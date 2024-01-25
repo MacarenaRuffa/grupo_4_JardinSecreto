@@ -1,3 +1,4 @@
+//rutas con create,edit,detail,list
 const express = require('express');
 const router = express.Router();
 const multer = require('multer');
@@ -9,16 +10,16 @@ const storage = multer.diskStorage({
     },
     filename: function (req, file, cb) {
         const ext = path.extname(file.originalname);
-        const filename = `${Date.now()}-product${ext}`;
+        const filename = `${Date.now()}-product${ext}}`;
         cb(null, filename);
     }
 });
 
-const upload = multer({ storage });
+const upload = multer ({storage});
 
 const productsController = require('../controllers/productsController');
 
-router.get('/', productsController.productsList);
+router.get('/',  productsController.productsList );
 
 router.get('/create', productsController.productCreate);
 router.post('/create', upload.single('image'), productsController.store);
