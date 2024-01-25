@@ -10,14 +10,22 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
-    }
+      Roles.belongsTo(models.User, { // models.Genre -> Genres es el valor de alias en genres.js
+          as: "user_roles",
+          foreignKey: 'roles_id'
+    })
+    
+  }
   }
   Role.init({
-    name: DataTypes.STRING
+    name: {
+      type: DataTypes.STRING(200)
+    }
   }, {
     sequelize,
     modelName: 'Role',
+    timestamps: false,
+    tableName: 'roles'
   });
   return Role;
 };
