@@ -97,5 +97,21 @@
     "pass_confirm": "1998",
     "terms": "d",
     "image": "1703113839217-user.jpg}"
+  },
+  {
+    "id": 11,
+    "name": "Macarena Ruffa",
+    "username": "macaruffa",
+    "email": "macarena.ruffa@gmail.com",
+    "birth_date": "1993-05-13",
+    "country": "Argentina",
+    "province": "Buenos Aires",
+    "city": "CABA",
+    "gender": "Femenino",
+    "interests": "Plantas",
+    "password": "$2b$10$es0ByNLOoWW62dQbQonfneeMnxdB8Jv3xOdoKjjJ4gIturhO6ARfa",
+    "pass_confirm": "maca1234",
+    "terms": "d",
+    "image": "default-image.png"
   }
 ]
