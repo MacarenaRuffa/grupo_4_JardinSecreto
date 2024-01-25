@@ -1,9 +1,9 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'Roles';
+    let alias = 'Category';
     let cols = {
         id: {
             type: dataTypes.INTEGER,
-            primaryKey: true,
+            primaryKey: true, 
             autoIncrement: true
         },
         // created_at: dataTypes.TIMESTAMP,
@@ -12,9 +12,9 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(45),
             allowNull: false
         },
-        
+
+
     };
- 
     let config = {
         timestamps: false,
         createdAt: 'created_at',
@@ -22,14 +22,14 @@ module.exports = (sequelize, dataTypes) => {
         deletedAt: false,
         tableName: 'roles'
     }
-    const Roles = sequelize.define(alias, cols, config); 
+    const Category = sequelize.define(alias, cols, config);
 
-    Roles.associate = function (models) {
-        Roles.belongsTo(models.User, { // models.Genre -> Genres es el valor de alias en genres.js
-            as: "user_roles",
-            foreignKey: 'roles_id'
+    Category.associate = function (models) {
+        Category.hasMany(models.Products, { // models.Genre -> Genres es el valor de alias en genres.js
+            as: "category_prduct",
+            foreignKey: "categories_id"
         })
     }
-   
-    return Roles;
+
+    return Category;
 };

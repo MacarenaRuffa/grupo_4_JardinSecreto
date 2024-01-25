@@ -3,7 +3,7 @@ module.exports = (sequelize, dataTypes) => {
     let cols = {
         id: {
             type: dataTypes.INTEGER,
-            primaryKey: true,
+            primaryKey: true, 
             autoIncrement: true
         },
         // created_at: dataTypes.TIMESTAMP,
@@ -12,8 +12,8 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(45),
             allowNull: false
         },
-       
-        
+
+
     };
     let config = {
         timestamps: false,
@@ -22,7 +22,7 @@ module.exports = (sequelize, dataTypes) => {
         deletedAt: false,
         tableName: 'roles'
     }
-    const Category = sequelize.define(alias, cols, config); 
+    const Category = sequelize.define(alias, cols, config);
 
     Category.associate = function (models) {
         Category.hasMany(models.Products, { // models.Genre -> Genres es el valor de alias en genres.js
