@@ -14,12 +14,12 @@ module.exports = (sequelize, DataTypes) => {
           as: "user_roles",
           foreignKey: 'role_id'
     })
-    
+    // TODO: puse en singular el nombre de la clase
   }
   }
   Role.init({
     name: {
-      type: DataTypes.STRING(200)
+      type: DataTypes.STRING(250)
     }
   }, {
     sequelize,
