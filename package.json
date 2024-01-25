@@ -6,7 +6,10 @@
   "scripts": {
     "start": "node src/app.js",
     "dev": "nodemon src/app.js",
-    "test": "mocha"
+    "test": "mocha",
+    "migrate": "npx sequelize-cli db:migrate",
+    "migrate:undo:all": "npx sequelize-cli db:migrate:undo:all",
+    "seed:all": "npx sequelize-cli db:seed:all"
   },
   "keywords": [],
   "author": "",
