@@ -1,37 +1,35 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'User_products';
+    let alias = 'User_Product';
     let cols = {
-        users_id: {
+        user_id: {
             type: dataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true,
             allowNull: false
         },
         // created_at: dataTypes.TIMESTAMP,
         // updated_at: dataTypes.TIMESTAMP,
-        products_id: {
+        product_id: {
             type: dataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true,
             allowNull: false
         },
-        
     };
+    /*
     let config = {
         timestamps: false,
         createdAt: 'created_at',
         updatedAt: 'updated_at',
         deletedAt: false,
         tableName: 'roles'
-    }
+    }*/
     const User_Product= sequelize.define(alias, cols, config); 
 
     User_Product.belongsTo(User, {
-         foreignKey: 'users_id',
+         foreignKey: 'user_id',
           targetKey: 'id' 
         });
     User_Product.belongsTo(Product, { 
-        foreignKey: 'products_id',
+        foreignKey: 'product_id',
          targetKey: 'id'
          });
     return User_Product;

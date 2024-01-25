@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'Products';
+    let alias = 'Products'; // TODO: no deberia ser singular?
     let cols = {
         id: {
             type: dataTypes.INTEGER,

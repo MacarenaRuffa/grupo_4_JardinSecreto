@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'Category';
+    let alias = 'Category'; // TODO: Si se mantiene como plurales user y product entonces este no deberia ser tambien en plural?
     let cols = {
         id: {
             type: dataTypes.INTEGER,
@@ -20,14 +20,14 @@ module.exports = (sequelize, dataTypes) => {
         createdAt: 'created_at',
         updatedAt: 'updated_at',
         deletedAt: false,
-        tableName: 'roles'
+        tableName: 'category'
     }
     const Category = sequelize.define(alias, cols, config);
 
     Category.associate = function (models) {
         Category.hasMany(models.Products, { // models.Genre -> Genres es el valor de alias en genres.js
             as: "category_prduct",
-            foreignKey: "categories_id"
+            foreignKey: "category_id"
         })
     }
 
