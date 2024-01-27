@@ -10,7 +10,14 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(45)
+      },
+      category_id:{
+        type: Sequelize.INTEGER,
+        references:{
+          model :'Category',
+          key:'id'
+        }
       },
       createdAt: {
         allowNull: false,

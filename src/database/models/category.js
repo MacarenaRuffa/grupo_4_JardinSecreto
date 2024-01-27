@@ -10,12 +10,22 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Category.associate = function (models) {
+        Category.hasMany(models.Products, { // models.Genre -> Genres es el valor de alias en genres.js
+            as: "category_prduct",
+            foreignKey: "categories_id"
+        });
+    }
+
     }
   }
   Category.init({
-    name: DataTypes.STRING
-  }, {
+    name:{
+     type: DataTypes.STRING(45),
+     allowNull: false
+    } 
+  },
+   {
     sequelize,
     modelName: 'Category',
   });
