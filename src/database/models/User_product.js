@@ -14,8 +14,8 @@ module.exports = (sequelize, DataTypes) => {
         as: 'product',
         foreignKey: 'products_id',
         });
-      User_Product.belongsTo(models.User, { // TODO: aqui el as y el foreignkey no deberia ser en singular?
-         as: 'users',
+      User_Product.belongsTo(models.User, { 
+         as: 'user',
          foreignKey: 'users_id',
        });
     }

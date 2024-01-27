@@ -10,12 +10,12 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Category.associate = function (models) {
-        Category.hasMany(models.Products, { // models.Genre -> Genres es el valor de alias en genres.js
-            as: "category_prduct",
-            foreignKey: "categories_id"
+      
+           Category.hasMany(models.Products, { // Esta relacion es de muchos a muchos 
+            foreignKey: "categories_id",
+            as: "category_prduct" // esto es el alias de la relacion 
         });
-    }
+    
 
     }
   }
