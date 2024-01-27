@@ -29,10 +29,10 @@ module.exports = {
           type: Sequelize.STRING(45),
           allowNull: false
       },
-      roles_id: { // TODO: aqui entiendo que deberia ser singular es correcto?
+      user_id: { // TODO: aqui entiendo que deberia ser singular es correcto?
         type: Sequelize.INTEGER,
         references: {
-          model: 'roles', // TODO: igual aqui
+          model: 'user', // TODO: igual aqui
           key: 'id'
         }
       },

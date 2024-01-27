@@ -19,7 +19,14 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
-      }
+      },
+      role_id:{
+        type: Sequelize.INTEGER,
+        references:{
+          model :'Role',  // Nombre de la tabla de Roles
+          key:'id'  // Clave primaria de la tabla de Role
+        }
+      },
     });
   },
   async down(queryInterface, Sequelize) {
