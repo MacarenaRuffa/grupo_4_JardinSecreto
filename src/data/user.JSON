@@ -65,7 +65,7 @@
     "image": "default-image.png"
   },
   {
-    "id": 9,
+    "id": 5,
     "name": "Francisco Alegre",
     "username": "Francisco",
     "email": "franciscoalegre775@gmail.com",
@@ -79,27 +79,7 @@
     "image": "default-image.png"
   },
   {
-    "id": 10,
-    "name": "Manuel Muract",
-    "username": "Manu",
-    "email": "manuelmuract98@gmail.com",
-    "birth_date": "1998-10-27",
-    "rol": "client",
-    "country": "Argentina",
-    "province": "Cordoba",
-    "city": "Manu",
-    "gender": "Masculino",
-    "interests": [
-      "Plantas",
-      "Semillas"
-    ],
-    "password": "$2b$10$SeTHmZ2lKWocAtxSWlgA9.hXIfr/DfNNCXA.KKX5h1xDaigZ4DCqW",
-    "pass_confirm": "1998",
-    "terms": "d",
-    "image": "1703113839217-user.jpg}"
-  },
-  {
-    "id": 11,
+    "id": 6,
     "name": "Macarena Ruffa",
     "username": "macaruffa",
     "email": "macarena.ruffa@gmail.com",
@@ -111,6 +91,27 @@
     "interests": "Plantas",
     "password": "$2b$10$es0ByNLOoWW62dQbQonfneeMnxdB8Jv3xOdoKjjJ4gIturhO6ARfa",
     "pass_confirm": "maca1234",
+    "terms": "d",
+    "image": "default-image.png"
+  },
+  {
+    "id": 7,
+    "name": "Manuel Muract",
+    "username": "MANU",
+    "rol": "admin",
+    "email": "manuelmuract98@gmail.com",
+    "birth_date": "1998-10-27",
+    "country": "Argentina",
+    "province": "Córdoba",
+    "city": "Río Cuarto",
+    "gender": "Masculino",
+    "interests": [
+      "Plantas",
+      "Suculentas",
+      "Semillas"
+    ],
+    "password": "$2b$10$86ZTEIFwUNd1y1tPht6k1.FDEoSB7NB1guDGzN2P8cPt0ZSkyogaK",
+    "pass_confirm": "1998",
     "terms": "d",
     "image": "default-image.png"
   }

@@ -5,7 +5,7 @@ const users = JSON.parse(fs.readFileSync(userFilePath, 'utf-8'));
 const bcrypt = require('bcrypt');
 const methodOverride = require('method-override');
 const { validationResult } = require('express-validator');
-
+const db = require("../database/models");
 
 const usersController = {
 
@@ -21,16 +21,20 @@ const usersController = {
 	},
 
 
-	store: (req, res) => {
-		const newUser = {
-			id: users[users.length - 1].id + 1,
+	store: async (req, res) => {
+		try {
+			const newUser = {
 			...req.body,
 			password: bcrypt.hashSync(req.body.password, 10),
 			image: req.file?.filename || "default-image.png"
 		};
-		users.push(newUser);
-		fs.writeFileSync(userFilePath, JSON.stringify(users, null, 2));
+		await db.User.create(newUser);
 		res.redirect('/');
+			
+		} catch (error) {
+			return res.status(500).send(error)
+		}
+		
 	},
 
 	processLogin: (req, res) => {

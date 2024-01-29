@@ -10,37 +10,40 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-        Products.hasMany(models.Category, { 
-            as: "category_prduct",
-            foreignKey: "categories_id"
-        });
+      Products.belongsTo(models.Category, {
+        as: "category",
+        foreignKey: "categories"
+      });
     }
   }
   Products.init({
     name: {
-        type: dataTypes.STRING(45),
-        allowNull: false
+      type: DataTypes.STRING(45),
+      allowNull: false
     },
-    description:{
-        type: dataTypes.STRING(300),
-        allowNull: false
+    description: {
+      type: DataTypes.TEXT,
+      allowNull: false
     },
-    price:{
-        type: dataTypes.INTEGER,
-        allowNull: false
+    price: {
+      type: DataTypes.INTEGER,
+      allowNull: false
     },
-    image:{
-        type: dataTypes.STRING(45),
-        allowNull: true
+    image: {
+      type: DataTypes.TEXT,
+      allowNull: true
     },
-    sale:{
-        type: dataTypes.TINYINT(1),
-        allowNull: false
-        }
-  },
+    sale: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false
+    },
+
+    categories_id: {
+      type: DataTypes.INTEGER,
+    }},
    {
-    sequelize,
-    modelName: 'Product',
-  });
+      sequelize,
+      modelName: 'Product',
+    });
   return Products;
 };
