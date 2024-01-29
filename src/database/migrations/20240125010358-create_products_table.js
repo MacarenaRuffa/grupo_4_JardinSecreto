@@ -39,7 +39,14 @@ module.exports = {
       updateAt: {
         allowNull: false,
         type: Sequelize.DATE
-      }
+      },
+      product_id:{
+        type: Sequelize.INTEGER,
+        references:{
+          model :'Product',  // Nombre de la tabla de Roles
+          key:'id'  // Clave primaria de la tabla de Role
+        }
+      }
 
 
     })

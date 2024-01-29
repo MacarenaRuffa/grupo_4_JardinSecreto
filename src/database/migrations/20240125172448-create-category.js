@@ -10,7 +10,14 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(45)
+      },
+      category_id:{
+        type: Sequelize.INTEGER,
+        references:{
+          model :'Category',
+          key:'id'
+        }
       },
       createdAt: {
         allowNull: false,
@@ -23,6 +30,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Categories');
+    await queryInterface.dropTable('Categories'); // TODO: siguendo la logica de las demas tablas deberia ser "categories" en minusculas
   }
 };

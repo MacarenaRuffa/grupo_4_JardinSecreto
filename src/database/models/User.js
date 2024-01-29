@@ -17,8 +17,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   }
     User.init({
-    // created_at: dataTypes.TIMESTAMP,
-    // updated_at: dataTypes.TIMESTAMP,
+   
       name: {
           type: dataTypes.STRING(45),
           allowNull: false

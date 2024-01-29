@@ -29,10 +29,10 @@ module.exports = {
           type: Sequelize.STRING(45),
           allowNull: false
       },
-      roles_id: {
+      user_id: {// llave foranea 
         type: Sequelize.INTEGER,
         references: {
-          model: 'roles',
+          model: 'User', 
           key: 'id'
         }
       },
