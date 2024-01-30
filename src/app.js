@@ -87,7 +87,7 @@ app.get('/logout', (req, res) => {
     //req.logout();
     res.redirect('/');
 });
-const port = process.env.PORT || 3030;
+const port = process.env.PORT || 3306;
 app.listen(port, () => {
     console.log(`Servidor iniciado en http://localhost:${port}`);
 });
