@@ -16,7 +16,7 @@ module.exports = {
         allowNull: false
       },
       description: {
-        type: Sequelize.STRING(300),
+        type: Sequelize.TEXT,
         allowNull: false
       },
       price: {
@@ -24,11 +24,11 @@ module.exports = {
         allowNull: false
       },
       image: {
-        type: Sequelize.STRING(45),
+        type: Sequelize.TEXT,
         allowNull: true
       },
       sale: {
-        type: Sequelize.TINYINT(1),
+        type: Sequelize.BOOLEAN,
         allowNull: false
       },
 
@@ -40,11 +40,11 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       },
-      product_id:{
+      categories_id:{
         type: Sequelize.INTEGER,
         references:{
-          model :'Product',  // Nombre de la tabla de Roles
-          key:'id'  // Clave primaria de la tabla de Role
+          model :'categories',  // Nombre de la tabla de categories
+          key:'id'  // Clave primaria de la tabla de categories
         }
       }
 

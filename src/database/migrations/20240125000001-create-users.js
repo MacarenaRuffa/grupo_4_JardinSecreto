@@ -21,26 +21,30 @@ module.exports = {
           type: Sequelize.STRING(64),
           allowNull: false
       },
+      password: {
+        type: Sequelize.TEXT,
+        allowNull: false
+    },
       birthday: {
           type: Sequelize.DATE,
-          allowNull: false
+          allowNull: true
       },
       gender: {
           type: Sequelize.STRING(45),
           allowNull: false
       },
-      user_id: {// llave foranea 
+      roles_id: {// llave foranea 
         type: Sequelize.INTEGER,
         references: {
-          model: 'User', 
+          model: 'roles', 
           key: 'id'
         }
       },
-      createAt: {
+      createdAt: {
           allowNull: false,
           type: Sequelize.DATE
       },
-      updateAt: {
+      updatedAt: {
           allowNull: false,
           type: Sequelize.DATE
       }
