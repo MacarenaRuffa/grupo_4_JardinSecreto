@@ -20,7 +20,7 @@ const {
     }
     Category.init({
         name: {
-            type: dataTypes.STRING(45),
+            type: DataTypes.STRING(45),
             allowNull: false
         }
     },
