@@ -24,53 +24,69 @@ const usersController = {
 	store: async (req, res) => {
 		try {
 			const newUser = {
-			...req.body,
-			password: bcrypt.hashSync(req.body.password, 10),
-			image: req.file?.filename || "default-image.png"
-		};
-		await db.User.create(newUser);
-		res.redirect('/');
-			
+				...req.body,
+				password: bcrypt.hashSync(req.body.password, 10),
+				image: req.file?.filename || "default-image.png"
+			};
+			await db.User.create(newUser);
+			res.redirect('/');
+
 		} catch (error) {
 			return res.status(500).send(error)
 		}
-		
+
 	},
 
-	processLogin: (req, res) => {
-	const {user1, password} = req.body;
-	let userFound = users.find((user) => user.username === user1);
+	processLogin: async (req, res) => {
+		try {
+			user = await db.User.findOne({
+				include: ['role'],
+				where: {
+					email: req.body.email
+				}
+			});
+			if (!user) {
+				return res.render('login', { errors: { unauthorize: { msg: 'Usuario y/o contraseña invalidos' } } });
 
-	if(!userFound ){
-		return res.status(404).render('nologin');
+			}
+			if (!bcrypt.compareSync(req.body.password, user.password)) {
+				return res.render('login', { errors: { unauthorize: { msg: 'Usuario y/o contraseña invalidos' } } });
+			}
+			req.session.user = {
+				id: user.id,
+				name: user.name,
+				user_name: user.user_name,
+				email: user.email,
+				password: user.password,
+				roles_id: user.roles_id.name,
+			};
+			res.redirect('/')
 
-	}
-	if(!bcrypt.compareSync(password,userFound.password)){
-		return res.status(500).render('error');
-	}
-    req.session.user = userFound;
-	return res.redirect('/')
+		} catch (error) {
+			return res.status(500).send(error)
+		}
 	},
+	
 
 	
-	remember(req,res) {
-		req.session.usuarioLogueado=usuariologuearse;
-		
-		if (req.body.recordame != undefined){
-		res.cookie('recordame', usuarioALoguearse.email,{maxAge: 60000})
-		} ;
+	remember(req, res) {
+		req.session.usuarioLogueado = usuariologuearse;
+
+		if (req.body.recordame != undefined) {
+			res.cookie('recordame', usuarioALoguearse.email, { maxAge: 60000 })
+		};
 	},
 
 
-	
-	errorcontroller(req,res){
+
+	errorcontroller(req, res) {
 		res.render('error');
 	},
 
-	nologin(req,res){
-	  	res.render('nologin');
-	  }
-	
+	nologin(req, res) {
+		res.render('nologin');
+	}
+
 
 
 
