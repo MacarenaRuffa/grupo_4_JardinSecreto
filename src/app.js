@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const session = require('express-session');
 const passport = require('passport');
@@ -86,7 +87,7 @@ app.get('/logout', (req, res) => {
     //req.logout();
     res.redirect('/');
 });
-const port = 3030;
+const port = process.env.PORT || 3306;
 app.listen(port, () => {
     console.log(`Servidor iniciado en http://localhost:${port}`);
 });

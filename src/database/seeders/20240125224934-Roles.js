@@ -12,14 +12,17 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
+    await queryInterface.bulkInsert('roles', [
+      {
+        name: 'Administrador'      
+      },
+      {
+        name: 'Cliente'      
+      }
+  ], {});
   },
 
   async down (queryInterface, Sequelize) {
-    /**
-     * Add commands to revert seed here.
-     *
-     * Example:
-     * await queryInterface.bulkDelete('People', null, {});
-     */
+    await queryInterface.bulkDelete('roles', null, {});
   }
 };

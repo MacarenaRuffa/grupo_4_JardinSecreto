@@ -19,25 +19,32 @@ module.exports = (sequelize, DataTypes) => {
     User.init({
    
       name: {
-          type: dataTypes.STRING(45),
-          allowNull: false
+        type: DataTypes.STRING(45),
+        allowNull: false
       },
       user_name: {
-          type: dataTypes.STRING(45),
+          type: DataTypes.STRING(45),
           allowNull: false
       },
       email: {
-          type: dataTypes.STRING(64),
+          type: DataTypes.STRING(64),
           allowNull: false
       },
+      password: {
+        type: DataTypes.TEXT,
+        allowNull: false
+    },
       birthday: {
-          type: dataTypes.DATE,
-          allowNull: false
+          type: DataTypes.DATE,
+          allowNull: true
       },
       gender: {
-          type: dataTypes.STRING(45),
+          type: DataTypes.STRING(45),
           allowNull: false
-      }
+      },
+      roles_id: {// llave foranea 
+        type: DataTypes.INTEGER,
+      },
     }, {
       sequelize,
       modelName: 'User',
