@@ -9,8 +9,6 @@ const db = require("../database/models");
 
 const usersController = {
 
-
-
 	register: (req, res) => {
 		res.render('register');
 	},
@@ -19,7 +17,6 @@ const usersController = {
 		res.render('login');
 
 	},
-
 
 	store: async (req, res) => {
 		try {
@@ -66,7 +63,6 @@ const usersController = {
 		}
 	},
 	
-
 	
 	remember(req, res) {
 		req.session.usuarioLogueado = usuariologuearse;
@@ -77,14 +73,31 @@ const usersController = {
 	},
 
 
-
 	errorcontroller(req, res) {
 		res.render('error');
 	},
 
 	nologin(req, res) {
 		res.render('nologin');
-	}
+	},
+
+	async delete (req, res){
+		try {
+		  let idSelect = Number(req.params.id);
+	
+		  let userliminado = await db.User.findByPk(idSelect);
+	
+		  await db.User.destroy({
+			where: {
+			  id: idSelect,
+			},
+		  });
+	
+		  res.redirect("/");
+		} catch (error) {
+			res.status(500).send(error);
+		}
+	},
 
 
 

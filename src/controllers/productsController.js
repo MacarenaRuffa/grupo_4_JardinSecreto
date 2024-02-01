@@ -53,9 +53,6 @@ const productsController = {
     },
 
 
-
-	
-
     productEdit: (req, res) => {
 		const product = products.find((product) => product.id == req.params.id);
 		res.render('productEdit', { productToEdit: product });
@@ -96,20 +93,20 @@ const productsController = {
 
 	
 
-	destroy: (req, res) => {
+	/*destroy: (req, res) => {
 		const indexProduct = products.findIndex((product) => product.id == req.params.id);
 		products.splice(indexProduct, 1);
 		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
 		res.redirect('/products');
-	},
+	},*/
 
 	delete: async (req, res) => {
 		try {
 		  let idSelect = Number(req.params.id);
 	
-		  let productoEliminado = await db.Product.findByPk(id);
+		  let productoEliminado = await db.Product.findByPk(idSelect);
 	
-		  await db.product.destroy({
+		  await db.Product.destroy({
 			where: {
 			  id: idSelect,
 			},
