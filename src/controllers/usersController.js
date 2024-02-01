@@ -37,7 +37,7 @@ const usersController = {
 
 	},
 
-	processLogin: async (req, res) => {
+	processLogin: async (req, res) => { //Pendiente 
 		try {
 			user = await db.User.findOne({
 				include: ['role'],
