@@ -41,8 +41,8 @@ const usersController = {
 		try {
 			user = await db.User.findOne({
 				where: {
-					email: req.body.email
-				}
+                    user: { [Op.gte]: user.body.user }
+                },
 			});
 			if (!user) {
 				return res.status(404).render('nologin');
