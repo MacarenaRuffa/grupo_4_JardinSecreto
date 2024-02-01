@@ -40,10 +40,9 @@ const usersController = {
 	processLogin: async (req, res) => {
 		try {
 			user = await db.User.findOne({
-				include: ['role'],
 				where: {
-					email: req.body.email
-				}
+                    user: { [Op.gte]: user.body.user }
+                },
 			});
 			if (!user) {
 				return res.render('login', { errors: { unauthorize: { msg: 'Usuario y/o contraseña invalidos' } } });
