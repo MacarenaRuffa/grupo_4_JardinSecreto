@@ -40,9 +40,8 @@ const usersController = {
 	processLogin: async (req, res) => {
 		try {
 			user = await db.User.findOne({
-				include: ['role'],
 				where: {
-					user: req.body.user
+					email: req.body.email
 				}
 			});
 			if (!user) {
