@@ -42,15 +42,15 @@ const usersController = {
 			user = await db.User.findOne({
 				include: ['role'],
 				where: {
-					email: req.body.email
+					user: req.body.user
 				}
 			});
 			if (!user) {
-				return res.render('login', { errors: { unauthorize: { msg: 'Usuario y/o contraseña invalidos' } } });
+				return res.status(404).render('nologin');
 
 			}
 			if (!bcrypt.compareSync(req.body.password, user.password)) {
-				return res.render('login', { errors: { unauthorize: { msg: 'Usuario y/o contraseña invalidos' } } });
+				return res.status(500).render('error');
 			}
 			req.session.user = {
 				id: user.id,

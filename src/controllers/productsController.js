@@ -59,7 +59,8 @@ const productsController = {
 	},
 
 	update: async (id) => {
-		const product = await db.Product.updateOne({_id:id}, //recibe el id y lo actualiza, busca lo que tiene que setear 
+		try{
+			const product = await db.Product.updateOne({_id:id}, //recibe el id y lo actualiza, busca lo que tiene que setear 
 		{
 			$set:{ // lo que hacemos cuando seteamos y aca abajo agregamos los valores que vamos a modificar
 				nombre: '',
@@ -68,6 +69,13 @@ const productsController = {
 				
 		});
 
+		}catch (error) {
+			
+			return res.status(500).send(error)
+			
+		}
+		
+		
 
 
 
