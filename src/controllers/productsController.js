@@ -49,6 +49,8 @@ const productsController = {
 		
     },
 
+
+
 	
 
     productEdit: (req, res) => {
@@ -56,14 +58,29 @@ const productsController = {
 		res.render('productEdit', { productToEdit: product });
 	},
 
-	update: (req, res) => {
-		const indexProduct = products.findIndex((product) => product.id == req.params.id);
-		products[indexProduct] = {
-			...products[indexProduct],
-			...req.body
-		};
-		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
-		res.redirect('/products');
+	update: async (id) => {
+		const product = await db.Product.updateOne({_id:id}, //recibe el id y lo actualiza, busca lo que tiene que setear 
+		{
+			$set:{ // lo que hacemos cuando seteamos y aca abajo agregamos los valores que vamos a modificar
+				nombre: '',
+				pais: '',
+			}  		 
+				
+		});
+
+
+
+
+		//CODIGO VIEJO DE ACTUALIZAR
+		// const indexProduct = products.findIndex((product) => product.id == req.params.id);
+		// products[indexProduct] = {
+		// 	...products[indexProduct],
+		// 	...req.body
+		// };
+		// fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
+		// res.redirect('/products');
+
+
 	},
 
 	destroy: (req, res) => {
