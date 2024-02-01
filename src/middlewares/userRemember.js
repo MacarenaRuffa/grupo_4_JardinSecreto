@@ -1,10 +1,12 @@
 
+const db = require("../database/models");
+
 function userRemember(req ,res, next)
 {
     next();
     if (req.cokies.recordame != undefined && req.session.usuarioLogueado == undefined);{
 
-        let usersJSON = fs.readFileSync('userFilePath', { encoding: 'utf-8' });
+        let  = fs.readFileSync('userFilePath', { encoding: 'utf-8' });
         let users;
         if (usersJSON === '') {
             users = [];

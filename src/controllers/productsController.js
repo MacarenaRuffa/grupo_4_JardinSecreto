@@ -9,11 +9,14 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const productsController = {
 
-    productDetail: (req,res) => {
-        const product = products.find((product) => product.id == req.params.id);
-		const user=req.session.user
-			
-        res.render('productDetail',{product, user});
+    productDetail: async(req,res) => {
+		
+			try {
+				const product = await db.Product.findByPk(req.params.id);
+				res.render('productDetail', { product });
+			} catch (error) {
+				res.status(500).send(error);
+			}
 		
 			
 		
@@ -91,20 +94,40 @@ const productsController = {
 
 	},
 
+	
+
 	destroy: (req, res) => {
 		const indexProduct = products.findIndex((product) => product.id == req.params.id);
 		products.splice(indexProduct, 1);
 		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
 		res.redirect('/products');
 	},
-    
-    productsList: (req,res) =>{
-		const user=req.session.user
-		if (user===undefined) {
-			return res.render("login")
+
+	delete: async (req, res) => {
+		try {
+		  let idSelect = Number(req.params.id);
+	
+		  let productoEliminado = await db.Product.findByPk(id);
+	
+		  await db.product.destroy({
+			where: {
+			  id: idSelect,
+			},
+		  });
+	
+		  res.redirect("/");
+		} catch (error) {
+		  console.log(error);
 		}
-		res.render('productList', {products, user});
-    }
+	},
+	async productsList (req,res){
+        try {
+            const product = await db.Product.findAll({include: ['products']});
+            res.render('productList', { categories });
+        } catch (error) {
+            res.status(500).send(error);
+        }
+    },
 	
 
 
