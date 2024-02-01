@@ -11,7 +11,7 @@ const {
          */
         static associate(models) {
 
-            Category.hasMany(models.Products, { // Esta relacion es de muchos a muchos 
+            Category.hasMany(models.Product, { // Esta relacion es de muchos a muchos 
                 foreignKey: "categories_id",
                 as: "products" // esto es el alias de la relacion 
             });
@@ -27,7 +27,9 @@ const {
         {
             sequelize,
             modelName: 'Category',
-            timestamps: false
+            timestamps: false,
+            tableName: 'categories'
+
         });
 
     return Category;
