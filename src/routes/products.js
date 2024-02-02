@@ -31,6 +31,6 @@ router.get('/cart', productsController.productCart);
 router.get('/:id/edit', productsController.productEdit);
 router.put('/:id/edit', productsController.update);
 
-router.delete('/:id/delete', productsController.destroy);
+router.delete('/:id/delete', productsController.delete);
 
 module.exports = router;
