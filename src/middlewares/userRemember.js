@@ -1,26 +1,24 @@
 
 const db = require("../database/models");
 
-function userRemember(req ,res, next)
-{
-    next();
-    if (req.cokies.recordame != undefined && req.session.usuarioLogueado == undefined);{
+function userRemember(req, res, next) {
+    if (req.cookies.recordame && !req.session.usuarioLogueado) {
+        const userEmail = req.cookies.recordame;
 
-        let  = fs.readFileSync('userFilePath', { encoding: 'utf-8' });
-        let users;
-        if (usersJSON === '') {
-            users = [];
-        } else {
-            users = JSON.parse(usersJSON);
-        }
-        let usuarioALoguearse
+        db.User.findOne({ where: { email: userEmail } })
+            .then(user => {
+                if (user) {
+                    req.session.usuarioLogueado = user;
+                }
+                next();
+            })
+            .catch(error => {
+                console.error("Error al buscar usuario en la base de datos:", error);
+next();
+            });
+    } else {
+        next();
+    }
+}
 
-        for (let i = 0; i < users.length; i++) {
-            if (users[i].email === req.cookies.recordame) {
-                    usuarioALoguearse = users[i];
-                    break;
-                }}
-                req.session.usuarioALogueado = usuarioALoguearse;
-            }}
-
-module.exports = userRemember;
+module.exports = userRemember

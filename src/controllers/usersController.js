@@ -81,31 +81,28 @@ const usersController = {
 		res.render('nologin');
 	},
 
-	async delete (req, res){
-		try {
-		  let idSelect = Number(req.params.id);
-	
-		  let userliminado = await db.User.findByPk(idSelect);
-	
-		  await db.User.destroy({
-			where: {
-			  id: idSelect,
-			},
-		  });
-	
-		  res.redirect("/");
-		} catch (error) {
-			res.status(500).send(error);
-		}
-	},
-
-
-
-
+// Función para actualizar un usuario
+updateUser: async (req, res) => {
+	try {
+		const userId = req.params.id;
+		const updatedUser = req.body; // Datos actualizados del usuario
+		await db.User.update(updatedUser, { where: { id: userId } });
+		res.send('Usuario actualizado correctamente');
+	} catch (error) {
+		res.status(500).send('Error al actualizar usuario');
+	}
+	// Función para eliminar un usuario
+    deleteUser: async (req, res) => {
+        try {
+            const userId = req.params.id;
+            await db.User.destroy({ where: { id: userId } });
+            res.send('Usuario eliminado correctamente');
+        } catch (error) {
+            res.status(500).send('Error al eliminar usuario');
+        }
+    }
+},
 
 };
-
-
-
 
 module.exports = usersController;

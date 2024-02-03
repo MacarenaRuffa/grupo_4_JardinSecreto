@@ -12,7 +12,7 @@ const usersRoutes = require('./routes/users');
 const userRemember = require('./middlewares/userRemember');
 
 const app = express();
-const PORT = 3030;  // Cambié el nombre de la variable a PORT para evitar conflictos
+const PORT = 3306;  // Cambié el nombre de la variable a PORT para evitar conflictos
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
