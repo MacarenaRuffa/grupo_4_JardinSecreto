@@ -21,4 +21,4 @@ function userRemember(req, res, next) {
     }
 }
 
-module.exports = userRemember
+module.exports = userRemember;

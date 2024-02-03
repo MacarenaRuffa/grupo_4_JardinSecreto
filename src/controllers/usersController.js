@@ -38,7 +38,7 @@ const usersController = {
 		try {
 			user = await db.User.findOne({
 				where: {
-                    user: { [Op.gte]: user.body.user }
+                    user: { [Op.gte]: users.body.user }
                 },
 			});
 			if (!user) {
@@ -49,12 +49,12 @@ const usersController = {
 				return res.status(500).render('error');
 			}
 			req.session.user = {
-				id: user.id,
-				name: user.name,
-				user_name: user.user_name,
-				email: user.email,
-				password: user.password,
-				roles_id: user.roles_id.name,
+				id: users.id,
+				name: users.name,
+				user_name: users.user_name,
+				email: users.email,
+				password: users.password,
+				roles_id: users.roles_id.name,
 			};
 			res.redirect('/')
 
@@ -91,6 +91,7 @@ updateUser: async (req, res) => {
 	} catch (error) {
 		res.status(500).send('Error al actualizar usuario');
 	}
+},
 	// Función para eliminar un usuario
     deleteUser: async (req, res) => {
         try {
@@ -101,8 +102,6 @@ updateUser: async (req, res) => {
             res.status(500).send('Error al eliminar usuario');
         }
     }
-},
-
 };
 
 module.exports = usersController;
