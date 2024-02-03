@@ -11,10 +11,22 @@ module.exports = {
       roles_id: 1,
       createdAt: new Date(),
       updatedAt: new Date()
-    }], {});
+    },
+    {
+      name: 'Macarena Ruffa',
+      user_name: 'macaruffa',
+      email: 'maca@gmail.com',
+      password: bcript.hashSync('12345678', 10),
+      birthday: "",
+      gender: "",
+      roles_id: 1,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }
+  ], {});
   },
 
   async down (queryInterface, Sequelize) {
-     await queryInterface.bulkDelete('User', null, {});
+     await queryInterface.bulkDelete('users', null, {});
   }
 };

@@ -1,4 +1,5 @@
 'use strict';
+
 const {
     Model
   } = require('sequelize');
@@ -11,7 +12,7 @@ const {
          */
         static associate(models) {
 
-            Category.belongsTo(models.Product, { 
+            Category.hasMany(models.Product, { //consultar elacion
                 foreignKey: "categories_id",
                 as: "products" 
             });
@@ -27,9 +28,8 @@ const {
         {
             sequelize,
             modelName: 'Category',
-            timestamps: false,
-            tableName: 'categories'
-
+            tableName: 'categories',
+            timestamps: false
         });
 
     return Category;

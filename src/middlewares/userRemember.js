@@ -14,7 +14,7 @@ function userRemember(req, res, next) {
             })
             .catch(error => {
                 console.error("Error al buscar usuario en la base de datos:", error);
-next();
+                next();
             });
     } else {
         next();
