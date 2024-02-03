@@ -62,7 +62,7 @@ const usersController = {
 		}
 	},
 	
-	
+	//pasar a processLogin
 	remember(req, res) {
 		req.session.usuarioLogueado = usuariologuearse;
 
