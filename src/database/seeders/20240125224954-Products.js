@@ -9,7 +9,7 @@ module.exports = {
         description: "Planta de exterior que irradia frescura y vitalidad. Sus exuberantes hojas y vibrantes flores",
         price: 600,
         image: "PE-Alegria_del_Hogar.png",
-        sale: "in-sale",
+        in_sale: true,
         createdAt: new Date(),
         updatedAt: new Date(),
         categories_id: 1
@@ -19,7 +19,7 @@ module.exports = {
         description: "Amplia gama de tonalidades, que van desde blancos puros y rosados suaves hasta rojos intensos",
         price: 4500,
         image: "PE-Azalea.png",
-        sale: "no-sale",
+        in_sale: false,
         createdAt: new Date(),
         updatedAt: new Date(),
         categories_id: 1
@@ -29,7 +29,7 @@ module.exports = {
         description: "Kit de tres herramientas para el jardin pala, palita y rastillo",
         price: 7300,
         image: "HE-Kit_jardin.png",
-        sale: "in-sale",
+        in_sale: true,
         createdAt: new Date(),
         updatedAt: new Date(),
         categories_id: 3
@@ -39,7 +39,7 @@ module.exports = {
         description: "Son pequeñas y alargadas, generalmente de color marrón claro. Estas semillas se pueden encontrar en el centro de la cabeza de la margarita después de que ha florecido. ",
         price: 1000,
         image: "SE-Margarita.png",
-        sale: "in-sale",
+        in_sale: true,
         createdAt: new Date(),
         updatedAt: new Date(),
         categories_id: 4
@@ -49,7 +49,7 @@ module.exports = {
         description: "Las semillas para plantar girasoles son pequeñas, en forma de óvalo, de color negro o marrón oscuro. Tienen una cubierta dura que debe ablandarse antes de la siembra para facilitar la germinación",
         price: 1000,
         image: "SE-Girasol_multifloral.png",
-        sale: "no-sale",
+        in_sale: false,
         createdAt: new Date(),
         updatedAt: new Date(),
         categories_id: 4

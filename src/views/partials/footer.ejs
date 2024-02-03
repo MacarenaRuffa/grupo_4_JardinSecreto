@@ -17,9 +17,9 @@
 </div>
 
 <p>
-    <% if (locals.user && locals.user.rol === 'admin') { %>
+    <% if (locals.user && locals.user.role === 'Administrador') { %>
       Bienvenido, Administrador.
-    <% } else if (locals.user && locals.user.rol === 'cliente') { %>
+    <% } else if (locals.user && locals.user.role === 'Cliente') { %>
       Bienvenido, Cliente.
     <% } else { %>
       Bienvenido, Visitante.

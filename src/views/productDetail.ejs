@@ -28,7 +28,7 @@
                 </div>
                 <button class="button-trolley"><i class="fas fa-plus"></i>Añadir al carrito</button>
 
-                <% if (user?.rol==="admin"){  %>
+                <% if (locals.user?.role==="Administrador"){  %>
                 <div class="crud-buttons">
                     <button><a href="/products/<%= locals.product?.id %>/edit" class="action-button edit">Editar</a></button>
                     <form action="/products/<%= locals.product?.id %>/delete?_method=DELETE" method="POST" style="display: inline-flex">

@@ -29,14 +29,17 @@ app.use(session({
 app.use(cookieParser());
 app.use(methodOverride('_method'));
 
+//ver uso 
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use(userRemember);
 
 app.use('/', mainRoutes);
 app.use('/products', productsRoutes);
 app.use('/users', usersRoutes);
 
-app.use(userRemember);
+
 
 const users = [
     { id: 1, username: 'admin', password: 'admin', isAdmin: true },

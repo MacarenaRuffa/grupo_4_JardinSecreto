@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   Product.init({
     name: {
-      type: DataTypes.STRING(45),
+      type: DataTypes.TEXT,
       allowNull: false
     },
     description: {
@@ -34,7 +34,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.TEXT,
       allowNull: true
     },
-    sale: {
+    in_sale: {
       type: DataTypes.BOOLEAN,
       allowNull: false
     },

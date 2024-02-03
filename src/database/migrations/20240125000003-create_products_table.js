@@ -12,7 +12,7 @@ module.exports = {
       },
  
       name: {
-        type: Sequelize.STRING(45),
+        type: Sequelize.TEXT,
         allowNull: false
       },
       description: {
@@ -27,11 +27,10 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull: true
       },
-      sale: {
+      in_sale: {
         type: Sequelize.BOOLEAN,
         allowNull: false
       },
-
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

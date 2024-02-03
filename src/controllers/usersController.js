@@ -36,10 +36,11 @@ const usersController = {
 
 	processLogin: async (req, res) => { //Pendiente 
 		try {
-			user = await db.User.findOne({
+			const user = await db.User.findOne({
 				where: {
-                    user: { [Op.gte]: users.body.user }
+                    email: req.body.email 
                 },
+				include: ['role']
 			});
 			if (!user) {
 				return res.status(404).render('nologin');
@@ -49,12 +50,10 @@ const usersController = {
 				return res.status(500).render('error');
 			}
 			req.session.user = {
-				id: users.id,
-				name: users.name,
-				user_name: users.user_name,
-				email: users.email,
-				password: users.password,
-				roles_id: users.roles_id.name,
+				id: user.id,
+				name: user.name,
+				email: user.email,
+				role: user.role.name,
 			};
 			res.redirect('/')
 
