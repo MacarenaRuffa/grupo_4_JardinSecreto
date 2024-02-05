@@ -1,77 +1,82 @@
 <%- include('partials/head', {styles : ['register']}) %>
-<body>
-    <div class="logo-btn">
-        <img src="/images/Logo-verde.png" alt="Logo">
-    </div>
-    <div class="wrapper-reg">
-        <form action="/users/register" method="POST" encType="multipart/form-data">
-            <h1>¡Regístrate!</h1>
-            <div class="ib-conteiner">
-                <div class="input-box">
-                    <input type="text" id="name" name="name" placeholder="Nombre y apellido">
-                    <i class='bx bx-user' style='color:#435334'></i>
+
+    <body>
+        <div class="logo-btn">
+            <img src="/images/Logo-verde.png" alt="Logo">
+        </div>
+        <div class="wrapper-reg">
+            <form action="/users/register" method="POST" encType="multipart/form-data">
+                <h1>¡Regístrate!</h1>
+                <div class="ib-conteiner">
+                    <div class="input-box">
+                        <input type="text" id="name" name="name" placeholder="Nombre y apellido">
+                        <i class='bx bx-user' style='color:#435334'></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="email" id="email" name="email" placeholder="E-mail">
+                        <i class='bx bx-envelope' style='color:#435334'></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" id="password" name="password" placeholder="Elegí tu contraseña">
+                        <i class='bx bx-lock' style='color:#435334'></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" id="pass_confirm" name="pass_confirm"
+                            placeholder="Confirmá tu contraseña">
+                        <i class='bx bx-lock' style='color:#435334'></i>
+                    </div>
+                    <div class="input-box">
+                        <select id="gender" name="gender" class="btn-gender">
+                            <option value="" disabled selected>Género</option>
+                            <option value="masculino">Masculino</option>
+                            <option value="femenino">Femenino</option>
+                            <option value="no_binario">No Binario</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                        <i class='bx bx-user' style='color:#435334'></i>
+                    </div>
                 </div>
-                <div class="input-box">
-                    <input type="email" id="email" name="email" placeholder="E-mail">
-                    <i class='bx bx-envelope' style='color:#435334'></i>
+                
+                <div class="interests">
+                    <h4>Intereses</h4>
+                    <div>
+                        <input type="checkbox" id="interests" name="interests" value="Plantas" id="interest-plantas">
+                        <label for="interest_interior">Plantas de interior</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="interests" name="interests" value="Plantas" id="interest-plantas">
+                        <label for="interest_exterior">Plantas de exterior</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="interests" name="interests" value="Semillas" id="interest-semillas">
+                        <label for="interest-semillas">Semillas</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="interests" name="interests" value="Semillas" id="interest-semillas">
+                        <label for="interest-macetas">Macetas</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="interests" name="interests" value="Herramientas"
+                            id="interest-herramientas">
+                        <label for="interest-herramientas">Herramientas</label>
+                    </div>
                 </div>
-                <div class="input-box">
-                    <select id="gender" name="gender" class="btn-gender">
-                        <option value="" disabled selected>Género</option>
-                        <option value="masculino">Masculino</option>
-                        <option value="femenino">Femenino</option>
-                        <option value="no_binario">No Binario</option>
-                        <option value="otro">Otro</option>
-                    </select>
-                    <i class='bx bx-user' style='color:#435334'></i>
+                <div class="user-file">
+                    <h4>Elegí tu foto de usuario</h4>
+                    <input type="file" id="avatar" name="avatar">
                 </div>
-            </div>
-            
-            
-            <div class="interests">
-                <h4>Intereses</h4>
-                <div>
-                    <input type="checkbox" id="interests" name="interests" value="Plantas" id="interest-plantas">
-                    <label for="interest-plantas">Plantas</label>
+
+                <div class="terms-check">
+                    <input type="checkbox" id="terms" name="terms" value="d" id="terms">
+                    <label for="terms">Acepto los términos y condiciones de El Jardin Secreto</label>
                 </div>
-                <div>
-                    <input type="checkbox" id="interests" name="interests" value="Suculentas" id="interest-suculentas">
-                    <label for="interest-suculentas">Suculentas</label>
+                <div class="btn-container">
+                    <button type="submit" class="btn">Enviar</button>
+                    <button type="reset" class="btn">Borrar</button>
                 </div>
-                <div>
-                    <input type="checkbox" id="interests" name="interests" value="Semillas" id="interest-semillas">
-                    <label for="interest-semillas">Semillas</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="interests" name="interests" value="Herramientas" id="interest-herramientas">
-                    <label for="interest-herramientas">Herramientas</label>
-                </div>
-            </div>
-            <div class="user-file">
-                <h4>Elegí tu foto de usuario</h4>
-                <input type="file" id="avatar" name="avatar">
-            </div>
-            <div class="pass-container">
-                <div class="input-box">
-                    <input type="password" id="password" name="password" placeholder="Elegí tu contraseña">
-                    <i class='bx bx-lock' style='color:#435334'></i>
-                </div>
-                <div class="input-box">
-                    <input type="password" id="pass_confirm" name="pass_confirm" placeholder="Confirmá tu contraseña">
-                    <i class='bx bx-lock' style='color:#435334'></i>
-                </div>
-            </div>
-            
-            <div class="terms-check">
-                <input type="checkbox" id="terms" name="terms" value="d" id="terms">
-                <label for="terms">Acepto los términos y condiciones de El Jardin Secreto</label>
-            </div>
-           <div class="btn-container">
-                <button type="submit" class="btn" >Enviar</button>
-                <button type="reset" class="btn">Borrar</button>
-            </div>
-            
-        </form>
-    </div>
-</body>
-</html>
+
+            </form>
+        </div>
+    </body>
+
+    </html>

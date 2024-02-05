@@ -33,9 +33,9 @@ router.get('/error',usersController.errorcontroller);
 router.get('/nologin',usersController.nologin);
 
 // Ruta para actualizar usuario
-router.put('/:id', usersController.updateUser);
+router.put('/:id', usersController.update);
 
 // Ruta para eliminar usuario
-router.delete('/:id', usersController.deleteUser);
+router.delete('/:id', usersController.delete);
 
 module.exports = router;

@@ -8,14 +8,18 @@ const { validationResult } = require('express-validator');
 const db = require("../database/models");
 
 const usersController = {
-
 	register: (req, res) => {
 		res.render('register');
 	},
-
 	login: (req, res) => {
 		res.render('login');
 
+	},
+	errorcontroller(req, res) {
+		res.render('error');
+	},
+	nologin(req, res) {
+		res.render('nologin');
 	},
 
 	store: async (req, res) => {
@@ -38,8 +42,8 @@ const usersController = {
 		try {
 			const user = await db.User.findOne({
 				where: {
-                    email: req.body.email 
-                },
+					email: req.body.email
+				},
 				include: ['role']
 			});
 			if (!user) {
@@ -61,7 +65,7 @@ const usersController = {
 			return res.status(500).send(error)
 		}
 	},
-	
+
 	//pasar a processLogin
 	remember(req, res) {
 		req.session.usuarioLogueado = usuariologuearse;
@@ -71,36 +75,27 @@ const usersController = {
 		};
 	},
 
-
-	errorcontroller(req, res) {
-		res.render('error');
+	// Función para actualizar un usuario
+	update: async (req, res) => {
+		try {
+			const userId = req.params.id;
+			const updatedUser = req.body; // Datos actualizados del usuario
+			await db.User.update(updatedUser, { where: { id: userId } });
+			res.send('Usuario actualizado correctamente');
+		} catch (error) {
+			res.status(500).send('Error al actualizar usuario');
+		}
 	},
-
-	nologin(req, res) {
-		res.render('nologin');
-	},
-
-// Función para actualizar un usuario
-updateUser: async (req, res) => {
-	try {
-		const userId = req.params.id;
-		const updatedUser = req.body; // Datos actualizados del usuario
-		await db.User.update(updatedUser, { where: { id: userId } });
-		res.send('Usuario actualizado correctamente');
-	} catch (error) {
-		res.status(500).send('Error al actualizar usuario');
-	}
-},
 	// Función para eliminar un usuario
-    deleteUser: async (req, res) => {
-        try {
-            const userId = req.params.id;
-            await db.User.destroy({ where: { id: userId } });
-            res.send('Usuario eliminado correctamente');
-        } catch (error) {
-            res.status(500).send('Error al eliminar usuario');
-        }
-    }
+	delete: async (req, res) => {
+		try {
+			const userId = req.params.id;
+			await db.User.destroy({ where: { id: userId } });
+			res.send('Usuario eliminado correctamente');
+		} catch (error) {
+			res.status(500).send('Error al eliminar usuario');
+		}
+	}
 };
 
 module.exports = usersController;
