@@ -8,76 +8,61 @@ const productsFilePath = path.join(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const productsController = {
-
-    productDetail: async(req,res) => {
-		
-			try {
-				const product = await db.Product.findByPk(req.params.id);
-				res.render('productDetail', { product });
-			} catch (error) {
-				res.status(500).send(error);
-			}
-		
-			
-		
-    },
-
-    productCreate: (req,res) => {
-        res.render('productCreate');
-    },
-
-    store: async (req, res) => {
+	productDetail: async (req, res) => {
 		try {
-			
+			const product = await db.Product.findByPk(req.params.id);
+			res.render('productDetail', { product });
+		} catch (error) {
+			res.status(500).send(error);
+		}
+	},
+
+	productCreate: (req, res) => {
+		res.render('productCreate');
+	},
+
+	store: async (req, res) => {
+		try {
 			const newProduct = {
 				...req.body,
 				image: req.file?.filename || "default-image.png"
 			};
 			await db.Product.create(newProduct);
 			res.redirect('/products');
-				
 		} catch (error) {
-			
 			return res.status(500).send(error)
-			
-		}},
-		
+		}
+	},
 
-    productCart: (req,res) => {
-			const user=req.session.user
-			if (user===undefined) {
-				return res.render("login")
-			}
-			res.render('productCart', {user});
-		
-    },
+	productCart: (req, res) => {
+		const user = req.session.user
+		if (user === undefined) {
+			return res.render("login")
+		}
+		res.render('productCart', { user });
 
+	},
 
-    productEdit: (req, res) => {
+	productEdit: (req, res) => {
 		const product = products.find((product) => product.id == req.params.id);
 		res.render('productEdit', { productToEdit: product });
 	},
 
 	update: async (id) => {
-		try{
-			const product = await db.Product.updateOne({_id:id}, //recibe el id y lo actualiza, busca lo que tiene que setear 
-		{
-			$set:{ // lo que hacemos cuando seteamos y aca abajo agregamos los valores que vamos a modificar
-				nombre: '',
-				pais: '',
-			}  		 
-				
-		});
-
-		}catch (error) {
-			
+		try {
+			await db.Product.update({ 
+				name: req.body.productNameEdit,
+				description: req.body.descriptionEdit,
+				price: req.body.priceEdit,
+				//image: 
+				in_sale: req.body.in_saleEdit
+			 }, 
+			 { where: { id: req.params.id } });
+			 console.log('Producto actualizado correctamente');
+			 res.redirect('/products')
+		} catch (error) {
 			return res.status(500).send(error)
-			
 		}
-		
-		
-
-
 
 		//CODIGO VIEJO DE ACTUALIZAR
 		// const indexProduct = products.findIndex((product) => product.id == req.params.id);
@@ -87,11 +72,7 @@ const productsController = {
 		// };
 		// fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
 		// res.redirect('/products');
-
-
 	},
-
-	
 
 	/*destroy: (req, res) => {
 		const indexProduct = products.findIndex((product) => product.id == req.params.id);
@@ -102,32 +83,23 @@ const productsController = {
 
 	delete: async (req, res) => {
 		try {
-		  let idSelect = Number(req.params.id);
-	
-		  let productoEliminado = await db.Product.findByPk(idSelect);
-	
-		  await db.Product.destroy({
-			where: {
-			  id: idSelect,
-			},
-		  });
-	
-		  res.redirect("/");
+			await db.Product.destroy({
+				where: {id:req.params.id},
+			});
+			res.redirect("/products");
 		} catch (error) {
-		  console.log(error);
+			console.log(error);
 		}
 	},
-	async productsList (req,res){
-        try {
-            const product = await db.Product.findAll({include: ['products']});
-            res.render('productList', { categories });
-        } catch (error) {
-            res.status(500).send(error);
-        }
-    },
-	
 
-
+	productsList: async (req, res) => {
+		try {
+			const product = await db.Product.findAll({ include: ['products'] });
+			res.render('productList', { categories });
+		} catch (error) {
+			res.status(500).send(error);
+		}
+	},
 };
 
 module.exports = productsController;

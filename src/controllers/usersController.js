@@ -78,10 +78,12 @@ const usersController = {
 	// Función para actualizar un usuario
 	update: async (req, res) => {
 		try {
-			const userId = req.params.id;
-			const updatedUser = req.body; // Datos actualizados del usuario
-			await db.User.update(updatedUser, { where: { id: userId } });
-			res.send('Usuario actualizado correctamente');
+			await db.User.update({
+				name: req.body.nameEdit,
+				email: req.body.emailEdit
+		}, { where: { id: req.params.id } });
+			console.log('Usuario actualizado correctamente');
+			res.redirect('/')
 		} catch (error) {
 			res.status(500).send('Error al actualizar usuario');
 		}
@@ -89,9 +91,9 @@ const usersController = {
 	// Función para eliminar un usuario
 	delete: async (req, res) => {
 		try {
-			const userId = req.params.id;
-			await db.User.destroy({ where: { id: userId } });
-			res.send('Usuario eliminado correctamente');
+			await db.User.destroy({ where: { id: req.params.id } });
+			console.log('Usuario eliminado correctamente');
+			res.redirect('/')
 		} catch (error) {
 			res.status(500).send('Error al eliminar usuario');
 		}

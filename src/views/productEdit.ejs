@@ -8,29 +8,28 @@
             <h1>Modificar Producto</h1>
             <div class="input-box">
                 <label for="name" class="form-label">Nombre del producto:</label>
-                <input type="text" id="name" name="name" placeholder="Nombre del producto" value="<%= productToEdit.name %>">
+                <input type="text" id="productNameEdit" name="productNameEdit" placeholder="Nombre del producto" value="<%= productToEdit.name %>">
             </div>
             <div class="input-box">
                 <label for="description" class="form-label">Descripción:</label>
-                <textarea name="description" id="description" placeholder="Descripción del producto"><%= productToEdit.description %></textarea>
+                <textarea name="descriptionEdit" id="descriptionEdit" placeholder="Descripción del producto"><%= productToEdit.description %></textarea>
             </div>
             <div class="input-box">
                 <label for="price" class="form-label">Precio del producto:</label>
-                <input type="text" id="price" name="price" placeholder="Precio del producto" value="<%= productToEdit.price %>">
+                <input type="text" id="priceEdit" name="priceEdit" placeholder="Precio del producto" value="<%= productToEdit.price %>">
             </div>
+            <!--nos falta para editar imagen o borrarlo del modelo-->
             <div class="input-box">
                 <label for="discount" class="form-label">Descuento:</label>
-                <input type="text" id="discount" name="discount" placeholder="Descuento a aplicar" value="<%= productToEdit.discount %>">
+                <input type="text" id="discountEdit" name="discountEdit" placeholder="Descuento a aplicar" value="<%= productToEdit.discount %>">
             </div>
             <div class="input-box">
                 <label class="copy">Seleccione categoría:</label>
-                <select name="category" id="category">
+                <select name="categoryEdit" id="categoryEdit">
                     <option value="">Elegir</option>
                     <option value="semillas" <%= productToEdit.category === 'semillas' && 'selected' %>>Semillas</option>
-                    <option value="insumos" <%= productToEdit.category === 'insumos' && 'selected' %>>Insumos</option>
                     <option value="macetas" <%= productToEdit.category === 'macetas' && 'selected' %>>Macetas</option>
                     <option value="herramientas" <%= productToEdit.category === 'herramientas' && 'selected' %>>Herramientas</option>
-                    <option value="suculentas" <%= productToEdit.category === 'suculentas' && 'selected' %>>Suculentas</option>
                     <option value="interior" <%= productToEdit.category === 'interior' && 'selected' %>>Interior</option>
                     <option value="exterior" <%= productToEdit.category === 'exterior' && 'selected' %>>Exterior</option>
                 </select>
@@ -41,7 +40,7 @@
             </div> -->
             <div class="input-box">
                 <label for="sale" class="form-label">¿Está en oferta?":</label>
-                <input type="text" id="sale" name="sale" placeholder="¿Está en oferta?" value="<%= productToEdit.sale %>">
+                <input type="text" id="in_saleEdit" name="in_saleEdit" placeholder="¿Está en oferta?" value="<%= productToEdit.sale %>">
             </div>
             <button type="submit" class="btn">Guardar Cambios</button>
         </form>
