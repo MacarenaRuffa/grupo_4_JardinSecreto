@@ -48,7 +48,7 @@ const productsController = {
 		res.render('productEdit', { productToEdit: product });
 	},
 
-	update: async (id) => {
+	update: async (req, res) => {
 		try {
 			await db.Product.update({ 
 				name: req.body.productNameEdit,
@@ -94,8 +94,8 @@ const productsController = {
 
 	productsList: async (req, res) => {
 		try {
-			const product = await db.Product.findAll({ include: ['products'] });
-			res.render('productList', { categories });
+			const products = await db.Product.findAll({ include: ['category'] });
+			res.render('productList', { products });
 		} catch (error) {
 			res.status(500).send(error);
 		}

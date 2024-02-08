@@ -27,7 +27,8 @@ const usersController = {
 			const newUser = {
 				...req.body,
 				password: bcrypt.hashSync(req.body.password, 10),
-				image: req.file?.filename || "default-image.png"
+				image: req.file?.filename || "default-image.png",
+				roles_id: 2
 			};
 			await db.User.create(newUser);
 			res.redirect('/');
@@ -62,6 +63,7 @@ const usersController = {
 			res.redirect('/')
 
 		} catch (error) {
+			console.log(error)
 			return res.status(500).send(error)
 		}
 	},
