@@ -42,10 +42,15 @@ const productsController = {
 		res.render('productCart', { user });
 
 	},
-
-	productEdit: (req, res) => {
-		const product = products.find((product) => product.id == req.params.id);
-		res.render('productEdit', { productToEdit: product });
+	 //replicar el de user
+	productEdit: async (req, res) => {
+		try {
+			const product = await db.Product.findByPk(req.params.id);
+			res.render('productEdit', { productToEdit: product });
+		} catch (error) {
+			res.status(500).send(error);
+		}
+		
 	},
 
 	update: async (req, res) => {

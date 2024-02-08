@@ -77,13 +77,23 @@ const usersController = {
 		};
 	},
 
+	//no viene el usuario correcto
+	userEdit: async (req, res) => {
+		try {
+			const user = await db.User.findByPk(req.params.id);
+			res.render('userEdit', { userToEdit: user });
+		} catch (error) {
+			res.status(500).send(error);
+		}
+
+	},
 	// Función para actualizar un usuario
 	update: async (req, res) => {
 		try {
 			await db.User.update({
 				name: req.body.nameEdit,
 				email: req.body.emailEdit
-		}, { where: { id: req.params.id } });
+			}, { where: { id: req.params.id } });
 			console.log('Usuario actualizado correctamente');
 			res.redirect('/')
 		} catch (error) {
