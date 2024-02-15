@@ -68,6 +68,7 @@ const usersController = {
 		}
 	},
 
+
 	//pasar a processLogin
 	remember(req, res) {
 		req.session.usuarioLogueado = usuariologuearse;
@@ -77,7 +78,6 @@ const usersController = {
 		};
 	},
 
-	//no viene el usuario correcto
 	userEdit: async (req, res) => {
 		try {
 			const user = await db.User.findByPk(req.params.id);
