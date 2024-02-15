@@ -1,8 +1,8 @@
 window.onload = function() {
     let name = document.querySelector('.input-box #name');
     let formulario = document.querySelector('#formulario');
-    
     const form = document.querySelector('#formulario form');
+   
     form.name.focus();
     const required = {
         name:true,

@@ -5,4 +5,6 @@ const loginValidator = [
     body('password').notEmpty()
 ];
 
+
+
 module.exports = { loginValidator };

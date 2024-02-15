@@ -5,49 +5,58 @@
             <img src="/images/Logo-verde.png" alt="Logo">
         </div>
         <div class="wrapper">
-            <form action="/products/create" method="POST" enctype="multipart/form-data">
-                <h1>Agregar productos</h1>
+            <section id="formulario">
+                <form action="/products/create" method="POST" enctype="multipart/form-data">
+                    <h1>Agregar productos</h1>
 
-                <div class="input-box">
-                    <label for="name">Nombre del producto:</label>
-                    <input type="text" id="name" name="name" placeholder="Ingrese el nombre">
-                </div>
+                    <div class="input-box">
+                        <label for="name">Nombre del producto:</label>
+                        <input type="text" id="name" name="name" placeholder="Ingrese el nombre">
+                        <p id="err-name"></p>
+                    </div>
 
-                <div class="input-box">
-                    <label for="description">Descripción del producto:</label>
-                    <textarea name="description" id="description" placeholder="Ingrese la descripción"></textarea>
-                </div>
+                    <div class="input-box">
+                        <label for="description">Descripción del producto:</label>
+                        <textarea name="description" id="description" placeholder="Ingrese la descripción"></textarea>
+                        <p id="err-description"></p>
+                    </div>
 
-                <div class="input-box">
-                    <label for="price">Precio del producto:</label>
-                    <input type="text" id="price" name="price" placeholder="Ingrese el precio">
-                </div>
+                    <div class="input-box">
+                        <label for="price">Precio del producto:</label>
+                        <input type="text" id="price" name="price" placeholder="Ingrese el precio">
+                        <p id="err-price"></p>
+                    </div>
 
-                <div class="input-box">
-                    <label for="category">Seleccione categoría:</label>
-                    <select name="category" id="category">
-                        <option value="">Elegir</option>
-                        <option value="semillas">Semillas</option>
-                        <option value="macetas">Macetas</option>
-                        <option value="herramientas">Herramientas</option>
-                        <option value="interior">Interior</option>
-                        <option value="exterior">Exterior</option>
-                    </select>
-                </div>
+                    <div class="input-box">
+                        <label for="category">Seleccione categoría:</label>
+                        <select name="category" id="category">
+                            <option value="">Elegir</option>
+                            <option value="semillas">Semillas</option>
+                            <option value="macetas">Macetas</option>
+                            <option value="herramientas">Herramientas</option>
+                            <option value="interior">Interior</option>
+                            <option value="exterior">Exterior</option>
+                        </select>
+                        <p id="err-category"></p>
+                    </div>
 
-                <div class="input-box">
-                    <label for="image">Foto del producto:</label>
-                    <input type="file" id="image" name="image" accept="image/*">
-                </div>
+                    <div class="input-box">
+                        <label for="image">Foto del producto:</label>
+                        <input type="file" id="image" name="image" accept="image/*">
+                        <p id="err-image"></p>
+                    </div>
 
-                <div class="input-box">
-                    <label for="sale">¿Está en oferta?</label>
-                    <input type="text" id="in_sale" name="in_sale" placeholder="Sí/No">
-                </div>
+                    <div class="input-box">
+                        <label for="sale">¿Está en oferta?</label>
+                        <input type="text" id="in_sale" name="in_sale" placeholder="Sí/No">
+                        <p id="err-in_sale"></p>
+                    </div>
 
-                <button type="submit" class="btn">Guardar producto nuevo</button>
-            </form>
+                    <button type="submit" class="btn">Guardar producto nuevo</button>
+                </form>
+            </section>
         </div>
+        <script src="/js/createValidator.js"></script>
     </body>
 
     </html>
