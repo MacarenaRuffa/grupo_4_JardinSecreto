@@ -13,7 +13,7 @@ const productsController = {
 			const product = await db.Product.findByPk(req.params.id);
 			res.render('productDetail', { product });
 		} catch (error) {
-			res.status(500).send(error);
+			res.status(500).send("Error en detalle del producto");
 		}
 	},
 
@@ -30,7 +30,7 @@ const productsController = {
 			await db.Product.create(newProduct);
 			res.redirect('/products');
 		} catch (error) {
-			return res.status(500).send(error)
+			return res.status(500).send("Error al crear el producto")
 		}
 	},
 
@@ -48,7 +48,7 @@ const productsController = {
 			const product = await db.Product.findByPk(req.params.id);
 			res.render('productEdit', { productToEdit: product });
 		} catch (error) {
-			res.status(500).send(error);
+			res.status(500).send("Error al editar el producto");
 		}
 		
 	},
@@ -66,7 +66,7 @@ const productsController = {
 			 console.log('Producto actualizado correctamente');
 			 res.redirect('/products')
 		} catch (error) {
-			return res.status(500).send(error)
+			return res.status(500).send("Error al actualizar el producto")
 		}
 
 		//CODIGO VIEJO DE ACTUALIZAR
@@ -94,6 +94,7 @@ const productsController = {
 			res.redirect("/products");
 		} catch (error) {
 			console.log(error);
+			res.status(500).send("Error al eliminar el producto")
 		}
 	},
 
@@ -102,7 +103,7 @@ const productsController = {
 			const products = await db.Product.findAll({ include: ['category'] });
 			res.render('productList', { products });
 		} catch (error) {
-			res.status(500).send(error);
+			res.status(500).send("Error interno del servidor, comuniquese con un administrador");
 		}
 	},
 };
