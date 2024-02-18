@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const session = require('express-session');
+const {body, validationResult} = require('express-validator');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const path = require('path');
@@ -10,8 +11,8 @@ const mainRoutes = require('./routes/main');
 const productsRoutes = require('./routes/products');
 const usersRoutes = require('./routes/users');
 const userRemember = require('./middlewares/userRemember');
-
 const app = express();
+
 const PORT = 3306;  // Cambié el nombre de la variable a PORT para evitar conflictos
 
 app.set('view engine', 'ejs');
@@ -68,6 +69,23 @@ function isAuthenticated(req, res, next) {
     if (req.isAuthenticated()) {
         return next();
     }
+    res.redirect('/register');
+}
+
+app.get('/register', (req, res) => {
+    res.render('register');
+});
+
+app.post('/register', passport.authenticate('local', {
+    successRedirect: '/carrito',
+    failureRedirect: '/register',
+    failureFlash: true
+}));
+
+function isAuthenticated(req, res, next) {
+    if (req.isAuthenticated()) {
+        return next();
+    }
     res.redirect('/login');
 }
 
@@ -78,6 +96,40 @@ app.get('/login', (req, res) => {
 app.post('/login', passport.authenticate('local', {
     successRedirect: '/carrito',
     failureRedirect: '/login',
+    failureFlash: true
+}));
+
+function isAuthenticated(req, res, next) {
+    if (req.isAuthenticated()) {
+        return next();
+    }
+    res.redirect('/create');
+}
+
+app.get('/create', (req, res) => {
+    res.render('create');
+});
+
+app.post('/create', passport.authenticate('local', {
+    successRedirect: '/carrito',
+    failureRedirect: '/create',
+    failureFlash: true
+}));
+
+function isAuthenticated(req, res, next) {
+    if (req.isAuthenticated()) {
+        return next();
+    }
+    res.redirect('/edit');
+}
+
+app.get('/edit', (req, res) => {
+    res.render('edit');
+});
+
+app.post('/edit', passport.authenticate('local', {
+    successRedirect: '/carrito',
+    failureRedirect: '/edit',
     failureFlash: true
 }));
 

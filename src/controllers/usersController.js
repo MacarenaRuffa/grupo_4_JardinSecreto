@@ -34,7 +34,7 @@ const usersController = {
 			res.redirect('/');
 
 		} catch (error) {
-			return res.status(500).send(error)
+			return res.status(500).send("Error al registrarse")
 		}
 
 	},
@@ -64,7 +64,7 @@ const usersController = {
 
 		} catch (error) {
 			console.log(error)
-			return res.status(500).send(error)
+			return res.status(500).send("Error interno del servidor, comuniquese con un administrador")
 		}
 	},
 
@@ -83,7 +83,7 @@ const usersController = {
 			const user = await db.User.findByPk(req.params.id);
 			res.render('userEdit', { userToEdit: user });
 		} catch (error) {
-			res.status(500).send(error);
+			res.status(500).send("Error al editar usuario");
 		}
 
 	},
