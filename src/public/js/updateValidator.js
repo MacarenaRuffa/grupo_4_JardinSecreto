@@ -1,7 +1,6 @@
 window.onload = function() {
     let productNameEdit = document.querySelector('.input-box #productNameEdit');
     let formulario = document.querySelector('#formulario');
-    
     const form = document.querySelector('#formulario form');
 
     form.productNameEdit.focus();
