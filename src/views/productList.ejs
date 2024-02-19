@@ -20,7 +20,7 @@
             </section>
         </section>
 
-       <% if (user.rol==="admin"){  %> <div class = "crud-buttons">
+       <% if (locals.user?.role==="Administrador"){  %> <div class = "crud-buttons">
         <a href="/products/create"><button type="submit" class="btn-products">Agregá un producto</button></a>
     </div> <% } %>
     

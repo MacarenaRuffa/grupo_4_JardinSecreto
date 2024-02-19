@@ -1,0 +1,20 @@
+<%- include('partials/head', {styles : ['productCreate']}) %>
+<body>
+    <div class="logo-btn">
+        <img src="/images/Logo-verde.png" alt="Logo">
+    </div>
+    <div class="wrapper">
+        <form action="/users/<%= userToEdit.id %>/edit?_method=PUT" method="post">
+            <h1>Modificar datos personales</h1>
+            <div class="input-box">
+                <label for="name" class="form-label">Nombre y apellido:</label>
+                <input type="text" id="nameEdit" name="nameEdit" placeholder="Nombre y apellido" value="<%= userToEdit.name %>">
+            </div>
+            <div class="input-box">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" id="emailEdit" name="emailEdit" placeholder="Email" value="<%= userToEdit.email %>">
+            </div>
+            <button type="submit" class="btn">Guardar Cambios</button>
+        </form>
+    </div>
+</body>

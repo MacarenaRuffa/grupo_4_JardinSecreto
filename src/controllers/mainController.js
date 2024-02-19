@@ -7,7 +7,7 @@ const methodOverride = require('method-override');
 const mainController = {
     home: (req, res) => {
         const user=req.session.user
-        const inSale = products.filter((product) => product.sale === "in-sale");
+        const inSale = products.filter((product) => product.sale === "in-sale"); //usar bdd en vez de json
         res.render('index', { inSale, user });
 
         //const filteredProducts = categories.reduce((acc, category) => {

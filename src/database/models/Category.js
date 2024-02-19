@@ -1,4 +1,5 @@
 'use strict';
+
 const {
     Model
   } = require('sequelize');
@@ -11,25 +12,24 @@ const {
          */
         static associate(models) {
 
-            Category.hasMany(models.Product, { // Esta relacion es de muchos a muchos 
+            Category.hasMany(models.Product, { //consultar elacion
                 foreignKey: "categories_id",
-                as: "products" // esto es el alias de la relacion 
+                as: "products" 
             });
 
         }
     }
     Category.init({
         name: {
-            type: DataTypes.STRING(45),
+            type: DataTypes.TEXT,
             allowNull: false
         }
     },
         {
             sequelize,
             modelName: 'Category',
-            timestamps: false,
-            tableName: 'categories'
-
+            tableName: 'categories',
+            timestamps: false
         });
 
     return Category;

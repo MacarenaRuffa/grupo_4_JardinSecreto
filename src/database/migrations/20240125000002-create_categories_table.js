@@ -12,7 +12,7 @@ module.exports = {
       },
 
       name: {
-        type: Sequelize.STRING(45),
+        type: Sequelize.TEXT,
         allowNull: false
       },
     });

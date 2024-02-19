@@ -5,6 +5,7 @@ const multer = require('multer');
 const path = require('path');
 const methodOverride = require('method-override');
 const { loginValidator } = require('../middlewares/userValidator')
+const usersController = require('../controllers/usersController');
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -19,7 +20,6 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-const usersController = require('../controllers/usersController');
 
 router.get('/register', usersController.register);
 router.post('/register', upload.single('avatar'), usersController.store);
@@ -31,5 +31,13 @@ router.post('/login', loginValidator, usersController.processLogin);
 router.get('/error',usersController.errorcontroller);
 
 router.get('/nologin',usersController.nologin);
+
+// Ruta para actualizar usuario
+router.put('/:id/edit', usersController.update);
+router.get('/:id/edit', usersController.userEdit);
+
+
+// Ruta para eliminar usuario
+router.delete('/:id', usersController.delete);
 
 module.exports = router;

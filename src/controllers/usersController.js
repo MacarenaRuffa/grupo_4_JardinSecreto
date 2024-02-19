@@ -8,67 +8,68 @@ const { validationResult } = require('express-validator');
 const db = require("../database/models");
 
 const usersController = {
-
-
-
 	register: (req, res) => {
 		res.render('register');
 	},
-
 	login: (req, res) => {
 		res.render('login');
 
 	},
-
+	errorcontroller(req, res) {
+		res.render('error');
+	},
+	nologin(req, res) {
+		res.render('nologin');
+	},
 
 	store: async (req, res) => {
 		try {
 			const newUser = {
 				...req.body,
 				password: bcrypt.hashSync(req.body.password, 10),
-				image: req.file?.filename || "default-image.png"
+				image: req.file?.filename || "default-image.png",
+				roles_id: 2
 			};
 			await db.User.create(newUser);
 			res.redirect('/');
 
 		} catch (error) {
-			return res.status(500).send(error)
+			return res.status(500).send("Error al registrarse")
 		}
 
 	},
 
-	processLogin: async (req, res) => {
+	processLogin: async (req, res) => { //Pendiente 
 		try {
-			user = await db.User.findOne({
-				include: ['role'],
+			const user = await db.User.findOne({
 				where: {
 					email: req.body.email
-				}
+				},
+				include: ['role']
 			});
 			if (!user) {
-				return res.render('login', { errors: { unauthorize: { msg: 'Usuario y/o contraseña invalidos' } } });
+				return res.status(404).render('nologin');
 
 			}
 			if (!bcrypt.compareSync(req.body.password, user.password)) {
-				return res.render('login', { errors: { unauthorize: { msg: 'Usuario y/o contraseña invalidos' } } });
+				return res.status(500).render('error');
 			}
 			req.session.user = {
 				id: user.id,
 				name: user.name,
-				user_name: user.user_name,
 				email: user.email,
-				password: user.password,
-				roles_id: user.roles_id.name,
+				role: user.role.name,
 			};
 			res.redirect('/')
 
 		} catch (error) {
-			return res.status(500).send(error)
+			console.log(error)
+			return res.status(500).send("Error interno del servidor, comuniquese con un administrador")
 		}
 	},
-	
 
-	
+
+	//pasar a processLogin
 	remember(req, res) {
 		req.session.usuarioLogueado = usuariologuearse;
 
@@ -77,23 +78,38 @@ const usersController = {
 		};
 	},
 
+	userEdit: async (req, res) => {
+		try {
+			const user = await db.User.findByPk(req.params.id);
+			res.render('userEdit', { userToEdit: user });
+		} catch (error) {
+			res.status(500).send("Error al editar usuario");
+		}
 
-
-	errorcontroller(req, res) {
-		res.render('error');
 	},
-
-	nologin(req, res) {
-		res.render('nologin');
+	// Función para actualizar un usuario
+	update: async (req, res) => {
+		try {
+			await db.User.update({
+				name: req.body.nameEdit,
+				email: req.body.emailEdit
+			}, { where: { id: req.params.id } });
+			console.log('Usuario actualizado correctamente');
+			res.redirect('/')
+		} catch (error) {
+			res.status(500).send('Error al actualizar usuario');
+		}
+	},
+	// Función para eliminar un usuario
+	delete: async (req, res) => {
+		try {
+			await db.User.destroy({ where: { id: req.params.id } });
+			console.log('Usuario eliminado correctamente');
+			res.redirect('/')
+		} catch (error) {
+			res.status(500).send('Error al eliminar usuario');
+		}
 	}
-
-
-
-
-
 };
-
-
-
 
 module.exports = usersController;
