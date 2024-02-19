@@ -11,9 +11,9 @@ const {
          */
         static associate(models) {
 
-            Category.belongsTo(models.Product, { 
+            Category.hasMany(models.Product, { // Esta relacion es de muchos a muchos 
                 foreignKey: "categories_id",
-                as: "products" 
+                as: "products" // esto es el alias de la relacion 
             });
 
         }
