@@ -3,20 +3,26 @@ const path = require('path');
 const productsFilePath = path.join(__dirname, '../data/products.JSON');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const methodOverride = require('method-override');
+const { Product, Category } = require('../database/models')
+
 
 const mainController = {
-    home: (req, res) => {
-        const user=req.session.user
-        const inSale = products.filter((product) => product.sale === "in-sale"); //usar bdd en vez de json
-        res.render('index', { inSale, user });
+    home: async (req, res) => {
+        try {
+            const user = req.session.user;
 
-        //const filteredProducts = categories.reduce((acc, category) => {
-        //     acc[category.toLowerCase()] = products.filter((product) => product.category === category);
-        //    return acc;
-        //}, {});
-        //res.render('index', { ...filteredProducts, inSale });
+            // Obtén los productos en venta directamente desde la base de datos
+            const inSale = await Product.findAll({
+                where: { in_sale: true },
+                include: [{ model: Category, as: 'category' }]
+            });
+            res.render('index', { inSale, user });
+        } catch (error) {
+            console.error("Error al recuperar productos en venta:", error);
+            res.status(500).render('error', { message: 'Error interno del servidor' });
+        }
     },
-
+    // Otros controladores si es necesario
 };
 
 module.exports = mainController;
