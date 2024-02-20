@@ -6,6 +6,7 @@ const path = require('path');
 const methodOverride = require('method-override');
 const { loginValidator } = require('../middlewares/userValidator')
 const usersController = require('../controllers/usersController');
+const { registerValidator} = require('../middlewares/userRegister')
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -22,7 +23,7 @@ const upload = multer({ storage });
 
 
 router.get('/register', usersController.register);
-router.post('/register', upload.single('avatar'), usersController.store);
+router.post('/register', upload.single('avatar'),registerValidator, usersController.store);
 
 router.get('/login', usersController.login);
 

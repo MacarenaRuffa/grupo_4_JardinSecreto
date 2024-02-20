@@ -29,6 +29,7 @@ window.onload = function() {
             }
         }
 
+       
         if(isValid){
             form.submit();
         }
