@@ -10,8 +10,6 @@ const mainController = {
     home: async (req, res) => {
         try {
             const user = req.session.user;
-
-            // Obtén los productos en venta directamente desde la base de datos
             const inSale = await Product.findAll({
                 where: { in_sale: true },
                 include: [{ model: Category, as: 'category' }]
@@ -22,7 +20,7 @@ const mainController = {
             res.status(500).render('error', { message: 'Error interno del servidor' });
         }
     },
-    // Otros controladores si es necesario
+    
 };
 
 module.exports = mainController;
