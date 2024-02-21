@@ -22,8 +22,7 @@ p a{
 main section.bestsellers article img{
     height: 250px;
     background-color: #FAF1E4;
-    border: solid 1px #435334;
-    border-radius: 5px;
+    border-bottom: solid 1px #435334;
 
 }
 
@@ -31,6 +30,16 @@ div.main-article{
     text-align: center;
     width: 100%;
     padding-bottom: 50px;
+}
+
+main section article {
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    background-color: #FAF1E4;
+    margin: 15px;
+    text-align: left;
+    border-top: 1px solid #ebebeb;
+    width: 90%;
+    position: relative;
 }
 
 article div h4, article div p{
@@ -58,4 +67,8 @@ article div h4, article div p{
     text-decoration: none;
     justify-content: space-around;
     align-items: center;
+}
+
+@media (min-width: 768px){
+
 }
