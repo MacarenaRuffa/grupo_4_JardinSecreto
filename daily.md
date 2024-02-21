@@ -11,4 +11,5 @@ Sprint 5.-Middlewares + Auth.
 En este sprint tuvimos  una sola weekly, ya que nos comunicamos mediante mensajes, mientras realizabamos nuestras tareas para informar los avances o inconvenientes que se presentaban.
 Logramos reorganizarnos como equipo para trabajar de manera individual y colaborativamente.
 
-
+Sprint 6. -Bases de datos
+Al no coordinar todo el equipo, decidimos realizar weeklys con ciertos integrantes e ir informando por mensaje lo charlado. Una vez aclaradas las dudas, siendo concientes de lo que estamos realizando, agregar los cambios en la rama principal para no generar conflictos.

@@ -16,4 +16,6 @@ Implementamos una mejor organizacion en las tareas de trabajo y las fechas de en
 Definimos una nueva fecha limite interna, que nos de un margen para resolver ultimos detalles.
 
 
-Sprint 6.-
+Sprint 6.-Bases de datos
+En el presente, tuvimos muchos conflictos para resolver las tareas. Hubo falta de responsabilidad y cumplimiento con las tareas individuales, lo que llevo a no poder cumplir con el plazo estimado. Sin embargo, logramos completar las actividades faltantes de manera grupal. 
+Debemos mejorar la comunicacion como equipo y consultar con nuestros compañeros todas las dudas que surgan durante la revision individual del codigo. 
