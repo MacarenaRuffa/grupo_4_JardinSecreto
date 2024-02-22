@@ -11,8 +11,9 @@ const usersRoutes = require('./routes/users');
 const userRemember = require('./middlewares/userRemember');
 const apiProductsRouter = require('./routes/api/productsAPI')
 const app = express();
+const cors = require('cors');
 
-const PORT = 3306;  // Cambié el nombre de la variable a PORT para evitar conflictos
+const PORT = 3306;  
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -34,6 +35,8 @@ app.use(userRemember);
 app.use('/', mainRoutes);
 app.use('/products', productsRoutes);
 app.use('/users', usersRoutes)
+
+app.use(cors());
 
 app.use('/api/products', apiProductsRouter);
 

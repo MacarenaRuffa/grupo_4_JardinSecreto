@@ -1,15 +1,16 @@
 const db = require('../../database/models');
 
+
 const controller = {
     async list(req, res) {
         try {
             const products = await db.Product.findAll({
-                include: ['category']
+                // include: ['category']
             });
             const response = {
                 status: 200,
                 count: products.length,
-                url: 'api/products',
+                url: '/api/products',
                 data: products
             };
             res.send(response);
