@@ -4,3 +4,5 @@ const productsAPIController = require ('../../controllers/api/productsAPIControl
 
 router.get('/', productsAPIController.list);
 router.get('/:id', productsAPIController.productDetail);
+
+module.exports = router
