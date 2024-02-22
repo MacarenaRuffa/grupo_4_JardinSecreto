@@ -9,6 +9,7 @@ const mainRoutes = require('./routes/main');
 const productsRoutes = require('./routes/products');
 const usersRoutes = require('./routes/users');
 const userRemember = require('./middlewares/userRemember');
+const apiProductsRouter = require('./routes/api/productsAPI')
 const app = express();
 
 const PORT = 3306;  // Cambié el nombre de la variable a PORT para evitar conflictos
@@ -34,64 +35,38 @@ app.use('/', mainRoutes);
 app.use('/products', productsRoutes);
 app.use('/users', usersRoutes)
 
-const users = [
-    { id: 1, username: 'admin', password: 'admin', isAdmin: true },
-    { id: 2, username: 'usuario', password: 'usuario', isAdmin: false }
-];
+app.use('/api/products', apiProductsRouter);
 
-function isAuthenticated(req, res, next) {
-    if (req.isAuthenticated()) {
-        return next();
-    }
-    res.redirect('/register');
-}
+// const users = [
+//     { id: 1, username: 'admin', password: 'admin', isAdmin: true },
+//     { id: 2, username: 'usuario', password: 'usuario', isAdmin: false }
+// ];
 
-app.get('/register', (req, res) => {
-    res.render('register');
-});
+// app.get('/register', (req, res) => {
+//     res.render('register');
+// });
 
-function isAuthenticated(req, res, next) {
-    if (req.isAuthenticated()) {
-        return next();
-    }
-    res.redirect('/login');
-}
+// app.get('/login', (req, res) => {
+//     res.render('login');
+// });
 
-app.get('/login', (req, res) => {
-    res.render('login');
-});
+// app.get('/create', (req, res) => {
+//     res.render('create');
+// });
 
-function isAuthenticated(req, res, next) {
-    if (req.isAuthenticated()) {
-        return next();
-    }
-    res.redirect('/create');
-}
+// app.get('/edit', (req, res) => {
+//     res.render('edit');
+// });
 
-app.get('/create', (req, res) => {
-    res.render('create');
-});
+// app.get('/carrito', isAuthenticated, (req, res) => {
+//     res.render('carrito', { user: req.user });
+// });
 
-function isAuthenticated(req, res, next) {
-    if (req.isAuthenticated()) {
-        return next();
-    }
-    res.redirect('/edit');
-}
-
-app.get('/edit', (req, res) => {
-    res.render('edit');
-});
-
-app.get('/carrito', isAuthenticated, (req, res) => {
-    res.render('carrito', { user: req.user });
-});
-
-app.get('/logout', (req, res) => {
-    delete req.session.user;
-    //req.logout();
-    res.redirect('/');
-});
+// app.get('/logout', (req, res) => {
+//     delete req.session.user;
+//     //req.logout();
+//     res.redirect('/');
+// });
 
 const port = process.env.PORT || 3306;
 app.listen(port, () => {
@@ -99,3 +74,36 @@ app.listen(port, () => {
 });
 
 module.exports = app;
+
+// function isAuthenticated(req, res, next) {
+//     if (req.isAuthenticated()) {
+//         return next();
+//     }
+//     res.redirect('/register');
+// }
+
+
+// function isAuthenticated(req, res, next) {
+//     if (req.isAuthenticated()) {
+//         return next();
+//     }
+//     res.redirect('/login');
+// }
+
+
+// function isAuthenticated(req, res, next) {
+//     if (req.isAuthenticated()) {
+//         return next();
+//     }
+//     res.redirect('/create');
+// }
+
+
+
+// function isAuthenticated(req, res, next) {
+//     if (req.isAuthenticated()) {
+//         return next();
+//     }
+//     res.redirect('/edit');
+// }
+

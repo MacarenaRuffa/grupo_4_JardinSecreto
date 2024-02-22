@@ -1,7 +1,7 @@
-const fs = require('fs');
-const path = require('path');
-const userFilePath = path.join(__dirname, '../data/user.JSON');
-const users = JSON.parse(fs.readFileSync(userFilePath, 'utf-8'));
+//const fs = require('fs');
+//const path = require('path');
+//const userFilePath = path.join(__dirname, '../data/user.JSON');
+//const users = JSON.parse(fs.readFileSync(userFilePath, 'utf-8'));
 const bcrypt = require('bcrypt');
 const methodOverride = require('method-override');
 const { validationResult } = require('express-validator');

@@ -1,4 +1,6 @@
 # grupo_4_JardinSecreto
+El link del repositorio que contiene el proyecto react-vite es:
+https://github.com/xagustinaperalta/jardin-secreto-react.git
 
 Descripción del producto ofrecido en el sitio:
 
