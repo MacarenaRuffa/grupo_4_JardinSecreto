@@ -11,6 +11,11 @@ const productValidator = [
         .notEmpty().withMessage('La descripción del producto es obligatoria.')
         .isLength({ min: 20 }).withMessage('La descripcion del producto debe tener al menos 20 caracteres.'),
 
+    // FINALIZAR 
+    //body('price')
+    //     .notEmpty().withMessage('La descripción del producto es obligatoria.')
+
+
     // Validaciones para la imagen del producto
     body('image')
         .custom((value, { req }) => {
