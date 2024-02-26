@@ -1,32 +1,37 @@
 <footer>
-    <section>
-        <h5>Regalá una giftcard!</h5>
-        <a href="#"><i class="fas fa-gift fa-lg"></i></a>
-    </section>
-    <section>
-        <h5>Contactate con nosotros</h5>
-        <a href="#"><i class="fas fa-envelope fa-lg"></i></a>
-    </section>
-    <section>
-        <h5>Asesoramiento</h5>
-        <a href="#"><i class="fas fa-toolbox fa-lg"></i></a>
-    </section>   
+
+  <section class="footer-info">
+    <i class="fas fa-gift fa-lg"></i>
+    <h5>Regalá una giftcard!</h5>
+  </section>
+
+  <section class="footer-info">
+    <i class="fas fa-envelope fa-lg"></i>
+    <h5>Contactate con nosotros</h5>
+  </section>
+
+  <section class="footer-info">
+    <i class="fas fa-toolbox fa-lg"></i>
+    <h5>Asesoramiento</h5>
+  </section>
+
+
 </footer>
-<div class = "info">
-    <p>Copyright ©2023 Jardín Secreto. Todos los derechos reservados</p>
+<div class="info">
+  <p>Copyright ©2023 Jardín Secreto. Todos los derechos reservados</p>
 </div>
 
 <p>
-    <% if (locals.user && locals.user.role === 'Administrador') { %>
-      Bienvenido, Administrador.
-    <% } else if (locals.user && locals.user.role === 'Cliente') { %>
+  <% if (locals.user && locals.user.role==='Administrador' ) { %>
+    Bienvenido, Administrador.
+    <% } else if (locals.user && locals.user.role==='Cliente' ) { %>
       Bienvenido, Cliente.
-    <% } else { %>
-      Bienvenido, Visitante.
-    <% } %>
+      <% } else { %>
+        Bienvenido, Visitante.
+        <% } %>
 
-  </p>
+</p>
 
-   
+
 
 <script src="/js/script.js"></script> <!--Prueba de linkeo para la carpeta de funciones scrip -Fran -->
