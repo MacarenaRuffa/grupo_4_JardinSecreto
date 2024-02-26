@@ -67,11 +67,11 @@ app.use('/api/users', apiUsersRouter);
 //     res.render('carrito', { user: req.user });
 // });
 
-// app.get('/logout', (req, res) => {
-//     delete req.session.user;
-//     //req.logout();
-//     res.redirect('/');
-// });
+ app.get('/logout', (req, res) => {
+     delete req.session.user;
+     //req.logout();
+     res.redirect('/');
+ });
 
 const port = process.env.PORT || 3306;
 app.listen(port, () => {
