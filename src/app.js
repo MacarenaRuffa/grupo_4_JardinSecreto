@@ -10,6 +10,7 @@ const productsRoutes = require('./routes/products');
 const usersRoutes = require('./routes/users');
 const userRemember = require('./middlewares/userRemember');
 const apiProductsRouter = require('./routes/api/productsAPI')
+const apiUsersRouter = require ('./routes/api/usersAPI')
 const app = express();
 const cors = require('cors');
 
@@ -39,6 +40,7 @@ app.use('/users', usersRoutes)
 app.use(cors());
 
 app.use('/api/products', apiProductsRouter);
+app.use('/api/users', apiUsersRouter);
 
 // const users = [
 //     { id: 1, username: 'admin', password: 'admin', isAdmin: true },
