@@ -42,34 +42,9 @@ app.use(cors());
 app.use('/api/products', apiProductsRouter);
 app.use('/api/users', apiUsersRouter);
 
-// const users = [
-//     { id: 1, username: 'admin', password: 'admin', isAdmin: true },
-//     { id: 2, username: 'usuario', password: 'usuario', isAdmin: false }
-// ];
-
-// app.get('/register', (req, res) => {
-//     res.render('register');
-// });
-
-// app.get('/login', (req, res) => {
-//     res.render('login');
-// });
-
-// app.get('/create', (req, res) => {
-//     res.render('create');
-// });
-
-// app.get('/edit', (req, res) => {
-//     res.render('edit');
-// });
-
-// app.get('/carrito', isAuthenticated, (req, res) => {
-//     res.render('carrito', { user: req.user });
-// });
-
  app.get('/logout', (req, res) => {
      delete req.session.user;
-     //req.logout();
+   
      res.redirect('/');
  });
 
@@ -80,35 +55,4 @@ app.listen(port, () => {
 
 module.exports = app;
 
-// function isAuthenticated(req, res, next) {
-//     if (req.isAuthenticated()) {
-//         return next();
-//     }
-//     res.redirect('/register');
-// }
-
-
-// function isAuthenticated(req, res, next) {
-//     if (req.isAuthenticated()) {
-//         return next();
-//     }
-//     res.redirect('/login');
-// }
-
-
-// function isAuthenticated(req, res, next) {
-//     if (req.isAuthenticated()) {
-//         return next();
-//     }
-//     res.redirect('/create');
-// }
-
-
-
-// function isAuthenticated(req, res, next) {
-//     if (req.isAuthenticated()) {
-//         return next();
-//     }
-//     res.redirect('/edit');
-// }
 

@@ -12,8 +12,9 @@ const productValidator = [
         .isLength({ min: 20 }).withMessage('La descripcion del producto debe tener al menos 20 caracteres.'),
 
     // FINALIZAR 
-    //body('price')
-    //     .notEmpty().withMessage('La descripción del producto es obligatoria.')
+    body('price')
+         .notEmpty().withMessage('La descripción del producto es obligatoria.')
+         .isNumeric().withMessage('El precio debe ser un numero'),
 
 
     // Validaciones para la imagen del producto
