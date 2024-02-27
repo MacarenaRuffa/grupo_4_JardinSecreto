@@ -18,7 +18,8 @@ const productValidator = [
 
 
     // Validaciones para la imagen del producto
-    body('image')
+    body('image') 
+        .optional()
         .custom((value, { req }) => {
             if (!req.file) {
                 throw new Error('Debe adjuntar una imagen valida.');

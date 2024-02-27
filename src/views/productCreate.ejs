@@ -10,32 +10,56 @@
                     <h1>Agregar productos</h1>
 
                     <div class="input-box">
-                        <label for="name">Nombre del producto:</label>
-                        <input type="text" id="name" name="name" placeholder="Ingrese el nombre">
-                        <p id="err-name"></p>
+                        <label for="name" class="form-label">Nombre del producto:</label>
+                        <input type="text" id="productNameEdit" name="name" placeholder="Nombre del producto"
+                            value="<%= productToEdit.name %>">
+                        <p id="err-productNameEdit"></p>
+                        <%if(locals.errors && locals.errors.name){%>
+                            <p>
+                                <%= errors.name.msg %>
+                            </p>
+                            <%} %>
+
+                                <p id="err-name"></p>
                     </div>
 
                     <div class="input-box">
-                        <label for="description">Descripción del producto:</label>
-                        <textarea name="description" id="description" placeholder="Ingrese la descripción"></textarea>
-                        <p id="err-description"></p>
+                        <label for="description" class="form-label">Descripción:</label>
+                        <textarea name="description" id="descriptionEdit"
+                            placeholder="Descripción del producto"><%= productToEdit.description %></textarea>
+                        <p id="err-descriptionEdit"></p>
+                        <%if(locals.errors && locals.errors.description){%>
+                            <p>
+                                <%= errors.description.msg %>
+                            </p>
+                            <%} %>
+
+                                <p id="err-description"></p>
                     </div>
 
                     <div class="input-box">
-                        <label for="price">Precio del producto:</label>
-                        <input type="text" id="price" name="price" placeholder="Ingrese el precio">
+                        <label for="price" class="form-label">Precio del producto:</label>
+                        <input type="text" id="priceEdit" name="price" placeholder="Precio del producto"
+                            value="<%= productToEdit.price %>">
+                        <p id="err-priceEdit"></p>
+                        <%if(locals.errors && locals.errors.price){%>
+                            <p>
+                                <%= errors.price.msg %>
+                            </p>
+                            <%} %>
+                
                         <p id="err-price"></p>
                     </div>
 
                     <div class="input-box">
-                        <label for="category">Seleccione categoría:</label>
-                        <select name="category" id="category">
+                        <label class="copy">Seleccione categoría:<%= productToEdit.categories_id %></label>
+                        <select name="categories_id" id="categoryEdit">
                             <option value="">Elegir</option>
-                            <option value="semillas">Semillas</option>
-                            <option value="macetas">Macetas</option>
-                            <option value="herramientas">Herramientas</option>
-                            <option value="interior">Interior</option>
-                            <option value="exterior">Exterior</option>
+                            <% categories.forEach(element=> {%>
+                                <option value="<%= element.id %>" <%=productToEdit.categories_id===element.id
+                                    && 'selected' %>><%= element.name %>
+                                </option>
+                                <% }); %>
                         </select>
                         <p id="err-category"></p>
                     </div>
@@ -47,8 +71,17 @@
                     </div>
 
                     <div class="input-box">
-                        <label for="sale">¿Está en oferta?</label>
-                        <input type="text" id="in_sale" name="in_sale" placeholder="Sí/No">
+                        <label for="sale" class="form-label">¿Está en oferta?":</label>
+                        <select id="in_saleEdit" name="in_sale">
+                            <option value="">Elegir</option>
+                            <option value="1" <%=productToEdit.in_sale== 1 && 'selected'%> >
+                            si
+                            </option>
+                            <option value="0" <%=productToEdit.in_sale== 0 && 'selected'%> >
+                                no
+                                </option>
+                        </select>
+                       
                         <p id="err-in_sale"></p>
                     </div>
 

@@ -9,9 +9,7 @@ const mainRoutes = require('./routes/main');
 const productsRoutes = require('./routes/products');
 const usersRoutes = require('./routes/users');
 const userRemember = require('./middlewares/userRemember');
-const productValidator = require('./middlewares/productValidator');
-const loginValidator = require('./middlewares/userValidator');
-const registerValidator = require('./middlewares/userRegister');
+
 const apiProductsRouter = require('./routes/api/productsAPI')
 const apiUsersRouter = require ('./routes/api/usersAPI')
 const app = express();
@@ -26,6 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+app.use(cors());
 
 app.use(session({
     secret: '1234567',
@@ -36,15 +35,12 @@ app.use(cookieParser());
 app.use(methodOverride('_method'));
 
 app.use(userRemember);
-app.post(productValidator);
-app.post(loginValidator);
-app.post(registerValidator);
+
 
 app.use('/', mainRoutes);
 app.use('/products', productsRoutes);
 app.use('/users', usersRoutes)
 
-app.use(cors());
 
 app.use('/api/products', apiProductsRouter);
 app.use('/api/users', apiUsersRouter);
