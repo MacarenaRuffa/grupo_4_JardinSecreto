@@ -3,125 +3,102 @@ main {
   background-color: #FAF1E4;
 }
 
-
 .product {
   display: flex;
   align-items: center;
   margin-left: 20px;
-  
-   border: 2px solid bisque;
-  /* box-shadow: 10px 10px 10px 5px rgb(100, 100, 100);  */
-
-
-
+  flex-direction: column;
 }
-.product-img{
+
+.product-img {
   background-color: #FAF1E4;
   border-radius: 50%;
-    margin-right:  20px;
-    margin-left: 20px;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-top: 10%;
+  width: 40%;
 }
-.product-info{
+
+.product-info {
   margin-left: 30px;
 }
-div.product-info h3{
- margin-top: 10px;
- margin-bottom: 15px;
-  font-size: 30px;
-  background-color: rgb(158,179,132);
-  border-radius: 20px;
-   width: 30%;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  color: #FAF1E4;
-  
+
+div.product-info h3 {
+  font-size: 25px;
+  background-color:#FAF1E4 ;
+  width: max-content;
+  color: rgb(158, 179, 132);
+
 }
+
 .product-info h2 {
   margin-top: 30px;
 }
 
-section div.payment-methods i{
-font-size: 30px;
+section div.payment-methods i {
+  font-size: 30px;
 }
 
 .description,
 .location,
 .payment-methods {
-  width: 50%;
-  margin-top: 15px;
- 
-
+  width: 100%;
 }
 
-.button-trolley{
+.button-trolley {
   padding: 10px 20px;
   margin-bottom: 20px;
-  background-color: #4CAF50; /* Color de fondo */
-  color: white; /* Color del texto */
+  background-color: #4CAF50;
+  color: white;
   border: none;
   border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
 }
 
-.button-trolley:hover {
-  background-color: #45A049;
-
-}
 
 .product-imgSmall {
-  width: 15%;
- margin-bottom: 20px;
- margin-top: 20px;
-  cursor: pointer;
+  width: 30%;
+  margin-bottom: 20px;
   margin-top: 15px;
-border-radius: 50%;
-  background-color: #FAF1E4;
-
-}
-
-.product-imgSmall:hover {
-  background-color: bisque;
   border-radius: 50%;
+  background-color: #FAF1E4;
 }
-/* MEDIDAS QUERY */
 
-@media  (max-width: 470px) { 
-    .product{
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-  
+
+@media (min-width: 768px) {
+
+  .product{
+    flex-direction: row;
   }
-  .button-trolley{
+
+  .description,
+  .location,
+  .payment-methods {
+    width: 50%;
+    margin-top: 15px;
+  }
+
+  .button-trolley {
     text-align: center;
-    margin-left: 30%;
+    cursor: pointer;
+    transition: background-color 0.3s;
   }
- 
-  .description{
-  width: 100%;
+
+  .button-trolley:hover {
+    background-color: #45A049;
   }
+
+  
   .product-imgSmall{
-    width: 30%;
+  cursor: pointer;
   }
+
+  .product-imgSmall:hover {
+    background-color: bisque;
+    border-radius: 50%;
+  }
+  .product-gallery {
+    width: 50%;
+  }
+
+
 }
-
-
-  @media (max-width: 768px)  {
-
-     .product{
-    display: flex;
-    /* flex-direction: column; */
-    margin: auto;
-  
-  }
-  .product-img{
-    width: 40%;
-  }
-  .description{
-  width: 100%;
-  }
-  
-  } 
-
-
