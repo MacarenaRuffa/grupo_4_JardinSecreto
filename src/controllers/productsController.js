@@ -18,6 +18,7 @@ const productsController = {
 
 	productCreate:async (req, res) => {
 		try {
+			
 			const categories = await db.Category.findAll();
 			res.render('productCreate', {categories});
 			

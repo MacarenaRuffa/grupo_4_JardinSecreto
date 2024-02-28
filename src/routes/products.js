@@ -3,7 +3,8 @@ const express = require('express');
 const router = express.Router();
 const multer = require('multer');
 const path = require('path');
-const { productValidator} = require('../middlewares/productValidator')
+const { productValidator} = require('../middlewares/productValidator');
+
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
