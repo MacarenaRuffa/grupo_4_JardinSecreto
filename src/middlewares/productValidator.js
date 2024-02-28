@@ -13,7 +13,7 @@ const productValidator = [
 
     // FINALIZAR 
     body('price')
-         .notEmpty()
+         .notEmpty().withMessage('El precio es obligatorio')
          .isNumeric().withMessage('El precio debe ser un numero'),
 
 

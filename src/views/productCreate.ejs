@@ -11,79 +11,75 @@
 
                 <div class="input-box">
                     <label for="name" class="form-label">Nombre del producto:</label>
-                    <input type="text" id="name" name="name" placeholder="Nombre del producto" value="<%= (locals.oldData && oldData.name) && oldData.name %>">
+                    <input type="text" id="name" name="name" placeholder="Nombre del producto" value="<%= (locals.oldData && oldData.name) ? oldData.name : "" %>">
                     
-                    <%if(locals.errors && locals.errors.name){%>
+                    <% if(locals.errors && locals.errors.name) { %>
                         <p>
                             <%= errors.name.msg %>
                         </p>
-                        <%} %>
-                 
-                 
-                
-                    <p id="err-name"></p>
+                    <% } %>
                 </div>
 
                 <div class="input-box">
                     <label for="description" class="form-label">Descripción:</label>
-                    <textarea name="description" id="description" placeholder="Descripción del producto" value="<%= (locals.oldData && oldData.name) && oldData.name %>"> </textarea>
+                    <textarea name="description" id="description" placeholder="Descripción del producto"><%= (locals.oldData && oldData.description) ? oldData.description : "" %></textarea>
                     
-                    <%if(locals.errors && locals.errors.name){%>
+                    <% if(locals.errors && locals.errors.description) { %>
                         <p>
-                            <%= errors.name.msg %>
+                            <%= errors.description.msg %>
                         </p>
-                        <%} %>
-                 
-                       
-                    <p id="err-description"></p>
+                    <% } %>
                 </div>
 
                 <div class="input-box">
                     <label for="price" class="form-label">Precio del producto:</label>
-                    <input type="text" id="price" name="price" placeholder="Precio del producto" value="<%= (locals.oldData && oldData.name) && oldData.name %>">
+                    <input type="text" id="price" name="price" placeholder="Precio del producto" value="<%= (locals.oldData && oldData.price) ? oldData.price : "" %>">
                    
-                    <%if(locals.errors && locals.errors.name){%>
+                    <% if(locals.errors && locals.errors.price) { %>
                         <p>
-                            <%= errors.name.msg %>
+                            <%= errors.price.msg %>
                         </p>
-                        <%} %>
-            
-                    <p id="err-price"></p>
+                    <% } %>
                 </div>
 
                 <div class="input-box">
                     <label for="categoryId">Categoría:</label>
                     <select id="categoryId" name="categoryId">
-
-                        <option value="">Elegí</option>
-                        <% for(let i=0; i < categories.length; i++) { %>
-                            <option value="<%= categories[i].id %>" <%= (locals.oldData &&
-                                oldData.categoryId == categories[i].id) ? 'selected' : '' %>>
+                        <option value="">Elegir</option>
+                        <% for(let i = 0; i < categories.length; i++) { %>
+                            <option value="<%= categories[i].id %>" <%= (locals.oldData && oldData.categoryId == categories[i].id) ? 'selected' : '' %>>
                                 <%= categories[i].name %>
-                        </option>
-                            <% } %>
+                            </option>
+                        <% } %>
                     </select>
-                    <% if (locals.errors && errors.categoryId) { %>
+                    <% if (locals.errors && locals.errors.categoryId) { %>
                         <span class="fieldError">
                             <%= errors.categoryId.msg %>
                         </span>
-                        <% } %>
-                    <p id="err-category"></p>
+                    <% } %>
                 </div>
 
                 <div class="input-box">
                     <label for="image">Foto del producto:</label>
                     <input type="file" id="image" name="image" accept="image/*">
-                    <p id="err-image"></p>
+                    <% if(locals.errors && locals.errors.image) { %>
+                        <p>
+                            <%= errors.image.msg %>
+                        </p>
+                    <% } %>
                 </div>
 
                 <div class="input-box">
-                    <label for="sale">¿Está en oferta?</label>
+                    <label for="in_sale">¿Está en oferta?</label>
                     <select id="in_sale" name="in_sale" onchange="updateSaleValue()">
                         <option value="1">Sí</option>
                         <option value="0">No</option>
                     </select>
-                    <p id="err-in_sale"></p>
+                    <% if(locals.errors && locals.errors.in_sale) { %>
+                        <p>
+                            <%= errors.in_sale.msg %>
+                        </p>
+                    <% } %>
                 </div>
 
                 <button type="submit" class="btn">Guardar producto nuevo</button>

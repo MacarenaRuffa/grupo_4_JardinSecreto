@@ -1,39 +1,46 @@
-window.onload = function(){
-    let name = document.querySelector('.input-box #name');
-    let formulario = document.querySelector('#formulario');
+window.onload = function() {
     const form = document.querySelector('#formulario form');
-   
-    form.name.focus();
-    const required = {
-        name: true,
-        description: true,
-        price: true,
-        image: true,
-        in_sale: true,
-        category: true
-       
-    };
-    form.addEventListener('submit', (event) => {
-        event.preventDefault();
+
+    form.querySelector('#name').focus();
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // se evita que el formulario se envie automaticamente
+
         let isValid = true;
-        for (const key in required) {
+
+        const fields = {
+            name: 'Nombre del producto',
+            description: 'Descripción',
+            price: 'Precio',
+            categoryId: 'Categoría',
+            image: 'Imagen',
+            in_sale: 'Estado de oferta'
+        };
+
+        // se verifica si los campos estan vacios
+        for (const key in fields) {
+            const field = form.elements[key];
             const err = document.getElementById(`err-${key}`);
-            if (required[key] && !form[key]?.value) {
-                form[key].classList.add('is-invalid');
-                err.classList.add('alert-warning');
-                err.innerText = 'El campo es requerido';
-                isValid = false;
+
+            if (field && err) {
+                if (!field.value) {
+                    field.classList.add('is-invalid'); // agrega clase de error a los campos vacios
+                    err.classList.add('alert-warning');
+                    err.innerText = `El campo "${fields[key]}" es requerido`;
+                    isValid = false;
+                } else {
+                    field.classList.remove('is-invalid'); // elimina clase de error si el campo tiene valor
+                    err.classList.remove('alert-warning');
+                    err.innerText = '';
+                }
             } else {
-                form[key].classList.remove('is-invalid');
-                err.classList.remove('alert-warning');
-                err.innerText = '';
+                console.error(`Element with key ${key} not found.`);
             }
         }
+
+        // envia el formulario si todos los campos estan completos
         if (isValid) {
             form.submit();
         }
     });
-
-}
-  
-
+};

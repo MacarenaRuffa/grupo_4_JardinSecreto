@@ -1,10 +1,11 @@
-const { validationResult } = require('express-validator')
-
-const db = require("../database/models")
 //const fs = require('fs');
 //const path = require('path');
 //const productsFilePath = path.join(__dirname, '../data/products.json');
 //const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+const { validationResult } = require('express-validator')
+
+const db = require("../database/models")
 
 const productsController = {
 	productDetail: async (req, res) => {
@@ -16,12 +17,10 @@ const productsController = {
 		}
 	},
 
-	productCreate:async (req, res) => {
+	productCreate: async (req, res) => {
 		try {
-			
 			const categories = await db.Category.findAll();
-			res.render('productCreate', {categories});
-			
+			res.render('productCreate', { categories });
 		} catch (error) {
 			return res.status(500).send("error");
 		}
@@ -31,7 +30,8 @@ const productsController = {
 		try {
 			const errors = validationResult(req);
 			if (!errors.isEmpty()) {
-				return res.render('productCreate', { oldData: req.body, errors: errors.mapped(),categories });
+				const categories = await db.Category.findAll();
+				return res.render('productCreate', { oldData: req.body, errors: errors.mapped(), categories });
 			}
 			const newProduct = {
 				...req.body,
@@ -50,9 +50,8 @@ const productsController = {
 			return res.render("login");
 		}
 		res.render('productCart', { user });
-
 	},
-	//replicar el de user
+
 	productEdit: async (req, res) => {
 		try {
 			const product = await db.Product.findByPk(req.params.id);
@@ -61,15 +60,14 @@ const productsController = {
 		} catch (error) {
 			res.status(500).send("error");
 		}
-
 	},
 
 	update: async (req, res) => {
 		try {
-			const categories = await db.Category.findAll();
 			const errors = validationResult(req);
 			if (!errors.isEmpty()) {
-				return res.render('productEdit', { productToEdit: req.body, errors: errors.mapped(),categories });
+				const categories = await db.Category.findAll();
+				return res.render('productEdit', { productToEdit: req.body, errors: errors.mapped(), categories });
 			}
 			await db.Product.update({
 				name: req.body.name,
@@ -80,20 +78,20 @@ const productsController = {
 			},
 				{ where: { id: req.params.id } });
 			console.log('Producto actualizado correctamente');
-			res.redirect('/products')
+			res.redirect('/products');
 		} catch (error) {
-			return res.status(500).send("error")
+			return res.status(500).send("error");
 		}
-
-		//CODIGO VIEJO DE ACTUALIZAR
-		// const indexProduct = products.findIndex((product) => product.id == req.params.id);
-		// products[indexProduct] = {
-		// 	...products[indexProduct],
-		// 	...req.body
-		// };
-		// fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
-		// res.redirect('/products');
 	},
+
+	//CODIGO VIEJO DE ACTUALIZAR
+	// const indexProduct = products.findIndex((product) => product.id == req.params.id);
+	// products[indexProduct] = {
+	// 	...products[indexProduct],
+	// 	...req.body
+	// };
+	// fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
+	// res.redirect('/products');
 
 	/*destroy: (req, res) => {
 		const indexProduct = products.findIndex((product) => product.id == req.params.id);
