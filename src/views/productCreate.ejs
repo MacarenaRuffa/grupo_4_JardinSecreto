@@ -22,9 +22,9 @@
 
                 <div class="input-box">
                     <label for="description" class="form-label">Descripción:</label>
-                    <textarea name="description" id="description" placeholder="Descripción del producto" value="<%= (locals.oldData && oldData.name) && oldData.name %>"> </textarea>
+                    <textarea name="description" id="description" placeholder="Descripción del producto"><%= (locals.oldData && oldData.description) ? oldData.description : "" %></textarea>
                     
-                    <%if(locals.errors && locals.errors.name){%>
+                    <% if(locals.errors && locals.errors.description) { %>
                         <p>
                             <%= errors.description.msg %>
                         </p>
@@ -33,9 +33,9 @@
 
                 <div class="input-box">
                     <label for="price" class="form-label">Precio del producto:</label>
-                    <input type="text" id="price" name="price" placeholder="Precio del producto" value="<%= (locals.oldData && oldData.name) && oldData.name %>">
+                    <input type="text" id="price" name="price" placeholder="Precio del producto" value="<%= (locals.oldData && oldData.price) ? oldData.price : "" %>">
                    
-                    <%if(locals.errors && locals.errors.name){%>
+                    <% if(locals.errors && locals.errors.price) { %>
                         <p>
                             <%= errors.price.msg %>
                         </p>
@@ -45,18 +45,16 @@
                 <div class="input-box">
                     <label for="categoryId">Categoría:</label>
                     <select id="categoryId" name="categoryId">
-
-                        <option value="">Elegí</option>
-                        <% for(let i=0; i < categories.length; i++) { %>
-                            <option value="<%= categories[i].id %>" <%= (locals.oldData &&
-                                oldData.categoryId == categories[i].id) ? 'selected' : '' %>>
+                        <option value="">Elegir</option>
+                        <% for(let i = 0; i < categories.length; i++) { %>
+                            <option value="<%= categories[i].id %>" <%= (locals.oldData && oldData.categoryId == categories[i].id) ? 'selected' : '' %>>
                                 <%= categories[i].name %>
                             </option>
                         <% } %>
                     </select>
-                    <% if (locals.errors && errors.categoryId) { %>
+                    <% if (locals.errors && locals.errors.categoryId) { %>
                         <span class="fieldError">
-                            <%= errors.category.msg %>
+                            <%= errors.categoryId.msg %>
                         </span>
                     <% } %>
                 </div>
