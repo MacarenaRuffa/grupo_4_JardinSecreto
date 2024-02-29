@@ -18,17 +18,19 @@
                             <%= errors.name.msg %>
                         </p>
                     <% } %>
+                    <p id="err-name"></p>
                 </div>
 
                 <div class="input-box">
                     <label for="description" class="form-label">Descripción:</label>
                     <textarea name="description" id="description" placeholder="Descripción del producto"><%= (locals.oldData && oldData.description) ? oldData.description : "" %></textarea>
                     
-                    <% if(locals.errors && locals.errors.description) { %>
+                    <% if(locals.errors && locals.errors.description){ %>
                         <p>
                             <%= errors.description.msg %>
                         </p>
                     <% } %>
+                    <p id="err-description"></p>
                 </div>
 
                 <div class="input-box">
@@ -40,6 +42,7 @@
                             <%= errors.price.msg %>
                         </p>
                     <% } %>
+                    <p id="err-price"></p>
                 </div>
 
                 <div class="input-box">
@@ -67,6 +70,7 @@
                             <%= errors.image.msg %>
                         </p>
                     <% } %>
+                    
                 </div>
 
                 <div class="input-box">
@@ -80,6 +84,7 @@
                             <%= errors.in_sale.msg %>
                         </p>
                     <% } %>
+                    
                 </div>
 
                 <button type="submit" class="btn">Guardar producto nuevo</button>

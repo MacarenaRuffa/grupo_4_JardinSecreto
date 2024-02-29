@@ -11,7 +11,7 @@
                     <div class="input-box">
                         <label for="name" class="form-label">Nombre del producto:</label>
                         <input type="text" id="productNameEdit" name="name" placeholder="Nombre del producto"
-                            value="<%= productToEdit.name %>">
+                           required value="<%= productToEdit.name %>">
                         <p id="err-productNameEdit"></p>
                         <%if(locals.errors && locals.errors.name){%>
                             <p>
@@ -22,7 +22,8 @@
                     <div class="input-box">
                         <label for="description" class="form-label">Descripción:</label>
                         <textarea name="description" id="descriptionEdit"
-                            placeholder="Descripción del producto"><%= productToEdit.description %></textarea>
+                            placeholder="Descripción del producto" 
+                            required value="<%= productToEdit.description %>"></textarea>
                         <p id="err-descriptionEdit"></p>
                         <%if(locals.errors && locals.errors.description){%>
                             <p>
@@ -33,7 +34,7 @@
                     <div class="input-box">
                         <label for="price" class="form-label">Precio del producto:</label>
                         <input type="text" id="priceEdit" name="price" placeholder="Precio del producto"
-                            value="<%= productToEdit.price %>">
+                           required value="<%= productToEdit.price %>">
                         <p id="err-priceEdit"></p>
                         <%if(locals.errors && locals.errors.price){%>
                             <p>

@@ -16,6 +16,10 @@ const productValidator = [
          .notEmpty().withMessage('El precio es obligatorio')
          .isNumeric().withMessage('El precio debe ser un numero'),
 
+    body('categoryId')
+         .notEmpty().withMessage('La categoria es obligatoria'),
+         //.isNumeric().withMessage('El precio debe ser un numero'),
+
 
     // Validaciones para la imagen del producto
     body('image') 
@@ -33,4 +37,4 @@ const productValidator = [
         }),
 ];
 
-module.exports = { productValidator };
+module.exports = { productValidator };
