@@ -32,7 +32,10 @@ router.get('/detail/:id', productsController.productDetail);
 router.get('/cart', productsController.productCart);
 
 router.get('/:id/edit', productsController.productEdit);
-router.put('/:id/edit', productValidator, productsController.update);
+router.put('/:id/edit', upload.single('image'), productValidator, (req, res) => {
+    console.log('Llegó a la ruta PUT /:id/edit');
+    productsController.update(req, res);
+});
 
 router.delete('/:id/delete', productsController.delete);
 

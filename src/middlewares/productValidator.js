@@ -16,7 +16,7 @@ const productValidator = [
          .notEmpty().withMessage('El precio es obligatorio')
          .isNumeric().withMessage('El precio debe ser un numero'),
 
-    body('categoryId')
+    body('categories_id')
          .notEmpty().withMessage('La categoria es obligatoria'),
          //.isNumeric().withMessage('El precio debe ser un numero'),
 

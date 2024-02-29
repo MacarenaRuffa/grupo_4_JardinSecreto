@@ -47,22 +47,21 @@
 
                 <div class="input-box">
                     <label for="categoryId">Categoría:</label>
-                    <select id="categoryId" name="categoryId">
+                    <select id="categoryId" name="categories_id">
                         <option value="">Elegir</option>
                         <% for(let i = 0; i < categories.length; i++) { %>
-                            <option value="<%= categories[i].id %>" <%= (locals.oldData && oldData.categoryId == categories[i].id) ? 'selected' : '' %>>
+                            <option value="<%= categories[i].id %>" <%= (locals.oldData && oldData.categories_id == categories[i].id) ? 'selected' : '' %>>
                                 <%= categories[i].name %>
                             </option>
                         <% } %>
-                        
-                        
                     </select>
-                    <% if (locals.errors && locals.errors.categoryId) { %>
+                    <% if (locals.errors && locals.errors.categories_id) { %>
                         <span class="fieldError">
-                            <%= errors.categoryId.msg %>
+                            <%= errors.categories_id.msg %>
                         </span>
                     <% } %>
                 </div>
+                
 
                 <div class="input-box">
                     <label for="image">Foto del producto:</label>

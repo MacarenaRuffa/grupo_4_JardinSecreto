@@ -4,6 +4,7 @@
 //const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const { validationResult } = require('express-validator')
+const path = require('path');
 
 const db = require("../database/models")
 
@@ -67,22 +68,32 @@ const productsController = {
 			const categories = await db.Category.findAll();
 			const errors = validationResult(req);
 			if (!errors.isEmpty()) {
-				return res.render('productEdit', { productToEdit: req.body, errors: errors.mapped(), categories });
+				const productToEdit = await db.Product.findByPk(req.params.id);
+				console.log('Errores de validación:', errors.mapped());
+				console.log('ID del producto a editar:', req.params.id);
+				return res.render('productEdit', { productToEdit, errors: errors.mapped(), categories });
 			}
-			await db.Product.update({
+	
+			const [updatedRows, updatedProducts] = await db.Product.update({
 				name: req.body.name,
 				description: req.body.description,
 				price: req.body.price,
 				categories_id: req.body.categories_id,
 				in_sale: req.body.in_sale
-			},
-				{ where: { id: req.params.id } });
+			}, { where: { id: req.params.id } });
+	
+			console.log('Filas actualizadas:', updatedRows);
+	
 			console.log('Producto actualizado correctamente');
 			res.redirect('/products');
 		} catch (error) {
+			console.error('Error en el controlador update:', error);
 			return res.status(500).send("error");
 		}
 	},
+	
+	
+	
 
 	//CODIGO VIEJO DE ACTUALIZAR
 	// const indexProduct = products.findIndex((product) => product.id == req.params.id);

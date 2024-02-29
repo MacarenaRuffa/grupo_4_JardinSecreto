@@ -12,7 +12,7 @@ window.onload = function() {
             name: 'Nombre del producto',
             description: 'Descripción',
             price: 'Precio',
-            categoryId: 'Categoría',
+            categories_id: 'Categoría',
             image: 'Imagen',
             in_sale: 'Estado de oferta'
         };
