@@ -64,6 +64,7 @@ const productsController = {
 
 	update: async (req, res) => {
 		try {
+			const categories = await db.Category.findAll();
 			const errors = validationResult(req);
 			const categories = await db.Category.findAll();
 			if (!errors.isEmpty()) {
