@@ -64,9 +64,9 @@ const productsController = {
 
 	update: async (req, res) => {
 		try {
+			const categories = await db.Category.findAll();
 			const errors = validationResult(req);
 			if (!errors.isEmpty()) {
-				const categories = await db.Category.findAll();
 				return res.render('productEdit', { productToEdit: req.body, errors: errors.mapped(), categories });
 			}
 			await db.Product.update({

@@ -18,6 +18,7 @@
                             <%= errors.name.msg %>
                         </p>
                     <% } %>
+                    <p id="err-name"></p>
                 </div>
 
                 <div class="input-box">
@@ -29,6 +30,7 @@
                             <%= errors.description.msg %>
                         </p>
                     <% } %>
+                    <p id="err-description"></p>
                 </div>
 
                 <div class="input-box">
@@ -40,6 +42,7 @@
                             <%= errors.price.msg %>
                         </p>
                     <% } %>
+                    <p id="err-price"></p>
                 </div>
 
                 <div class="input-box">
@@ -51,6 +54,8 @@
                                 <%= categories[i].name %>
                             </option>
                         <% } %>
+                        
+                        
                     </select>
                     <% if (locals.errors && locals.errors.categoryId) { %>
                         <span class="fieldError">
@@ -67,6 +72,7 @@
                             <%= errors.image.msg %>
                         </p>
                     <% } %>
+                    
                 </div>
 
                 <div class="input-box">
@@ -80,6 +86,7 @@
                             <%= errors.in_sale.msg %>
                         </p>
                     <% } %>
+                    
                 </div>
 
                 <button type="submit" class="btn">Guardar producto nuevo</button>
