@@ -66,7 +66,7 @@ const productsController = {
 		try {
 			const categories = await db.Category.findAll();
 			const errors = validationResult(req);
-			const categories = await db.Category.findAll();
+			
 			if (!errors.isEmpty()) {
 				return res.render('productEdit', { productToEdit: req.body, errors: errors.mapped(), categories });
 			}
