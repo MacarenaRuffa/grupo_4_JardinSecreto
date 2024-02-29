@@ -25,7 +25,7 @@
                     <label for="description" class="form-label">Descripción:</label>
                     <textarea name="description" id="description" placeholder="Descripción del producto"><%= (locals.oldData && oldData.description) ? oldData.description : "" %></textarea>
                     
-                    <% if(locals.errors && locals.errors.description) { %>
+                    <% if(locals.errors && locals.errors.description){ %>
                         <p>
                             <%= errors.description.msg %>
                         </p>

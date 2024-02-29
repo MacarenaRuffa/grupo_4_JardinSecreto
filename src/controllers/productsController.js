@@ -67,6 +67,7 @@ const productsController = {
 		try {
 			const categories = await db.Category.findAll();
 			const errors = validationResult(req);
+			
 			if (!errors.isEmpty()) {
 				const productToEdit = await db.Product.findByPk(req.params.id);
 				console.log('Errores de validación:', errors.mapped());

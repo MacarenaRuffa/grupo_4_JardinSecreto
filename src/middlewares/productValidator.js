@@ -37,4 +37,4 @@ const productValidator = [
         }),
 ];
 
-module.exports = { productValidator };
+module.exports = { productValidator };
