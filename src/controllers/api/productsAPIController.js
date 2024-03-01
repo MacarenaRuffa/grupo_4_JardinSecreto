@@ -12,7 +12,7 @@ const controller = {
             };
             res.send(response);
         } catch (error) {
-            console.error("Error en el controlador:", error);
+            console.error("Error en el controlador (list):", error);
             res.status(500).send("Error interno del servidor");
         }
     },
@@ -35,15 +35,16 @@ const controller = {
             };
             res.send(response);
         } catch (error) {
-            console.error("Error en el controlador:", error);
+            console.error("Error en el controlador (productDetail):", error);
             res.status(500).send("Error interno del servidor");
         }
     },
+
     async lastProduct(req, res) {
         try {
+            console.log('Request to lastProduct received'); // Log de depuración
             const lastProduct = await db.Product.findOne({
-                order: [['createdAt', 'DESC']], // Ordenar por fecha de creación en orden descendente
-                limit: 1,
+                order: [['createdAt', 'DESC']],
                 include: ['category'],
             });
     
@@ -59,11 +60,10 @@ const controller = {
             };
             res.send(response);
         } catch (error) {
-             console.error("Error en el controlador:", error);
-        res.status(500).send("Error interno del servidor");
+            console.error("Error en el controlador:", error);
+            res.status(500).send("Error interno del servidor");
         }
     },
-    
 
     async countCategories(req, res) {
         try {
@@ -75,7 +75,7 @@ const controller = {
             };
             res.json(response);
         } catch (error) {
-            console.error("Error en el controlador:", error);
+            console.error("Error en el controlador (countCategories):", error);
             res.status(500).json({ error: "Error interno del servidor" });
         }
     },
