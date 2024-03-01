@@ -45,8 +45,11 @@ const controller = {
             console.log('Request to lastProduct received'); // Log de depuración
             const lastProduct = await db.Product.findOne({
                 order: [['createdAt', 'DESC']],
+                limit: 1,
                 include: ['category'],
             });
+    
+            console.log('Last Product:', lastProduct); // Nuevo log
     
             if (!lastProduct) {
                 return res.status(404).send("No se encontró el último producto");
