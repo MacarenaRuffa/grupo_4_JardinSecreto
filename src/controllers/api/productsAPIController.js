@@ -5,13 +5,16 @@ const controller = {
     async list(req, res) {
         try {
             const products = await db.Product.findAll({
-                // include: ['category']
+                include: ['category']
             });
             const response = {
                 status: 200,
                 count: products.length,
                 url: '/api/products',
-                data: products
+                data: {
+                    products,
+                    detail: `http://localhost:3000/api/user/${products.id}`
+                }
             };
             res.send(response);
         } catch (error) {
@@ -20,9 +23,7 @@ const controller = {
     },
     async productDetail(req, res) {
         try {
-            const products = await db.Product.findByPk(req.params.id, {
-                include: ['category']
-            });
+            const products = await db.Product.findByPk(req.params.id, {});
             const response = {
                 status: 200,
                 count: products.length,

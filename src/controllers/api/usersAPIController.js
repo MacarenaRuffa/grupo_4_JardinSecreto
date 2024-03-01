@@ -5,13 +5,21 @@ const controller = {
     async userlist(req, res) {
         try {
             const users = await db.User.findAll({
-                
+                attributes: {
+                    exclude: ['password'
+                    ]
+                }
             });
+
             const response = {
                 status: 200,
                 count: users.length,
                 url: '/api/users',
-                data: users
+                data:
+                {
+                    users,
+                    detail: `http://localhost:3000/api/user/${users.id}`
+                }
             };
             res.send(response);
         } catch (error) {
@@ -20,9 +28,7 @@ const controller = {
     },
     async userDetail(req, res) {
         try {
-            const users = await db.User.findByPk(req.params.id, {
-                include: ['category']
-            });
+            const users = await db.User.findByPk(req.params.id, {});
             const response = {
                 status: 200,
                 count: users.length,
