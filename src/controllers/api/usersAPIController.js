@@ -3,7 +3,7 @@ const db = require('../../database/models');
 const controller = {
     async userlist(req, res) {
         try {
-            const users = await db.User.findAll(); // Obtén la lista de usuarios
+            const users = await db.User.findAll({attributes:{exclude:['password']}}); // Obtén la lista de usuarios
             const response = {
                 status: 200,
                 count: users.length,
