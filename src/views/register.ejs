@@ -1,66 +1,86 @@
 <%- include('partials/head', {styles : ['register']}) %>
 
-    <body>
-        <div class="logo-btn">
-            <img src="/images/Logo-verde.png" alt="Logo">
+<body>
+    <div class="logo-btn">
+        <img src="/images/Logo-verde.png" alt="Logo">
+    </div>
+    <div class="wrapper-reg">
+        <section id="formulario">
+            <form action="/users/register" method="POST" encType="multipart/form-data">
+                <h1>¡Regístrate!</h1>
+                <div class="ib-conteiner">
+                    <div class="input-box">
+                        <input type="text" id="name" name="name" placeholder="Nombre y apellido" 
+                        value="<%= locals.oldData ? locals.oldData.name : '' %>">
+                        <i class='bx bx-user' style='color:#435334'></i>
+                        <% if (locals.errors && locals.errors.name) { %>
+                            <p class="error-msg"><%= locals.errors.name.msg %></p>
+                        <% } %>
+                        <p id="err-name" class="error-msg"></p>
+                    </div>
+                    <div class="input-box">
+                        <input type="email" id="email" name="email" placeholder="E-mail" 
+                        value="<%= locals.oldData ? locals.oldData.email : '' %>">
+                        <i class='bx bx-envelope' style='color:#435334'></i>
+                        <% if (locals.errors && locals.errors.email) { %>
+                            <p class="error-msg"><%= locals.errors.email.msg %></p>
+                        <% } %>
+                        <p id="err-email" class="error-msg"></p>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" id="password" name="password" placeholder="Elegí tu contraseña">
+                        <i class='bx bx-lock' style='color:#435334'></i>
+                        <% if (locals.errors && locals.errors.password) { %>
+                            <p class="error-msg"><%= locals.errors.password.msg %></p>
+                        <% } %>
+                        <p id="err-password" class="error-msg"></p>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" id="pass_confirm" name="pass_confirm" placeholder="Confirmá tu contraseña">
+                        <i class='bx bx-lock' style='color:#435334'></i>
+                        <% if (locals.errors && locals.errors.pass_confirm) { %>
+                            <p class="error-msg"><%= locals.errors.pass_confirm.msg %></p>
+                        <% } %>
+                        <p id="err-pass_confirm" class="error-msg"></p>
+                    </div>
+                    <div class="input-box">
+                        <select id="gender" name="gender" class="btn-gender">
+                            <option value="" disabled selected>Género</option>
+                            <option value="masculino">Masculino</option>
+                            <option value="femenino">Femenino</option>
+                            <option value="no_binario">No Binario</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                        <i class='bx bx-user' style='color:#435334'></i>
+                        <% if (locals.errors && locals.errors.gender) { %>
+                            <p class="error-msg"><%= locals.errors.gender.msg %></p>
+                        <% } %>
+                        <p id="err-gender" class="error-msg"></p>
+                    </div>
+                </div>
+
+                <div class="user-file">
+                    <h4>Elegí tu foto de usuario</h4>
+                    <input type="file" id="avatar" name="avatar">
+                </div>
+
+                <div class="terms-check">
+                    <input type="checkbox" id="terms" name="terms" value="d" id="terms">
+                    <label for="terms">Acepto los términos y condiciones de El Jardin Secreto</label>
+                    <% if (locals.errors && locals.errors.terms) { %>
+                        <p class="error-msg"><%= locals.errors.terms.msg %></p>
+                    <% } %>
+                    <p id="err-terms" class="error-msg"></p>
+                </div>
+                <div class="btn-container">
+                    <button type="submit" class="btn">Enviar</button>
+                    <button type="reset" class="btn">Borrar</button>
+                </div>
+
+            </form>
         </div>
-        <div class="wrapper-reg">
-            <section id="formulario">
-                <form action="/users/register" method="POST" encType="multipart/form-data">
-                    <h1>¡Regístrate!</h1>
-                    <div class="ib-conteiner">
-                        <div class="input-box">
-                            <input type="text" id="name" name="name" placeholder="Nombre y apellido">
-                            <i class='bx bx-user' style='color:#435334'></i>
-                            <p id="err-name"></p>
-                        </div>
-                        <div class="input-box">
-                            <input type="email" id="email" name="email" placeholder="E-mail">
-                            <i class='bx bx-envelope' style='color:#435334'></i>
-                            <p id="err-email"></p>
-                        </div>
-                        <div class="input-box">
-                            <input type="password" id="password" name="password" placeholder="Elegí tu contraseña">
-                            <i class='bx bx-lock' style='color:#435334'></i>
-                            <p id="err-password"></p>
-                        </div>
-                        <div class="input-box">
-                            <input type="password" id="pass_confirm" name="pass_confirm"
-                                placeholder="Confirmá tu contraseña">
-                            <i class='bx bx-lock' style='color:#435334'></i>
-                            <p id="err-pass_confirm"></p>
-                        </div>
-                        <div class="input-box">
-                            <select id="gender" name="gender" class="btn-gender">
-                                <option value="" disabled selected>Género</option>
-                                <option value="masculino">Masculino</option>
-                                <option value="femenino">Femenino</option>
-                                <option value="no_binario">No Binario</option>
-                                <option value="otro">Otro</option>
-                            </select>
-                            <i class='bx bx-user' style='color:#435334'></i>
-                            <p id="err-gender"></p>
-                        </div>
-                    </div>
+    </section>
+    <script src="/js/registerValidator.js"></script>
+</body>
 
-                    <div class="user-file">
-                        <h4>Elegí tu foto de usuario</h4>
-                        <input type="file" id="avatar" name="avatar">
-                    </div>
-
-                    <div class="terms-check">
-                        <input type="checkbox" id="terms" name="terms" value="d" id="terms">
-                        <label for="terms">Acepto los términos y condiciones de El Jardin Secreto</label>
-                    </div>
-                    <div class="btn-container">
-                        <button type="submit" class="btn">Enviar</button>
-                        <button type="reset" class="btn">Borrar</button>
-                    </div>
-
-                </form>
-        </div>
-        </section>
-        <script src="/js/registerValidator.js"></script>
-    </body>
-
-    </html>
+</html>

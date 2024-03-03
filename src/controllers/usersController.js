@@ -12,7 +12,7 @@ const usersController = {
 		res.render('register');
 	},
 	login: (req, res) => {
-		res.render('login');
+		res.render('login', );
 
 	},
 	errorcontroller(req, res) {
@@ -21,7 +21,7 @@ const usersController = {
 	nologin(req, res) {
 		res.render('nologin');
 	},
-	
+
 	store: async (req, res) => {
 		try {
 			const errors = validationResult(req);
@@ -44,20 +44,26 @@ const usersController = {
 		}
 	},
 
-	processLogin: async (req, res) => { //Pendiente 
+	processLogin: async (req, res) => {
 		try {
+			const errors = validationResult(req);
+			if (!errors.isEmpty()) {
+				return res.render("login", { errors: errors.mapped(), oldData: req.body });
+        }
+
 			const user = await db.User.findOne({
 				where: {
 					email: req.body.email
 				},
 				include: ['role']
 			});
+
 			if (!user) {
 				return res.status(404).render('nologin');
 
 			}
 			if (!bcrypt.compareSync(req.body.password, user.password)) {
-				return res.status(500).render('error');
+				return res.render("error", {  oldData: req.body.email });
 			}
 			req.session.user = {
 				id: user.id,
@@ -66,7 +72,7 @@ const usersController = {
 				role: user.role.name,
 			};
 			res.redirect('/')
-
+			
 		} catch (error) {
 			console.log(error)
 			return res.status(500).send("Error interno del servidor, comuniquese con un administrador")
@@ -77,9 +83,9 @@ const usersController = {
 	//pasar a processLogin
 	remember(req, res) {
 		req.session.usuarioLogueado = usuariologuearse;
-
+		console.log(userEmail);
 		if (req.body.recordame != undefined) {
-			res.cookie('recordame', usuarioALoguearse.email, { maxAge: 60000 })
+			res.cookie('recordame', usuarioLoguearse.email, { maxAge: 60000 })
 		};
 	},
 
