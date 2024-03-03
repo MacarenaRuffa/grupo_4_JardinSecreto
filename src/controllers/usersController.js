@@ -21,9 +21,14 @@ const usersController = {
 	nologin(req, res) {
 		res.render('nologin');
 	},
-
+	
 	store: async (req, res) => {
 		try {
+			const errors = validationResult(req);
+			if (!errors.isEmpty()) {
+				return res.render('register', { errors: errors.mapped(), oldData: req.body });
+			}
+	
 			const newUser = {
 				...req.body,
 				password: bcrypt.hashSync(req.body.password, 10),
@@ -31,12 +36,12 @@ const usersController = {
 				roles_id: 2
 			};
 			await db.User.create(newUser);
-			res.redirect('/');
-
+			return res.redirect('/'); 
+	
 		} catch (error) {
-			return res.status(500).send("Error al registrarse")
+			console.error("Error al registrarse:", error);
+			return res.status(500).send("Error al registrarse");
 		}
-
 	},
 
 	processLogin: async (req, res) => { //Pendiente 
