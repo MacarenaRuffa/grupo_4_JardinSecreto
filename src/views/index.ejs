@@ -1,12 +1,35 @@
 <%- include('partials/head', {styles : ['stylesINDEX']}) %>
 
+    <head>
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+        <link rel="stylesheet" href="css/bannerHome.css">
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    </head>
+
     <body>
         <%- include('partials/header') %>
-            <section class="banner"> <!--son 3 imagenes deslizables-->
-                <img src="/images/Banner-promo1.png" alt="Banner de ofertas">
+            <section data-store="home-slider">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img id="promo-1" src="/images/Banner-prueba1.png" alt="Promo 1" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img id="promo-2" src="/images/Banner-prueba3.png" alt="Promo 3" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img id="promo-2" src="/images/Banner-prueba4.png" alt="Promo 4" />
+                        </div>
+                    </div>
+                    <!-- Agrega controles de navegación -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <!-- Agrega paginación -->
+                    <div class="swiper-pagination"></div>
+                </div>
             </section>
+            
             <main>
-
                 <section>
                     <h3>Ofertas</h3>
                     <section class="bestsellers">
@@ -33,6 +56,7 @@
 
             </main>
             <%- include('partials/footer') %>
+            <script src="/js/swiper.js"></script>
     </body>
 
     </html>
