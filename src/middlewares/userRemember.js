@@ -2,18 +2,23 @@
 const db = require("../database/models");
 
 function userRemember(req, res, next) {
-    console.log(req.session.user);
-    if (req.session.user){
-        res.locals.user = req.session.user     
+
+    if (req.session.user) {
+        res.locals.user = req.session.user
     }
-    next();
-    /*if (req.cookies.recordame && !req.session.usuarioLogueado) {
+
+    if (req.cookies.recordame && !req.session.user) {
         const userEmail = req.cookies.recordame;
 
-        db.User.findOne({ where: { email: userEmail } })
+        db.User.findOne({ where: { email: userEmail }, include: ['role'] })
             .then(user => {
                 if (user) {
-                    req.session.usuarioLogueado = user;
+                    req.session.user = {
+                        id: user.id,
+                        name: user.name,
+                        email: user.email,
+                        role: user.role.name,
+                    };
                 }
                 next();
             })
@@ -23,7 +28,7 @@ function userRemember(req, res, next) {
             });
     } else {
         next();
-    }*/
+    }
 }
 
 module.exports = userRemember;

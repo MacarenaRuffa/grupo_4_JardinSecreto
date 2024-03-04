@@ -3,9 +3,18 @@ const db = require('../../database/models');
 const controller = {
     async list(req, res) {
         try {
-            const products = await db.Product.findAll();
+            const products = await db.Product.findAll({ include: ['category'] });
+            const countByCategory = await db.Category.findAll({
+                attributes: [
+                    [db.Sequelize.fn('COUNT', 'products.id'), 'count'],
+                    'name'
+                ],
+                include:['products' ],
+                group:['Category.id']
+            });
             const response = {
                 status: 200,
+                countByCategory,
                 count: products.length,
                 url: '/api/products',
                 data: products
@@ -48,13 +57,13 @@ const controller = {
                 limit: 1,
                 include: ['category'],
             });
-    
+
             console.log('Last Product:', lastProduct); // Nuevo log
-    
+
             if (!lastProduct) {
                 return res.status(404).send("No se encontró el último producto");
             }
-    
+
             const response = {
                 status: 200,
                 count: 1,

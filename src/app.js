@@ -49,7 +49,7 @@ app.use('/api/users', apiUsersRouter);
 //   try {
 //     // MODIFICAR O BORRAR!! No funciona el count Category, no lo logra buscar en el react (intuyo ruteo o palabras)
 
-    
+
 //     const categoryCounts = await Product.aggregate([
 //       { $group: { _id: '$category', count: { $sum: 1 } } },
 //     ]);
@@ -63,7 +63,7 @@ app.use('/api/users', apiUsersRouter);
 
 app.get('/logout', (req, res) => {
   delete req.session.user;
-
+  res.clearCookie('recordame')
   res.redirect('/');
 });
 

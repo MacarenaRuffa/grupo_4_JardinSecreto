@@ -12,7 +12,7 @@ const usersController = {
 		res.render('register');
 	},
 	login: (req, res) => {
-		res.render('login', );
+		res.render('login',);
 
 	},
 	errorcontroller(req, res) {
@@ -22,13 +22,15 @@ const usersController = {
 		res.render('nologin');
 	},
 
+
+
 	store: async (req, res) => {
 		try {
 			const errors = validationResult(req);
 			if (!errors.isEmpty()) {
 				return res.render('register', { errors: errors.mapped(), oldData: req.body });
 			}
-	
+
 			const newUser = {
 				...req.body,
 				password: bcrypt.hashSync(req.body.password, 10),
@@ -36,8 +38,8 @@ const usersController = {
 				roles_id: 2
 			};
 			await db.User.create(newUser);
-			return res.redirect('/'); 
-	
+			return res.redirect('/');
+
 		} catch (error) {
 			console.error("Error al registrarse:", error);
 			return res.status(500).send("Error al registrarse");
@@ -49,7 +51,7 @@ const usersController = {
 			const errors = validationResult(req);
 			if (!errors.isEmpty()) {
 				return res.render("login", { errors: errors.mapped(), oldData: req.body });
-        }
+			}
 
 			const user = await db.User.findOne({
 				where: {
@@ -57,14 +59,18 @@ const usersController = {
 				},
 				include: ['role']
 			});
-
+			//Enviar al login con los mensajes de credenciales incorrectos
 			if (!user) {
-				return res.status(404).render('nologin');
-
+				return res.render("login", { errors: { password: { msg: 'credenciales incorrectas!' } }, oldData: req.body });
 			}
+			//Enviar al login con los mensajes de credenciales incorrectos
 			if (!bcrypt.compareSync(req.body.password, user.password)) {
-				return res.render("error", {  oldData: req.body.email });
+				return res.render("login", { errors: { password: { msg: 'credenciales incorrectas!' } }, oldData: req.body });
 			}
+			if (req.body.recordame == 'on') {
+				res.cookie('recordame', user.email, { maxAge: 60000 })
+			};
+
 			req.session.user = {
 				id: user.id,
 				name: user.name,
@@ -72,7 +78,7 @@ const usersController = {
 				role: user.role.name,
 			};
 			res.redirect('/')
-			
+
 		} catch (error) {
 			console.log(error)
 			return res.status(500).send("Error interno del servidor, comuniquese con un administrador")
