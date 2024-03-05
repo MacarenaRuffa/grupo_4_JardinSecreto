@@ -1,7 +1,7 @@
 <%- include('partials/head', {styles : ['productCreate']}) %>
 <body>
     <div class="logo-btn">
-        <img src="/images/Logo-verde.png" alt="Logo">
+        <a href="/"><img src="/images/Logo-verde.png" alt="Logo"></a>
     </div>
     <div class="wrapper">
         <form action="/users/<%= userToEdit.id %>/edit?_method=PUT" method="post">

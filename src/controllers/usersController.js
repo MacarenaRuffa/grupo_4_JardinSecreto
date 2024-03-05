@@ -80,16 +80,14 @@ const usersController = {
 			res.redirect('/')
 
 		} catch (error) {
-			console.log(error)
 			return res.status(500).send("Error interno del servidor, comuniquese con un administrador")
 		}
 	},
 
 
-	//pasar a processLogin
+	
 	remember(req, res) {
 		req.session.usuarioLogueado = usuariologuearse;
-		console.log(userEmail);
 		if (req.body.recordame != undefined) {
 			res.cookie('recordame', usuarioLoguearse.email, { maxAge: 60000 })
 		};
@@ -111,7 +109,6 @@ const usersController = {
 				name: req.body.nameEdit,
 				email: req.body.emailEdit
 			}, { where: { id: req.params.id } });
-			console.log('Usuario actualizado correctamente');
 			res.redirect('/')
 		} catch (error) {
 			res.status(500).send('Error al actualizar usuario');
@@ -121,7 +118,6 @@ const usersController = {
 	delete: async (req, res) => {
 		try {
 			await db.User.destroy({ where: { id: req.params.id } });
-			console.log('Usuario eliminado correctamente');
 			res.redirect('/')
 		} catch (error) {
 			res.status(500).send('Error al eliminar usuario');

@@ -44,22 +44,7 @@ app.use('/users', usersRoutes);
 
 app.use('/api/products', apiProductsRouter);
 app.use('/api/users', apiUsersRouter);
-// Ruta para contar las categorías
-// app.get('/api/products/count-categories', async (req, res) => {
-//   try {
-//     // MODIFICAR O BORRAR!! No funciona el count Category, no lo logra buscar en el react (intuyo ruteo o palabras)
 
-
-//     const categoryCounts = await Product.aggregate([
-//       { $group: { _id: '$category', count: { $sum: 1 } } },
-//     ]);
-
-//     res.json({ categoryCounts });
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ error: 'Internal Server Error' });
-//   }
-// });
 
 app.get('/logout', (req, res) => {
   delete req.session.user;

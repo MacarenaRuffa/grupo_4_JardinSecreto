@@ -1,8 +1,3 @@
-//const fs = require('fs');
-//const path = require('path');
-//const productsFilePath = path.join(__dirname, '../data/products.json');
-//const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
 const { validationResult } = require('express-validator')
 const path = require('path');
 
@@ -70,8 +65,6 @@ const productsController = {
 			
 			if (!errors.isEmpty()) {
 				const productToEdit = await db.Product.findByPk(req.params.id);
-				console.log('Errores de validación:', errors.mapped());
-				console.log('ID del producto a editar:', req.params.id);
 				return res.render('productEdit', { productToEdit, errors: errors.mapped(), categories });
 			}
 	
@@ -83,9 +76,6 @@ const productsController = {
 				in_sale: req.body.in_sale
 			}, { where: { id: req.params.id } });
 	
-			console.log('Filas actualizadas:', updatedRows);
-	
-			console.log('Producto actualizado correctamente');
 			res.redirect('/products');
 		} catch (error) {
 			console.error('Error en el controlador update:', error);
@@ -93,25 +83,6 @@ const productsController = {
 		}
 	},
 	
-	
-	
-
-	//CODIGO VIEJO DE ACTUALIZAR
-	// const indexProduct = products.findIndex((product) => product.id == req.params.id);
-	// products[indexProduct] = {
-	// 	...products[indexProduct],
-	// 	...req.body
-	// };
-	// fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
-	// res.redirect('/products');
-
-	/*destroy: (req, res) => {
-		const indexProduct = products.findIndex((product) => product.id == req.params.id);
-		products.splice(indexProduct, 1);
-		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
-		res.redirect('/products');
-	},*/
-
 	delete: async (req, res) => {
 		try {
 			await db.Product.destroy({
@@ -119,7 +90,6 @@ const productsController = {
 			});
 			res.redirect("/products");
 		} catch (error) {
-			console.log(error);
 			res.status(500).send("error")
 		}
 	},
