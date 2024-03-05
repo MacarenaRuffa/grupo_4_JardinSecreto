@@ -51,7 +51,9 @@ main section article img {
     width: 100%;
 }
 
-
+h4.name {
+    text-align: center;
+}
 
 article div h4,
 article div p {

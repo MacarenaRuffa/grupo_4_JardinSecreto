@@ -26,7 +26,8 @@ body div.info p{
 }
 
 /* Buscador --Maca*/
-nav div.navbar div li a, li.search { /*estilo del registrate, ingresa, carrito*/
+nav div.navbar div li a, 
+li.search { /*estilo del registrate, ingresa, carrito*/
     list-style-type: none;
     text-decoration: none;
     color: #435334;
