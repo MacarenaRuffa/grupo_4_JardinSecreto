@@ -25,6 +25,7 @@ body {
     width: 150px;
 }
 
+
 .wrapper {
     width: 90%;
     background: rgba(255, 255, 255, 0.4);
@@ -103,9 +104,13 @@ body {
     margin-top: 20px;
 }
 
+p {
+    color: tomato
+}
+
 @media (min-width: 768px) {
     .wrapper {
-        width: 420px;
+        
         padding: 20px 30px;
     }
 
@@ -114,7 +119,7 @@ body {
     }
 
     .wrapper .input-box {
-        margin: 20px 0;
+        margin-bottom: 60px;
     }
 
     .input-box input,
@@ -130,6 +135,8 @@ body {
     .wrapper .btn {
         font-size: 16px;
     }
+
+    
 }
 
 @media (min-width: 1024px) {
