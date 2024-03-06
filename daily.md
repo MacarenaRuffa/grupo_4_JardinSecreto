@@ -13,3 +13,9 @@ Logramos reorganizarnos como equipo para trabajar de manera individual y colabor
 
 Sprint 6. -Bases de datos
 Al no coordinar todo el equipo, decidimos realizar weeklys con ciertos integrantes e ir informando por mensaje lo charlado. Una vez aclaradas las dudas, siendo concientes de lo que estamos realizando, agregar los cambios en la rama principal para no generar conflictos.
+
+Sprint 7- 
+Retomamos las weeklys para informarnos sobre el desarrollo que realizaba cada uno y tambien para pulir errores entre todos, logramos exitosamente cumplir con todo. 
+
+Sprint 8-
+Ya finalizando con el proyecto estas weeklys que implementamos se convirtieron en dailys ya que aprovechamos al maximo el tiempo que nos quedaba para limpiar el codigo, entender todas las funcionalidades, revisar estilos y preparar la demo como equipo. 
