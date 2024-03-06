@@ -69,7 +69,7 @@ body {
 
 .wrapper .remember-forgot {
     display: flex;
-    justify-content: space-between;
+    justify-content:center;
     font-size: 14.5px;
     margin: 15px 0;
     color: #435334;
@@ -169,6 +169,10 @@ body {
     p.error-msg {
         color: tomato;
         text-align: center;
+    }
+
+    label.remember{
+        margin-left: 5px;
     }
 
 }
